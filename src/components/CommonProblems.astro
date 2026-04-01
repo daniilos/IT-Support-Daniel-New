@@ -1,0 +1,22 @@
+---
+import { translations, type Lang } from '../i18n/translations';
+interface Props { lang?: Lang }
+const { lang = 'nl' } = Astro.props;
+const t = translations[lang].commonProblems;
+---
+
+<section class="section-padding bg-section-alt">
+    <div class="container-main">
+        <h2 class="mb-10 text-center">{t.heading}</h2>
+        <div class="mx-auto grid max-w-3xl gap-3 sm:grid-cols-2">
+            {t.items.map((item) => (
+                <div class="flex items-start gap-3 rounded-xl border border-border bg-white px-5 py-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-5 w-5 flex-shrink-0 text-accent" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span class="text-sm text-foreground">{item}</span>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
