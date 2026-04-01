@@ -1,5 +1,15 @@
+import { translations, type Lang } from '../i18n/translations';
+
 (function () {
+  function getLang(): Lang {
+    const htmlLang = document.documentElement.lang;
+    return htmlLang === 'en' ? 'en' : 'nl';
+  }
+
   function initForms() {
+    const lang = getLang();
+    const t = translations[lang].contact;
+
     document.querySelectorAll<HTMLInputElement>('input[name="_page_url"]').forEach((el) => {
       el.value = window.location.href;
     });
@@ -24,7 +34,7 @@
 
         if (btn) {
           btn.disabled = true;
-          btn.textContent = 'Verzenden...';
+          btn.textContent = t.sending;
         }
         status!.textContent = '';
         status!.style.color = '';
@@ -41,19 +51,18 @@
           const json: Record<string, unknown> = await res.json().catch(() => ({}));
 
           if (res.ok && json.success) {
-            status!.textContent = '✅ Bedankt! We nemen zo snel mogelijk contact met je op.';
+            status!.textContent = `✅ ${t.successMessage}`;
             status!.style.color = 'var(--color-success)';
             form.reset();
             form.querySelectorAll<HTMLInputElement>('input[name="_page_url"]').forEach((el) => {
               el.value = window.location.href;
             });
           } else {
-            status!.textContent =
-              (json.error as string) || '❌ Er is iets misgegaan. Probeer het opnieuw.';
+            status!.textContent = `❌ ${t.errorMessage}`;
             status!.style.color = 'var(--color-danger)';
           }
         } catch {
-          status!.textContent = '❌ Verbindingsfout. Controleer je internetverbinding en probeer opnieuw.';
+          status!.textContent = `❌ ${t.connectionError}`;
           status!.style.color = 'var(--color-danger)';
         } finally {
           if (btn) {

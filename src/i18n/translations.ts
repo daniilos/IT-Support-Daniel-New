@@ -209,6 +209,10 @@ const nl = {
         messageLabel: 'Bericht',
         messagePlaceholder: 'Beschrijf je vraag of probleem...',
         submit: 'Ondersteuning aanvragen',
+        sending: 'Verzenden...',
+        successMessage: 'Bedankt! We nemen zo snel mogelijk contact met je op.',
+        errorMessage: 'Er is iets misgegaan. Probeer het opnieuw.',
+        connectionError: 'Verbindingsfout. Controleer je internetverbinding en probeer opnieuw.',
         consent: 'Door op de knop te klikken, ga je akkoord met de verwerking van je persoonsgegevens.',
     },
     footer: {
@@ -446,6 +450,10 @@ const en: typeof nl = {
         messageLabel: 'Message',
         messagePlaceholder: 'Describe your question or issue...',
         submit: 'Request Support',
+        sending: 'Sending...',
+        successMessage: 'Thank you! We will get back to you as soon as possible.',
+        errorMessage: 'Something went wrong. Please try again.',
+        connectionError: 'Connection error. Check your internet connection and try again.',
         consent: 'By clicking the button, you agree to the processing of your personal data.',
     },
     footer: {
