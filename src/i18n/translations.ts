@@ -1,300 +1,478 @@
-export type Lang = 'uk' | 'en';
+export type Lang = 'nl' | 'en';
 
-const uk = {
+const nl = {
     meta: {
-        title: 'IT-аутсорсинг для бізнесу в Києві | OST',
-        description: 'OST — IT-аутсорсинг та обслуговування комп\'ютерної інфраструктури в Києві з 1995 року.',
+        title: 'IT-support voor kleine bedrijven in Zuid-Limburg | Oros IT Support',
+        description:
+            'Oros IT Support — lokale IT-ondersteuning voor kleine bedrijven in Kerkrade en Zuid-Limburg. Computers, printers, Wi-Fi, gebruikersaccounts en basisbeveiliging.',
     },
     topBar: {
-        phone: '+38 (044) 289 95 41',
-        email: 'info@ost.kiev.ua',
-        hours: 'Пн-Пт: 9:00 - 18:00',
+        phone: '+31 6 3483 6118',
+        email: 'info@oros.agency',
+        hours: 'Ma–Vr: 9:00–18:00',
     },
     header: {
         nav: [
-            { label: 'Послуги', href: '#services' },
-            { label: 'Чому OST', href: '#why-us' },
-            { label: 'Порівняння', href: '#comparison' },
-            { label: 'Відгуки', href: '#testimonials' },
-            { label: 'Контакти', href: '#contact' },
+            { label: 'Diensten', href: '#services' },
+            { label: 'Over mij', href: '#about' },
+            { label: 'Waarom Oros', href: '#why-oros' },
+            { label: 'Tarieven', href: '#pricing' },
+            { label: 'Contact', href: '#contact' },
         ],
-        cta: 'Безкоштовна консультація',
-        menuLabel: 'Відкрити меню',
+        cta: 'Ondersteuning aanvragen',
+        menuLabel: 'Menu openen',
     },
     hero: {
-        badge: 'З 1995 року на ринку IT',
-        heading: 'IT-аутсорсинг для',
-        headingBr: 'вашого бізнесу',
-        subtitle: 'Беремо на себе все IT — ви займаєтеся бізнесом. Професійна підтримка та обслуговування IT-інфраструктури для малого та середнього бізнесу.',
-        cta1: 'Дізнатися вартість',
-        cta2: 'Наші послуги',
+        heading: 'Lokale IT-support',
+        headingAccent: 'voor jouw bedrijf',
+        subtitle:
+            'Ik help kleine bedrijven in Zuid-Limburg met dagelijkse IT: computers, printers, Wi-Fi, gebruikersaccounts, storingen en basisbeveiliging — zowel ter plaatse als op afstand.',
+        valueProps: 'Snel, praktisch en begrijpelijk. Geen onnodige complexiteit. Gewoon betrouwbare IT-support die jouw kantoor draaiende houdt.',
+        cta1: 'Ondersteuning aanvragen',
+        cta2: 'Gratis kennismakingsgesprek',
     },
-    stats: {
+    trustBar: {
         items: [
-            { value: '30', suffix: '+', label: 'років на ринку', icon: 'calendar' },
-            { value: '200', suffix: '+', label: 'постійних клієнтів', icon: 'users' },
-            { value: '98', suffix: '%', label: 'завдань вчасно', icon: 'check' },
-            { value: '24', suffix: '/7', label: 'підтримка без вихідних', icon: 'clock' },
+            'Gevestigd in Kerkrade, actief in heel Zuid-Limburg',
+            'Windows, macOS & Linux',
+            'On-site én remote support',
+            'Voor kleine kantoren en groeiende bedrijven',
         ],
-        tagline: 'Понад 15 років деякі клієнти працюють з нами',
-    },
-    founder: {
-        badge: 'Засновник OST',
-        paragraphs: [
-            'Компанія ОСТ заснована в 1995 році. Ми стояли біля витоків комп\'ютерної індустрії України — збирали перші ПК 386DX40 з жорсткими дисками на 40 МБ.',
-            'Один з них досі працює в Інституті ядерної фізики.',
-            'З 2002 року повністю перейшли на IT-аутсорсинг. Сьогодні працюємо з FreeBSD, Linux, Windows — підбираємо оптимальні рішення під ваш бізнес.',
-            'З 2008 року впроваджуємо міжнародні стандарти якості. 30+ років досвіду — для стабільності вашого IT.',
-        ],
-        quote: '«30+ років ми створюємо IT-інфраструктуру, яка працює без збоїв. Наш досвід — це ваша стабільність.»',
-        author: '— Степан Орос',
-        role: ', засновник ОСТ',
-        badgeYears: '30+',
-        badgeLabel: 'років',
-        labelToday: 'Сьогодні',
-        label1994: '1994',
     },
     services: {
-        heading: 'Послуги OST для бізнесу',
-        subtitle: '6 ключових напрямів IT-аутсорсингу для стабільної та безпечної роботи вашого офісу.',
+        heading: 'IT-supportdiensten voor kleine bedrijven',
         items: [
-            { title: 'IT-аутсорсинг', description: 'Повний зовнішній IT-відділ для бізнесу: обслуговування інфраструктури, контроль процесів та розвиток вашого IT-середовища.' },
-            { title: 'Обслуговування ПК', description: 'Підтримка робочих станцій та периферії, оновлення, діагностика, усунення збоїв та стандартизація робочих місць.' },
-            { title: 'Сервери', description: 'Адміністрування серверів, резервне копіювання, контроль доступу та підтримка високої доступності бізнес-сервісів.' },
-            { title: 'Мережі', description: 'Проєктування та супровід офісних мереж, Wi-Fi та VPN. Стабільний зв\'язок між усіма вашими філіями та відділами.' },
-            { title: 'Кібербезпека', description: 'Аудит захищеності, впровадження політик безпеки, захист даних компанії та працівників від актуальних загроз.' },
-            { title: 'Техпідтримка', description: 'Єдина точка входу для всіх звернень працівників. Швидкі реакції, прозорі SLA та підтримка у робочий і позаробочий час.' },
+            {
+                title: 'Werkplekondersteuning',
+                description:
+                    'Installatie, onderhoud, updates, probleemoplossing en optimalisatie van Windows-pc\'s, Macs en kantoorlaptops.',
+                icon: 'monitor',
+            },
+            {
+                title: 'Printer- en randapparatuur',
+                description:
+                    'Instellen en oplossen van problemen met printers, scanners, labelprinters en andere kantoorapparatuur.',
+                icon: 'printer',
+            },
+            {
+                title: 'Wi-Fi en netwerkhulp',
+                description:
+                    'Kantoor-Wi-Fi instellen, router- en access point-configuratie, netwerkstoringen oplossen en verbindingsverbeteringen doorvoeren.',
+                icon: 'wifi',
+            },
+            {
+                title: 'Gebruikersaccounts en toegangsbeheer',
+                description:
+                    'E-mailinstellingen, Microsoft 365 / Google Workspace basis, wachtwoordherstel, toegangsbeheer, ondersteuning bij in- en uitdienst van medewerkers.',
+                icon: 'users',
+            },
+            {
+                title: 'Remote en on-site IT-hulp',
+                description:
+                    'Snelle hulp als er iets stopt met werken — op afstand waar mogelijk, ter plaatse waar nodig.',
+                icon: 'headset',
+            },
+            {
+                title: 'Basisbeveiliging en back-upcheck',
+                description:
+                    'Praktische verbeteringen voor veiliger dagelijks werken: updates, back-ups, MFA, phishing-bewustwording en basisapparaathygiëne.',
+                icon: 'shield',
+            },
+            {
+                title: 'ChatGPT & werkstroomautomatisering',
+                description:
+                    'Gebruik je al ChatGPT, maar doe je nog veel taken handmatig? Ik help je eenvoudige manieren te vinden om tijd te besparen en herhalend werk te verminderen.',
+                icon: 'sparkles',
+            },
         ],
     },
-    whyUs: {
-        heading: 'Чому OST',
-        subtitle: 'Ми вибудовуємо сервіс навколо цілей бізнесу: передбачувані терміни, високий рівень відмовостійкості та зрозуміла модель обслуговування без зайвої складності.',
-        cta: 'Отримати пропозицію',
+    about: {
+        heading: 'Over Daniel Oros',
+        paragraphs: [
+            'Ik ben al sinds mijn tienerjaren gefascineerd door IT en heb jarenlang gewerkt met computers, netwerken, kantoorapparatuur en digitale systemen in echte werkomgevingen.',
+            'Ik help kleine bedrijven om praktische IT-problemen op te lossen — zonder verwarrend vakjargon. Van trage computers en printerproblemen tot Wi-Fi-storingen, gebruikersaccounts, apparaatinstallatie en dagelijkse kantoorondersteuning.',
+        ],
+        approach: 'Mijn aanpak is eenvoudig:',
+        approachText: 'IT stabiel, begrijpelijk en minder stressvol maken voor jouw bedrijf.',
+        quote:
+            '"Goede IT-support gaat niet alleen over het oplossen van problemen. Het gaat over het verminderen van chaos, het besparen van tijd en het geven van vertrouwen dat dingen gewoon werken."',
+        quoteAuthor: '— Daniel Oros',
+    },
+    whyOros: {
+        heading: 'Waarom kiezen voor Oros IT Support?',
         reasons: [
-            { title: 'Прозора вартість', description: 'Ви знижуєте витрати на IT та платите за вимірний сервіс без додаткових витрат на штат.' },
-            { title: 'Команда замість одного спеціаліста', description: 'Над вашою інфраструктурою працює група профільних інженерів із розподіленою експертизою.' },
-            { title: 'Швидкі реакції та SLA', description: 'Узгоджені терміни реакції та вирішення завдань фіксуються в договорі й контролюються за метриками.' },
-            { title: 'Профілактика інцидентів', description: 'Моніторимо стан систем та усуваємо проблеми до того, як вони впливають на працівників і клієнтів.' },
-            { title: 'Єдина точка відповідальності', description: 'Один партнер відповідає за весь IT-контур: від робочих місць до серверів, мереж і безпеки.' },
+            {
+                title: 'Lokaal en beschikbaar',
+                description: 'Gevestigd in Kerkrade, met snelle ondersteuning voor bedrijven in heel Zuid-Limburg.',
+            },
+            {
+                title: 'Duidelijke communicatie',
+                description:
+                    'Ik leg technische problemen uit in gewone taal, zodat je altijd begrijpt wat er aan de hand is en waarom.',
+            },
+            {
+                title: 'Praktische probleemoplossing',
+                description:
+                    'Ik richt me op oplossingen die werken in echte kantooromgevingen — geen onnodig ingewikkeld advies.',
+            },
+            {
+                title: 'Flexibel supportmodel',
+                description: 'Op afstand waar mogelijk, ter plaatse waar nodig.',
+            },
+            {
+                title: 'MKB-mindset',
+                description:
+                    'Ik begrijp dat kleine bedrijven betrouwbare ondersteuning nodig hebben: voorspelbare kosten en iemand die écht verantwoordelijkheid neemt.',
+            },
+        ],
+    },
+    commonProblems: {
+        heading: 'Problemen waarbij ik dagelijks help',
+        items: [
+            'Printer doet het niet',
+            'Wi-Fi is instabiel of traag',
+            'Nieuwe medewerker instellen',
+            'Geen toegang tot e-mail of account',
+            'Trage pc of laptop',
+            'Back-up of basisbeveiligingscheck',
+            'IT-opruiming en optimalisatie van het kantoor',
+            'Vragen over Microsoft 365 of Google Workspace',
         ],
     },
     comparison: {
-        bannerHeading: 'Витрати на IT скорочуються вдвічі',
-        bannerSubtitle: 'Порівняйте реальні витрати для офісу 25 робочих місць',
-        inHouseTitle: 'Штатний IT-спеціаліст',
-        ostTitle: 'IT-аутсорсинг OST',
-        saveBadge: 'Економія 73%',
-        rows: [
-            { label: 'Зарплата', inHouse: '20 000 грн', ost: '0 грн' },
-            { label: 'Соціальні податки', inHouse: '6 000 грн', ost: '0 грн' },
-            { label: 'Оренда робочого місця', inHouse: '1 500 грн', ost: '0 грн' },
-            { label: 'Навчання та кваліфікація', inHouse: '~2 000 грн', ost: '' },
-            { label: 'Абонентська плата', inHouse: '', ost: 'від 8 000 грн' },
+        heading: 'Eigen IT-medewerker vs. flexibele lokale IT-support',
+        inHouseTitle: 'Eigen IT-medewerker',
+        orosTitle: 'Oros IT Support',
+        inHouseItems: [
+            'Vast salaris + sociale lasten',
+            'Eén persoon, beperkt bij ziekte/vakantie',
+            'Moeilijk schaalbaar voor kleine teams',
+            'Niet altijd rendabel voor kleine kantoren',
         ],
-        totalLabel: 'Підсумок',
-        inHouseTotal: '29 500',
-        ostTotal: '8 000',
-        currency: 'грн/міс',
-        ostTotalPrefix: 'від',
-        advantages: [
-            { title: 'Без відпусток і лікарняних', subtitle: 'Постійна підтримка 365 днів' },
-            { title: 'Реакція за 15 хвилин', subtitle: 'Швидке вирішення проблем' },
-            { title: 'Команда 10+ фахівців', subtitle: 'Різні спеціалізації під завдання' },
-            { title: 'SLA-договір з гарантіями', subtitle: 'Прозора відповідальність' },
+        orosItems: [
+            'Alleen betalen voor wat je nodig hebt',
+            'Remote + on-site, flexibel inzetbaar',
+            'Praktische focus op kantoor-IT',
+            'Ideaal voor 2–30 werkplekken',
+            'Direct contact met Daniel',
         ],
+        note: 'Voor veel kleine bedrijven is uitbestede IT-support flexibeler dan een eigen IT-medewerker in dienst nemen.',
     },
-    testimonials: {
-        heading: 'Відгуки клієнтів',
-        subtitle: 'Компанії обирають OST за стабільність, швидкість реакції та бізнес-орієнтований підхід.',
-        items: [
-            { quote: 'З OST ми отримали передбачуваний сервіс і зрозумілі SLA. Кількість простоїв помітно знизилася вже у перші місяці роботи.', name: 'Андрій Коваленко', role: 'Генеральний директор', company: 'ТОВ «ТехноТрейд»' },
-            { quote: 'Ми скоротили витрати на IT та отримали команду, яка глибоко розуміє наші бізнес-процеси. Підтримка завжди на зв\'язку.', name: 'Марина Петренко', role: 'Керівний партнер', company: 'Юридична компанія «Правовест»' },
-            { quote: 'Команда OST стандартизувала інфраструктуру в кількох офісах. У результаті ми швидше масштабуємося і легше впроваджуємо нові сервіси.', name: 'Дмитро Савченко', role: 'IT-директор', company: 'Мережа клінік «Здоров\'я»' },
+    quickScan: {
+        heading: 'IT Quick Scan voor kleine bedrijven',
+        intro: 'Weet jij zeker dat de IT van jouw kantoor goed is geregeld?',
+        checks: [
+            'Computers en laptops',
+            'Wi-Fi en netwerkverbinding',
+            'Printers en randapparatuur',
+            'Gebruikersaccounts en toegangsbeheer',
+            'Back-up en basisbeveiliging',
         ],
+        checkIntro: 'Ik bekijk praktisch:',
+        result:
+            'Resultaat: een helder overzicht van wat goed gaat en wat aandacht verdient — in gewone taal, zonder onnodige complexiteit.',
+        cta: 'Quick Scan aanvragen',
+    },
+    pricing: {
+        heading: 'Transparante tarieven',
+        items: [
+            { label: 'Remote support', price: 'vanaf €65 / uur', note: 'excl. btw' },
+            { label: 'On-site support Zuid-Limburg', price: 'vanaf €79 / uur', note: 'excl. btw' },
+            { label: 'Voorrijkosten (lokaal)', price: 'vanaf €20–30', note: 'excl. btw' },
+            { label: 'IT Quick Scan (klein kantoor)', price: '€149 – €199', note: 'excl. btw' },
+            { label: 'Maandelijks starterssupportplan', price: 'vanaf €149 / maand', note: 'excl. btw' },
+            { label: 'Per-gebruiker maandelijks pakket', price: 'vanaf €35–49 / gebruiker / maand', note: 'excl. btw' },
+        ],
+        disclaimer:
+            'Alle prijzen zijn exclusief btw. Voor maatwerkprojecten en grotere kantoren maak ik graag een offerte.',
     },
     contact: {
-        heading: 'Зв\'яжіться з нами',
-        subtitle: 'Залиште заявку, і ми повернемося із пропозицією під ваш бізнес.',
+        heading: 'Neem contact op',
+        subtitle:
+            'Op zoek naar lokale IT-support in Zuid-Limburg? Stuur een bericht en vertel me wat voor hulp je nodig hebt.',
         info: [
-            { label: 'Телефон', value: '+38 (044) 289 95 41' },
-            { label: 'Email', value: 'info@ost.kiev.ua' },
-            { label: 'Місто', value: 'Київ' },
-            { label: 'Графік роботи', value: 'Пн-Пт: 9:00 - 18:00' },
+            { label: 'Telefoon', value: '+31 6 3483 6118', href: 'tel:+31634836118' },
+            { label: 'E-mail', value: 'info@oros.agency', href: 'mailto:info@oros.agency' },
+            { label: 'Locatie', value: 'Kerkrade, Zuid-Limburg, The Netherlands' },
+            { label: 'Ondersteuningsuren', value: 'Ma–Vr, 9:00–18:00' },
         ],
-        auditTitle: 'Безкоштовний IT-аудит',
-        auditText: 'Підготуємо оцінку поточної інфраструктури та план покращень із зрозумілою вартістю обслуговування.',
-        nameLabel: 'Ім\'я',
-        namePlaceholder: 'Ваше ім\'я',
-        phoneLabel: 'Телефон',
-        emailLabel: 'Email',
-        messageLabel: 'Повідомлення',
-        messagePlaceholder: 'Опишіть ваше завдання або запитання...',
-        submit: 'Надіслати заявку',
-        consent: 'Натискаючи кнопку, ви погоджуєтеся з обробкою персональних даних.',
+        urgentNote: 'Spoedondersteuning in overleg',
+        formTitle: 'Vertel me waarmee ik kan helpen',
+        nameLabel: 'Naam',
+        namePlaceholder: 'Je naam',
+        companyLabel: 'Bedrijf',
+        companyPlaceholder: 'Je bedrijfsnaam',
+        phoneLabel: 'Telefoon',
+        phonePlaceholder: '+31 6 ...',
+        emailLabel: 'E-mail',
+        emailPlaceholder: 'naam@bedrijf.nl',
+        messageLabel: 'Bericht',
+        messagePlaceholder: 'Beschrijf je vraag of probleem...',
+        submit: 'Ondersteuning aanvragen',
+        consent: 'Door op de knop te klikken, ga je akkoord met de verwerking van je persoonsgegevens.',
     },
     footer: {
-        description: 'Корпоративний IT-аутсорсинг для малого та середнього бізнесу в Києві: підтримка робочих місць, серверів, мереж та інформаційної безпеки.',
-        servicesTitle: 'Послуги',
-        servicesLinks: ['IT-аутсорсинг', 'Обслуговування ПК', 'Сервери', 'Мережі', 'Кібербезпека'],
-        companyTitle: 'Компанія',
-        companyLinks: [
-            { label: 'Чому OST', href: '#why-us' },
-            { label: 'Порівняння', href: '#comparison' },
-            { label: 'Відгуки', href: '#testimonials' },
-            { label: 'Контакти', href: '#contact' },
+        description:
+            'Lokale IT-support voor kleine bedrijven in Zuid-Limburg: computers, printers, Wi-Fi, gebruikersaccounts, storingen en praktische kantoor-IT.',
+        location: 'Kerkrade, Zuid-Limburg, The Netherlands',
+        phone: '+31 6 3483 6118',
+        email: 'info@oros.agency',
+        copyright: 'Oros IT Support',
+        servicesTitle: 'Diensten',
+        servicesLinks: [
+            'Werkplekondersteuning',
+            'Printer & randapparatuur',
+            'Wi-Fi & netwerk',
+            'Accounts & toegang',
+            'Remote & on-site hulp',
+            'Beveiliging & back-up',
         ],
-        copyright: 'OST. IT-аутсорсинг для бізнесу в Києві.',
-        tagline: 'Корпоративна IT-підтримка під ключ.',
+        linksTitle: 'Navigatie',
+        navLinks: [
+            { label: 'Waarom Oros', href: '#why-oros' },
+            { label: 'Vergelijking', href: '#comparison' },
+            { label: 'Tarieven', href: '#pricing' },
+            { label: 'Contact', href: '#contact' },
+        ],
     },
 };
 
-const en: typeof uk = {
+const en: typeof nl = {
     meta: {
-        title: 'IT Outsourcing for Business in Kyiv | OST',
-        description: 'OST — IT outsourcing and computer infrastructure management in Kyiv since 1995.',
+        title: 'IT Support for Small Businesses in Zuid-Limburg | Oros IT Support',
+        description:
+            'Oros IT Support — local IT support for small businesses in Kerkrade and Zuid-Limburg. Computers, printers, Wi-Fi, user accounts, and basic cybersecurity.',
     },
     topBar: {
-        phone: '+38 (044) 289 95 41',
-        email: 'info@ost.kiev.ua',
-        hours: 'Mon–Fri: 9:00 AM – 6:00 PM',
+        phone: '+31 6 3483 6118',
+        email: 'info@oros.agency',
+        hours: 'Mon–Fri: 9:00 AM–6:00 PM',
     },
     header: {
         nav: [
             { label: 'Services', href: '#services' },
-            { label: 'Why OST', href: '#why-us' },
-            { label: 'Comparison', href: '#comparison' },
-            { label: 'Testimonials', href: '#testimonials' },
+            { label: 'About', href: '#about' },
+            { label: 'Why Oros', href: '#why-oros' },
+            { label: 'Pricing', href: '#pricing' },
             { label: 'Contact', href: '#contact' },
         ],
-        cta: 'Free Consultation',
+        cta: 'Request Support',
         menuLabel: 'Open menu',
     },
     hero: {
-        badge: 'In the IT market since 1995',
-        heading: 'IT Outsourcing for',
-        headingBr: 'Your Business',
-        subtitle: 'We handle all your IT — so you can focus on your business. Professional support and management of IT infrastructure for small and medium-sized companies.',
-        cta1: 'Get a Quote',
-        cta2: 'Our Services',
+        heading: 'Local IT Support',
+        headingAccent: 'for Your Business',
+        subtitle:
+            'I help small businesses in Zuid-Limburg with day-to-day IT: computers, printers, Wi-Fi, user accounts, troubleshooting, and basic cybersecurity — on-site and remotely.',
+        valueProps: 'Fast, practical, and easy to understand. No unnecessary complexity. Just reliable IT support that keeps your office running.',
+        cta1: 'Request Support',
+        cta2: 'Free Intro Call',
     },
-    stats: {
+    trustBar: {
         items: [
-            { value: '30', suffix: '+', label: 'years on the market', icon: 'calendar' },
-            { value: '200', suffix: '+', label: 'long-term clients', icon: 'users' },
-            { value: '98', suffix: '%', label: 'tasks completed on time', icon: 'check' },
-            { value: '24', suffix: '/7', label: 'support, no days off', icon: 'clock' },
+            'Based in Kerkrade, active across Zuid-Limburg',
+            'Windows, macOS & Linux',
+            'On-site & remote support',
+            'For small offices and growing businesses',
         ],
-        tagline: 'Some clients have been with us for over 15 years',
-    },
-    founder: {
-        badge: 'OST Founder',
-        paragraphs: [
-            'OST was founded in 1995. We stood at the very beginning of Ukraine\'s computer industry — assembling the first 386DX40 PCs with 40 MB hard drives.',
-            'One of them is still running at the Institute for Nuclear Research.',
-            'In 2002, we fully transitioned to IT outsourcing. Today we work with FreeBSD, Linux, and Windows — selecting the right solution for each business.',
-            'Since 2008, we have been implementing international quality standards. 30+ years of experience — for the reliability of your IT.',
-        ],
-        quote: '"For 30+ years, we have been building IT infrastructure that works without failure. Our experience is your stability."',
-        author: '— Stepan Oros',
-        role: ', Founder of OST',
-        badgeYears: '30+',
-        badgeLabel: 'years',
-        labelToday: 'Today',
-        label1994: '1994',
     },
     services: {
-        heading: 'OST Services for Business',
-        subtitle: '6 core areas of IT outsourcing for a stable and secure office environment.',
+        heading: 'IT support services for small businesses',
         items: [
-            { title: 'IT Outsourcing', description: 'A fully managed external IT department: infrastructure support, process control, and ongoing development of your IT environment.' },
-            { title: 'PC Maintenance', description: 'Support for workstations and peripherals, updates, diagnostics, issue resolution, and standardization of workplaces.' },
-            { title: 'Servers', description: 'Server administration, backup management, access control, and high-availability support for business-critical services.' },
-            { title: 'Networking', description: 'Design and maintenance of office networks, Wi-Fi, and VPN. Reliable connectivity across all your branches and departments.' },
-            { title: 'Cybersecurity', description: 'Security audits, policy implementation, and protection of company and employee data against current threats.' },
-            { title: 'Help Desk', description: 'A single point of contact for all employee requests. Fast response times, transparent SLAs, and support during and outside business hours.' },
+            {
+                title: 'Workstation Support',
+                description:
+                    'Installation, maintenance, updates, troubleshooting, and optimization of Windows PCs, Macs, and office laptops.',
+                icon: 'monitor',
+            },
+            {
+                title: 'Printer & Peripheral Support',
+                description:
+                    'Setup and troubleshooting for printers, scanners, label printers, and other office equipment.',
+                icon: 'printer',
+            },
+            {
+                title: 'Wi-Fi & Network Help',
+                description:
+                    'Office Wi-Fi setup, router and access point configuration, resolving network issues, and connectivity improvements.',
+                icon: 'wifi',
+            },
+            {
+                title: 'User Accounts & Access Management',
+                description:
+                    'Email setup, Microsoft 365 / Google Workspace basics, password resets, access control, and onboarding/offboarding support.',
+                icon: 'users',
+            },
+            {
+                title: 'Remote & On-site IT Help',
+                description:
+                    'Quick help when something stops working — remotely where possible, on-site where needed.',
+                icon: 'headset',
+            },
+            {
+                title: 'Basic Security & Backup Check',
+                description:
+                    'Practical improvements for safer daily work: updates, backups, MFA, phishing awareness, and basic device hygiene.',
+                icon: 'shield',
+            },
+            {
+                title: 'ChatGPT & Workflow Automation',
+                description:
+                    'Already using ChatGPT but still doing many tasks manually? I help you find simple ways to save time and reduce repetitive work.',
+                icon: 'sparkles',
+            },
         ],
     },
-    whyUs: {
-        heading: 'Why OST',
-        subtitle: 'We build our service around your business goals: predictable timelines, high fault tolerance, and a straightforward support model without unnecessary complexity.',
-        cta: 'Get a Proposal',
+    about: {
+        heading: 'About Daniel Oros',
+        paragraphs: [
+            'I\'ve been fascinated by IT since my teenage years and have spent years working with computers, networks, office equipment, and digital systems in real work environments.',
+            'I help small businesses solve practical IT problems — without confusing jargon. From slow computers and printer issues to Wi-Fi outages, user accounts, device setup, and everyday office support.',
+        ],
+        approach: 'My approach is simple:',
+        approachText: 'Make IT stable, understandable, and less stressful for your business.',
+        quote:
+            '"Good IT support isn\'t just about fixing problems. It\'s about reducing chaos, saving time, and giving you confidence that things simply work."',
+        quoteAuthor: '— Daniel Oros',
+    },
+    whyOros: {
+        heading: 'Why choose Oros IT Support?',
         reasons: [
-            { title: 'Transparent Pricing', description: 'Reduce your IT costs and pay for measurable service — no hidden staffing expenses.' },
-            { title: 'A Team, Not Just One Specialist', description: 'Your infrastructure is handled by a group of specialized engineers with distributed expertise.' },
-            { title: 'Fast Response & SLA', description: 'Agreed response and resolution times are written into the contract and tracked by metrics.' },
-            { title: 'Incident Prevention', description: 'We monitor your systems and resolve issues before they affect your employees or clients.' },
-            { title: 'Single Point of Accountability', description: 'One partner is responsible for your entire IT scope: workstations, servers, networks, and security.' },
+            {
+                title: 'Local and available',
+                description: 'Based in Kerkrade, with fast support for businesses across Zuid-Limburg.',
+            },
+            {
+                title: 'Clear communication',
+                description:
+                    'I explain technical issues in plain language, so you always understand what\'s going on and why.',
+            },
+            {
+                title: 'Practical problem-solving',
+                description:
+                    'I focus on solutions that work in real office environments — no unnecessarily complicated advice.',
+            },
+            {
+                title: 'Flexible support model',
+                description: 'Remote where possible, on-site where needed.',
+            },
+            {
+                title: 'SMB mindset',
+                description:
+                    'I understand that small businesses need reliable support: predictable costs and someone who truly takes responsibility.',
+            },
+        ],
+    },
+    commonProblems: {
+        heading: 'Problems I help with every day',
+        items: [
+            'Printer not working',
+            'Wi-Fi is unstable or slow',
+            'Setting up a new employee',
+            'Can\'t access email or an account',
+            'Slow PC or laptop',
+            'Backup or basic security check',
+            'Office IT cleanup and optimization',
+            'Questions about Microsoft 365 or Google Workspace',
         ],
     },
     comparison: {
-        bannerHeading: 'Cut Your IT Costs in Half',
-        bannerSubtitle: 'Compare the real costs for a 25-workstation office',
-        inHouseTitle: 'In-House IT Specialist',
-        ostTitle: 'OST IT Outsourcing',
-        saveBadge: 'Save 73%',
-        rows: [
-            { label: 'Salary', inHouse: '20,000 UAH', ost: '0' },
-            { label: 'Social taxes', inHouse: '6,000 UAH', ost: '0' },
-            { label: 'Workplace rent', inHouse: '1,500 UAH', ost: '0' },
-            { label: 'Training & certification', inHouse: '~2,000 UAH', ost: '' },
-            { label: 'Subscription fee', inHouse: '', ost: 'from 8,000 UAH' },
+        heading: 'In-house IT employee vs. flexible local IT support',
+        inHouseTitle: 'In-house IT employee',
+        orosTitle: 'Oros IT Support',
+        inHouseItems: [
+            'Fixed salary + social charges',
+            'One person, limited during illness/holiday',
+            'Hard to scale for small teams',
+            'Not always cost-effective for small offices',
         ],
-        totalLabel: 'Total',
-        inHouseTotal: '29,500',
-        ostTotal: '8,000',
-        currency: 'UAH/mo',
-        ostTotalPrefix: 'from',
-        advantages: [
-            { title: 'No vacations or sick days', subtitle: '365-day continuous support' },
-            { title: '15-minute response time', subtitle: 'Fast issue resolution' },
-            { title: 'Team of 10+ specialists', subtitle: 'Multiple areas of expertise' },
-            { title: 'SLA contract with guarantees', subtitle: 'Full transparency' },
+        orosItems: [
+            'Only pay for what you need',
+            'Remote + on-site, flexibly available',
+            'Practical focus on office IT',
+            'Ideal for 2–30 workstations',
+            'Direct contact with Daniel',
         ],
+        note: 'For many small businesses, outsourced IT support is more flexible than hiring a dedicated in-house IT employee.',
     },
-    testimonials: {
-        heading: 'Client Testimonials',
-        subtitle: 'Companies choose OST for reliability, fast response times, and a business-first approach.',
-        items: [
-            { quote: 'With OST, we got a predictable service and clear SLAs. The number of downtime incidents dropped noticeably within the first few months.', name: 'Andriy Kovalenko', role: 'CEO', company: 'TechnoTrade LLC' },
-            { quote: 'We reduced our IT costs and gained a team that truly understands our business processes. Support is always available when we need it.', name: 'Maryna Petrenko', role: 'Managing Partner', company: 'Pravovest Law Firm' },
-            { quote: 'The OST team standardized infrastructure across multiple offices. As a result, we scale faster and deploy new services with much less friction.', name: 'Dmytro Savchenko', role: 'IT Director', company: 'Zdorovya Clinic Network' },
+    quickScan: {
+        heading: 'IT Quick Scan for small businesses',
+        intro: 'Are you sure your office IT is properly set up?',
+        checks: [
+            'Computers and laptops',
+            'Wi-Fi and network connectivity',
+            'Printers and peripherals',
+            'User accounts and access control',
+            'Backup and basic security',
         ],
+        checkIntro: 'I practically review:',
+        result:
+            'Result: a clear overview of what\'s working well and what needs attention — in plain language, without unnecessary complexity.',
+        cta: 'Request Quick Scan',
+    },
+    pricing: {
+        heading: 'Transparent pricing',
+        items: [
+            { label: 'Remote support', price: 'from €65 / hour', note: 'excl. VAT' },
+            { label: 'On-site support Zuid-Limburg', price: 'from €79 / hour', note: 'excl. VAT' },
+            { label: 'Travel costs (local)', price: 'from €20–30', note: 'excl. VAT' },
+            { label: 'IT Quick Scan (small office)', price: '€149 – €199', note: 'excl. VAT' },
+            { label: 'Monthly starter support plan', price: 'from €149 / month', note: 'excl. VAT' },
+            { label: 'Per-user monthly package', price: 'from €35–49 / user / month', note: 'excl. VAT' },
+        ],
+        disclaimer:
+            'All prices are excluding VAT. For custom projects and larger offices, I\'m happy to provide a quote.',
     },
     contact: {
         heading: 'Get in Touch',
-        subtitle: 'Leave a request and we\'ll come back to you with a tailored proposal for your business.',
+        subtitle:
+            'Looking for local IT support in Zuid-Limburg? Send a message and tell me what kind of help you need.',
         info: [
-            { label: 'Phone', value: '+38 (044) 289 95 41' },
-            { label: 'Email', value: 'info@ost.kiev.ua' },
-            { label: 'City', value: 'Kyiv' },
-            { label: 'Hours', value: 'Mon–Fri, 9:00 AM – 6:00 PM' },
+            { label: 'Phone', value: '+31 6 3483 6118', href: 'tel:+31634836118' },
+            { label: 'Email', value: 'info@oros.agency', href: 'mailto:info@oros.agency' },
+            { label: 'Location', value: 'Kerkrade, Zuid-Limburg, The Netherlands' },
+            { label: 'Support hours', value: 'Mon–Fri, 9:00 AM–6:00 PM' },
         ],
-        auditTitle: 'Free IT Audit',
-        auditText: 'We\'ll assess your current infrastructure and prepare an improvement plan with clear service pricing.',
+        urgentNote: 'Urgent support by arrangement',
+        formTitle: 'Tell me how I can help',
         nameLabel: 'Name',
         namePlaceholder: 'Your name',
+        companyLabel: 'Company',
+        companyPlaceholder: 'Your company name',
         phoneLabel: 'Phone',
+        phonePlaceholder: '+31 6 ...',
         emailLabel: 'Email',
+        emailPlaceholder: 'name@company.nl',
         messageLabel: 'Message',
-        messagePlaceholder: 'Describe your task or question...',
-        submit: 'Submit Request',
+        messagePlaceholder: 'Describe your question or issue...',
+        submit: 'Request Support',
         consent: 'By clicking the button, you agree to the processing of your personal data.',
     },
     footer: {
-        description: 'Corporate IT outsourcing for small and medium-sized businesses in Kyiv: workstation support, servers, networking, and information security.',
+        description:
+            'Local IT support for small businesses in Zuid-Limburg: computers, printers, Wi-Fi, user accounts, troubleshooting, and practical office IT.',
+        location: 'Kerkrade, Zuid-Limburg, The Netherlands',
+        phone: '+31 6 3483 6118',
+        email: 'info@oros.agency',
+        copyright: 'Oros IT Support',
         servicesTitle: 'Services',
-        servicesLinks: ['IT Outsourcing', 'PC Maintenance', 'Servers', 'Networking', 'Cybersecurity'],
-        companyTitle: 'Company',
-        companyLinks: [
-            { label: 'Why OST', href: '#why-us' },
+        servicesLinks: [
+            'Workstation support',
+            'Printer & peripherals',
+            'Wi-Fi & network',
+            'Accounts & access',
+            'Remote & on-site help',
+            'Security & backup',
+        ],
+        linksTitle: 'Navigation',
+        navLinks: [
+            { label: 'Why Oros', href: '#why-oros' },
             { label: 'Comparison', href: '#comparison' },
-            { label: 'Testimonials', href: '#testimonials' },
+            { label: 'Pricing', href: '#pricing' },
             { label: 'Contact', href: '#contact' },
         ],
-        copyright: 'OST. IT Outsourcing for Business in Kyiv.',
-        tagline: 'End-to-end corporate IT support.',
     },
 };
 
-export const translations = { uk, en } as const;
-export type Translations = typeof uk;
+export const translations = { nl, en } as const;
+export type Translations = typeof nl;

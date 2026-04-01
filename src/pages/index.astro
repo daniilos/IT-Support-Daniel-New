@@ -2,37 +2,43 @@
 import Layout from '../layouts/Layout.astro';
 import { translations } from '../i18n/translations';
 import HeroSection from '../components/HeroSection.astro';
-import StatsSection from '../components/StatsSection.astro';
-import FounderSection from '../components/FounderSection.astro';
+import TrustBar from '../components/TrustBar.astro';
 import ServicesGrid from '../components/ServicesGrid';
-import WhyUs from '../components/WhyUs';
+import AboutSection from '../components/AboutSection.astro';
+import WhyOros from '../components/WhyOros.astro';
+import CommonProblems from '../components/CommonProblems.astro';
 import ComparisonSection from '../components/ComparisonSection.astro';
-import Testimonials from '../components/Testimonials';
+import QuickScan from '../components/QuickScan.astro';
+import PricingSection from '../components/PricingSection.astro';
 import ContactForm from '../components/ContactForm';
 
-const lang = 'uk';
+const lang = 'nl';
 const t = translations[lang].meta;
 ---
 
 <Layout title={t.title} description={t.description} lang={lang}>
     <HeroSection lang={lang} />
-    <div class="scroll-reveal">
-        <StatsSection lang={lang} />
-    </div>
-    <div class="scroll-reveal">
-        <FounderSection lang={lang} />
-    </div>
+    <TrustBar lang={lang} />
     <div class="scroll-reveal">
         <ServicesGrid lang={lang} />
     </div>
     <div class="scroll-reveal">
-        <WhyUs lang={lang} />
+        <AboutSection lang={lang} />
+    </div>
+    <div class="scroll-reveal">
+        <WhyOros lang={lang} />
+    </div>
+    <div class="scroll-reveal">
+        <CommonProblems lang={lang} />
     </div>
     <div class="scroll-reveal">
         <ComparisonSection lang={lang} />
     </div>
     <div class="scroll-reveal">
-        <Testimonials lang={lang} />
+        <QuickScan lang={lang} />
+    </div>
+    <div class="scroll-reveal">
+        <PricingSection lang={lang} />
     </div>
     <div class="scroll-reveal">
         <ContactForm lang={lang} />

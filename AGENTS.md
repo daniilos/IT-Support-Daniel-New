@@ -2,7 +2,7 @@
 
 ## Cursor Cloud specific instructions
 
-This is an **Astro v5 static marketing website** (OST IT outsourcing) with React 19 islands, Tailwind CSS v4, and TypeScript.
+This is an **Astro v5 static marketing website** for **Oros IT Support** (local IT support for small businesses in Zuid-Limburg, Netherlands) with React 19 islands, Tailwind CSS v4, and TypeScript.
 
 ### Quick reference
 
@@ -15,6 +15,13 @@ This is an **Astro v5 static marketing website** (OST IT outsourcing) with React
 | Preview build | `npm run preview` |
 
 See `README.md` for the full commands table.
+
+### Site structure
+
+- **Primary language:** Dutch (`/`) — lang code `nl`
+- **Secondary language:** English (`/en/`) — lang code `en`
+- All copy lives in `src/i18n/translations.ts` (single source of truth for both languages)
+- Sections in order: Hero, TrustBar, Services, About, WhyOros, CommonProblems, Comparison, QuickScan, Pricing, Contact
 
 ### Notes
 

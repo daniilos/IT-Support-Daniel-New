@@ -1,0 +1,29 @@
+---
+import { translations, type Lang } from '../i18n/translations';
+interface Props { lang?: Lang }
+const { lang = 'nl' } = Astro.props;
+const t = translations[lang].pricing;
+---
+
+<section id="pricing" class="section-padding bg-white">
+    <div class="container-main">
+        <h2 class="mb-10 text-center">{t.heading}</h2>
+
+        <div class="mx-auto max-w-3xl">
+            <div class="divide-y divide-border rounded-2xl border border-border bg-white overflow-hidden">
+                {t.items.map((item) => (
+                    <div class="flex flex-col gap-1 px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
+                        <span class="text-sm font-medium text-foreground">{item.label}</span>
+                        <span class="flex items-baseline gap-2">
+                            <span class="text-base font-bold text-primary">{item.price}</span>
+                            <span class="text-xs text-muted-foreground">{item.note}</span>
+                        </span>
+                    </div>
+                ))}
+            </div>
+            <p class="mt-6 text-center text-sm text-muted-foreground">
+                {t.disclaimer}
+            </p>
+        </div>
+    </div>
+</section>
