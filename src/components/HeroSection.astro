@@ -7,20 +7,40 @@ const t = translations[lang].hero;
 
 <section class="bg-white section-padding !pb-10 md:!pb-14">
     <div class="container-main">
-        <div class="mx-auto max-w-3xl text-center">
-            <h1 class="mb-6">
-                {t.heading}<br />
-                <span class="text-accent">{t.headingAccent}</span>
-            </h1>
-            <p class="mx-auto mb-4 max-w-2xl text-lg text-muted-foreground">
-                {t.subtitle}
-            </p>
-            <p class="mx-auto mb-8 max-w-xl text-base font-medium text-foreground">
-                {t.valueProps}
-            </p>
-            <div class="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-                <a href="#contact" class="btn-primary px-8 py-3.5 text-base">{t.cta1}</a>
-                <a href="#contact" class="btn-outline px-8 py-3.5 text-base">{t.cta2}</a>
+        <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
+            <div class="text-center lg:text-left">
+                <h1 class="mb-6">
+                    {t.heading}<br />
+                    <span class="text-accent">{t.headingAccent}</span>
+                </h1>
+                <p class="mx-auto mb-4 max-w-2xl text-lg text-muted-foreground lg:mx-0">
+                    {t.subtitle}
+                </p>
+                <p class="mx-auto mb-8 max-w-xl text-base font-medium text-foreground lg:mx-0">
+                    {t.valueProps}
+                </p>
+                <div class="flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
+                    <a href="#contact" class="btn-primary px-8 py-3.5 text-base">{t.cta1}</a>
+                    <a href="#contact" class="btn-outline px-8 py-3.5 text-base">{t.cta2}</a>
+                </div>
+            </div>
+
+            <div class="mx-auto flex max-w-sm items-end justify-center lg:mx-0 lg:max-w-none lg:justify-end">
+                <div class="relative">
+                    <div class="absolute -inset-4 -z-10 rounded-3xl bg-gradient-to-br from-blue-50 to-slate-50"></div>
+                    <img
+                        src="/images/daniel-it.png"
+                        alt="Daniel Oros — IT support specialist"
+                        width="597"
+                        height="800"
+                        class="h-auto w-full max-w-[320px] rounded-2xl object-cover lg:max-w-[380px]"
+                        fetchpriority="high"
+                        decoding="async"
+                    />
+                    <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-xl bg-white px-5 py-2.5 text-sm font-semibold text-primary shadow-lg border border-border">
+                        Daniel Oros · Kerkrade
+                    </div>
+                </div>
             </div>
         </div>
     </div>
