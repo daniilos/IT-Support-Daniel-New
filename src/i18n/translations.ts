@@ -209,6 +209,10 @@ const nl = {
         messageLabel: 'Bericht',
         messagePlaceholder: 'Beschrijf je vraag of probleem...',
         submit: 'Ondersteuning aanvragen',
+        sending: 'Verzenden...',
+        successMessage: 'Bedankt! We nemen zo snel mogelijk contact met je op.',
+        errorMessage: 'Er is iets misgegaan. Probeer het opnieuw.',
+        connectionError: 'Verbindingsfout. Controleer je internetverbinding en probeer opnieuw.',
         consent: 'Door op de knop te klikken, ga je akkoord met de verwerking van je persoonsgegevens.',
     },
     footer: {
@@ -218,6 +222,8 @@ const nl = {
         phone: '+31 6 3483 6118',
         email: 'info@oros.agency',
         copyright: 'Oros IT Support',
+        kvk: 'KvK: 98242482',
+        btw: 'BTW: NL005319090B91',
         servicesTitle: 'Diensten',
         servicesLinks: [
             'Werkplekondersteuning',
@@ -446,6 +452,10 @@ const en: typeof nl = {
         messageLabel: 'Message',
         messagePlaceholder: 'Describe your question or issue...',
         submit: 'Request Support',
+        sending: 'Sending...',
+        successMessage: 'Thank you! We will get back to you as soon as possible.',
+        errorMessage: 'Something went wrong. Please try again.',
+        connectionError: 'Connection error. Check your internet connection and try again.',
         consent: 'By clicking the button, you agree to the processing of your personal data.',
     },
     footer: {
@@ -455,6 +465,8 @@ const en: typeof nl = {
         phone: '+31 6 3483 6118',
         email: 'info@oros.agency',
         copyright: 'Oros IT Support',
+        kvk: 'KvK: 98242482',
+        btw: 'VAT: NL005319090B91',
         servicesTitle: 'Services',
         servicesLinks: [
             'Workstation support',
