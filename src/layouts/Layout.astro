@@ -51,8 +51,9 @@ const htmlLang = lang === 'en' ? 'en' : 'nl';
                 { threshold: 0.08 }
             );
             document.querySelectorAll('.scroll-reveal').forEach((el) => revealObserver.observe(el));
-
-            document.getElementById('contact-form')?.addEventListener('submit', (e) => e.preventDefault());
+        </script>
+        <script>
+            import '../scripts/form-handler.ts';
         </script>
     </body>
 </html>

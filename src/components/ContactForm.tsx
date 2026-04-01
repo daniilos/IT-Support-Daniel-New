@@ -41,6 +41,10 @@ export default function ContactForm({ lang = 'nl' }: { lang?: Lang }) {
                         >
                             <p className="mb-2 text-lg font-semibold text-primary">{t.formTitle}</p>
 
+                            <input type="text" name="_honeypot" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
+                            <input type="hidden" name="_form_name" value={lang === 'en' ? 'Contact form' : 'Contactformulier'} />
+                            <input type="hidden" name="_page_url" value="" />
+
                             <div className="grid gap-4 sm:grid-cols-2">
                                 <div>
                                     <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-card-foreground">
