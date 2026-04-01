@@ -222,6 +222,8 @@ const nl = {
         phone: '+31 6 3483 6118',
         email: 'info@oros.agency',
         copyright: 'Oros IT Support',
+        kvk: 'KvK: 98242482',
+        btw: 'BTW: NL005319090B91',
         servicesTitle: 'Diensten',
         servicesLinks: [
             'Werkplekondersteuning',
@@ -463,6 +465,8 @@ const en: typeof nl = {
         phone: '+31 6 3483 6118',
         email: 'info@oros.agency',
         copyright: 'Oros IT Support',
+        kvk: 'KvK: 98242482',
+        btw: 'VAT: NL005319090B91',
         servicesTitle: 'Services',
         servicesLinks: [
             'Workstation support',
