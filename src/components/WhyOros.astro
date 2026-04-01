@@ -16,9 +16,9 @@ const icons = [
 <section id="why-oros" class="section-padding bg-white">
     <div class="container-main">
         <h2 class="mb-10 text-center">{t.heading}</h2>
-        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
             {t.reasons.map((reason, i) => (
-                <div class="rounded-2xl border border-border bg-white p-6 transition-all duration-300 hover:shadow-md">
+                <div class="w-full rounded-2xl border border-border bg-white p-6 transition-all duration-300 hover:shadow-md">
                     <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50 text-accent">
                         <span set:html={icons[i % icons.length]} />
                     </div>

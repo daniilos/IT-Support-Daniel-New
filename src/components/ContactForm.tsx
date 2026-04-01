@@ -46,27 +46,13 @@ export default function ContactForm({ lang = 'nl' }: { lang?: Lang }) {
                                     <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-card-foreground">
                                         {t.nameLabel}
                                     </label>
-                                    <input
-                                        id="name"
-                                        name="name"
-                                        type="text"
-                                        autoComplete="name"
-                                        placeholder={t.namePlaceholder}
-                                        className="w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-accent focus:ring-2 focus:ring-accent/20"
-                                    />
+                                    <input id="name" name="name" type="text" autoComplete="name" placeholder={t.namePlaceholder} className="form-input" />
                                 </div>
                                 <div>
                                     <label htmlFor="company" className="mb-1.5 block text-sm font-medium text-card-foreground">
                                         {t.companyLabel}
                                     </label>
-                                    <input
-                                        id="company"
-                                        name="company"
-                                        type="text"
-                                        autoComplete="organization"
-                                        placeholder={t.companyPlaceholder}
-                                        className="w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-accent focus:ring-2 focus:ring-accent/20"
-                                    />
+                                    <input id="company" name="company" type="text" autoComplete="organization" placeholder={t.companyPlaceholder} className="form-input" />
                                 </div>
                             </div>
 
@@ -75,29 +61,13 @@ export default function ContactForm({ lang = 'nl' }: { lang?: Lang }) {
                                     <label htmlFor="phone" className="mb-1.5 block text-sm font-medium text-card-foreground">
                                         {t.phoneLabel}
                                     </label>
-                                    <input
-                                        id="phone"
-                                        name="phone"
-                                        type="tel"
-                                        inputMode="tel"
-                                        autoComplete="tel"
-                                        placeholder={t.phonePlaceholder}
-                                        className="w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-accent focus:ring-2 focus:ring-accent/20"
-                                    />
+                                    <input id="phone" name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder={t.phonePlaceholder} className="form-input" />
                                 </div>
                                 <div>
                                     <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-card-foreground">
                                         {t.emailLabel}
                                     </label>
-                                    <input
-                                        id="email"
-                                        name="email"
-                                        type="email"
-                                        inputMode="email"
-                                        autoComplete="email"
-                                        placeholder={t.emailPlaceholder}
-                                        className="w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-accent focus:ring-2 focus:ring-accent/20"
-                                    />
+                                    <input id="email" name="email" type="email" inputMode="email" autoComplete="email" placeholder={t.emailPlaceholder} className="form-input" />
                                 </div>
                             </div>
 
@@ -110,7 +80,7 @@ export default function ContactForm({ lang = 'nl' }: { lang?: Lang }) {
                                     name="message"
                                     rows={4}
                                     placeholder={t.messagePlaceholder}
-                                    className="w-full resize-none rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-accent focus:ring-2 focus:ring-accent/20"
+                                    className="form-input resize-none"
                                 ></textarea>
                             </div>
 
