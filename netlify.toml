@@ -5,7 +5,38 @@
 [functions]
   directory = "netlify/functions"
 
+# Force HTTPS on all requests
+[[redirects]]
+  from   = "http://ict-support-limburg.nl/*"
+  to     = "https://ict-support-limburg.nl/:splat"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "http://www.ict-support-limburg.nl/*"
+  to     = "https://ict-support-limburg.nl/:splat"
+  status = 301
+  force  = true
+
+# Redirect www to non-www (HTTPS)
+[[redirects]]
+  from   = "https://www.ict-support-limburg.nl/*"
+  to     = "https://ict-support-limburg.nl/:splat"
+  status = 301
+  force  = true
+
 [[redirects]]
   from   = "/api/*"
   to     = "/.netlify/functions/:splat"
   status = 200
+
+# Security headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Content-Security-Policy = "upgrade-insecure-requests"
