@@ -1,0 +1,227 @@
+---
+import Layout from './Layout.astro';
+import type { Lang } from '../i18n/translations';
+
+interface Props {
+    title: string;
+    description: string;
+    pubDate: Date;
+    updatedDate?: Date;
+    author?: string;
+    tags?: string[];
+    lang?: Lang;
+    slug: string;
+}
+
+const {
+    title,
+    description,
+    pubDate,
+    updatedDate,
+    author = 'Daniel Orosz',
+    tags = [],
+    lang = 'nl',
+    slug,
+} = Astro.props;
+
+const baseUrl = 'https://ict-support-limburg.nl';
+const blogPath = lang === 'en' ? '/en/blog' : '/blog';
+const canonicalUrl = `${baseUrl}${blogPath}/${slug}/`;
+
+const datePublished = pubDate.toISOString().split('T')[0];
+const dateModified = (updatedDate ?? pubDate).toISOString().split('T')[0];
+
+const readingLabel = lang === 'en' ? 'min read' : 'min leestijd';
+const publishedLabel = lang === 'en' ? 'Published' : 'Gepubliceerd';
+const updatedLabel = lang === 'en' ? 'Updated' : 'Bijgewerkt';
+const backLabel = lang === 'en' ? '← Back to blog' : '← Terug naar blog';
+const tagLabel = lang === 'en' ? 'Tags' : 'Tags';
+
+const articleSchema = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: title,
+    description: description,
+    author: {
+        '@type': 'Person',
+        name: author,
+        url: `${baseUrl}/over/`,
+        sameAs: ['https://www.linkedin.com/in/danielorosz/'],
+    },
+    publisher: {
+        '@type': 'Organization',
+        name: 'Oros IT Support',
+        url: baseUrl,
+        logo: { '@type': 'ImageObject', url: `${baseUrl}/favicon.svg` },
+        knowsAbout: [
+            'IT support',
+            'systeembeheer',
+            'netwerk configuratie',
+            'Mikrotik',
+            'Microsoft 365',
+            'IT beveiliging',
+            'kleine bedrijven Limburg',
+        ],
+        sameAs: ['https://www.linkedin.com/company/oros-it-support/'],
+    },
+    datePublished: datePublished,
+    dateModified: dateModified,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
+    inLanguage: lang === 'en' ? 'en' : 'nl',
+    keywords: tags.join(', '),
+});
+---
+
+<Layout title={title} description={description} lang={lang}>
+    <Fragment slot="head">
+        <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="article:published_time" content={datePublished} />
+        <meta property="article:modified_time" content={dateModified} />
+        <meta property="article:author" content={author} />
+        {tags.map((tag) => <meta property="article:tag" content={tag} />)}
+        <script type="application/ld+json" set:html={articleSchema} />
+    </Fragment>
+
+    <div class="bg-background min-h-screen">
+        <!-- Breadcrumb -->
+        <div class="border-b border-border bg-muted">
+            <div class="container-main px-4 py-3 sm:px-6 lg:px-8">
+                <nav aria-label="Breadcrumb" class="text-sm text-muted-foreground">
+                    <a href={lang === 'en' ? '/en/' : '/'} class="hover:text-accent no-underline">
+                        {lang === 'en' ? 'Home' : 'Home'}
+                    </a>
+                    <span class="mx-2">/</span>
+                    <a href={`${blogPath}/`} class="hover:text-accent no-underline">
+                        Blog
+                    </a>
+                    <span class="mx-2">/</span>
+                    <span class="text-foreground">{title}</span>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Article -->
+        <article class="container-main px-4 py-12 sm:px-6 lg:px-8">
+            <div class="mx-auto max-w-2xl">
+
+                <!-- Header -->
+                <header class="mb-10">
+                    {tags.length > 0 && (
+                        <div class="mb-4 flex flex-wrap gap-2">
+                            {tags.map((tag) => (
+                                <span class="rounded-full bg-accent/10 px-3 py-1 text-xs font-medium text-accent">
+                                    {tag}
+                                </span>
+                            ))}
+                        </div>
+                    )}
+                    <h1 class="mb-6">{title}</h1>
+                    <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground">
+                        <span class="font-medium text-foreground">{author}</span>
+                        <span>·</span>
+                        <time datetime={datePublished}>
+                            {publishedLabel}: {pubDate.toLocaleDateString(lang === 'en' ? 'en-GB' : 'nl-NL', { year: 'numeric', month: 'long', day: 'numeric' })}
+                        </time>
+                        {updatedDate && (
+                            <>
+                                <span>·</span>
+                                <time datetime={dateModified}>
+                                    {updatedLabel}: {updatedDate.toLocaleDateString(lang === 'en' ? 'en-GB' : 'nl-NL', { year: 'numeric', month: 'long', day: 'numeric' })}
+                                </time>
+                            </>
+                        )}
+                    </div>
+                </header>
+
+                <!-- Content -->
+                <div class="prose-blog">
+                    <slot />
+                </div>
+
+                <!-- Footer -->
+                <footer class="mt-12 border-t border-border pt-8">
+                    <div class="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+                        <div class="flex items-center gap-4">
+                            <div class="h-12 w-12 rounded-full bg-accent/10 flex items-center justify-center">
+                                <span class="text-lg font-bold text-accent">D</span>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-foreground text-sm">{author}</p>
+                                <p class="text-xs text-muted-foreground">
+                                    {lang === 'en'
+                                        ? 'IT Support Specialist · Kerkrade, Limburg'
+                                        : 'IT Support Specialist · Kerkrade, Limburg'}
+                                </p>
+                            </div>
+                        </div>
+                        <a href="#contact" class="btn-primary text-sm">
+                            {lang === 'en' ? 'Request support' : 'Ondersteuning aanvragen'}
+                        </a>
+                    </div>
+                </footer>
+
+                <div class="mt-8">
+                    <a href={`${blogPath}/`} class="text-sm text-accent no-underline hover:underline">
+                        {backLabel}
+                    </a>
+                </div>
+            </div>
+        </article>
+    </div>
+</Layout>
+
+<style>
+    @reference "../styles/globals.css";
+
+    .prose-blog :global(h2) {
+        @apply mt-10 mb-4 text-[1.4rem] font-bold text-primary;
+    }
+    .prose-blog :global(h3) {
+        @apply mt-8 mb-3 text-base font-semibold text-primary;
+    }
+    .prose-blog :global(p) {
+        @apply mb-5 leading-[1.75] text-foreground;
+    }
+    .prose-blog :global(ul) {
+        @apply mb-5 space-y-2 pl-5;
+    }
+    .prose-blog :global(ul li) {
+        @apply relative leading-[1.7] text-foreground;
+        list-style: disc;
+    }
+    .prose-blog :global(ol) {
+        @apply mb-5 space-y-2 pl-5;
+    }
+    .prose-blog :global(ol li) {
+        @apply relative leading-[1.7] text-foreground;
+        list-style: decimal;
+    }
+    .prose-blog :global(strong) {
+        @apply font-semibold text-foreground;
+    }
+    .prose-blog :global(blockquote) {
+        @apply my-6 border-l-4 border-accent pl-5 italic text-muted-foreground;
+    }
+    .prose-blog :global(table) {
+        @apply mb-6 w-full border-collapse text-sm;
+    }
+    .prose-blog :global(th) {
+        @apply border border-border bg-muted px-4 py-2 text-left font-semibold text-foreground;
+    }
+    .prose-blog :global(td) {
+        @apply border border-border px-4 py-2 text-foreground;
+    }
+    .prose-blog :global(a) {
+        @apply text-accent underline;
+    }
+    .prose-blog :global(code) {
+        @apply rounded bg-muted px-1.5 py-0.5 text-sm font-mono text-foreground;
+    }
+    .prose-blog :global(hr) {
+        @apply my-8 border-border;
+    }
+</style>

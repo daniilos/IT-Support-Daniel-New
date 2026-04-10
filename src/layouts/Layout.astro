@@ -29,6 +29,7 @@ const htmlLang = lang === 'en' ? 'en' : 'nl';
         <link rel="preload" as="font" type="font/woff2" href={interWoff2Latin} crossorigin />
         <link rel="alternate" hreflang="nl" href="/" />
         <link rel="alternate" hreflang="en" href="/en/" />
+        <slot name="head" />
     </head>
     <body class="font-sans antialiased">
         <TopBar lang={lang} />

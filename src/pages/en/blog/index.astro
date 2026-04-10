@@ -1,0 +1,97 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../../layouts/Layout.astro';
+
+const posts = (await getCollection('blog-en'))
+    .filter((p) => !p.data.draft)
+    .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<Layout
+    title="IT Blog — Practical IT Tips for Small Businesses | Oros IT Support"
+    description="Practical IT articles for small businesses in Limburg. Security, maintenance, networking, Microsoft 365, and workstation management — explained in plain language."
+    lang="en"
+>
+    <div class="bg-background min-h-screen">
+        <div class="bg-muted border-b border-border">
+            <div class="container-main px-4 py-14 sm:px-6 lg:px-8">
+                <div class="mx-auto max-w-2xl">
+                    <p class="mb-2 text-sm font-medium text-accent">Blog</p>
+                    <h1 class="mb-4 text-[clamp(1.8rem,5vw,2.8rem)]">Practical IT for small businesses</h1>
+                    <p class="text-base text-muted-foreground leading-relaxed">
+                        No jargon, no theory. Stories and tips from daily IT support practice in Limburg —
+                        from security and networking to workstation management and Microsoft 365.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-main px-4 py-12 sm:px-6 lg:px-8">
+            <div class="mx-auto max-w-2xl">
+                {posts.length === 0 ? (
+                    <p class="text-muted-foreground">Articles coming soon.</p>
+                ) : (
+                    <ul class="space-y-10 list-none p-0 m-0">
+                        {posts.map((post) => (
+                            <li class="border-b border-border pb-10 last:border-0">
+                                <article>
+                                    {post.data.tags && post.data.tags.length > 0 && (
+                                        <div class="mb-3 flex flex-wrap gap-2">
+                                            {post.data.tags.slice(0, 3).map((tag: string) => (
+                                                <span class="rounded-full bg-accent/10 px-3 py-1 text-xs font-medium text-accent">
+                                                    {tag}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    )}
+                                    <h2 class="mb-3 text-xl font-bold leading-snug">
+                                        <a
+                                            href={`/en/blog/${post.id}/`}
+                                            class="text-primary no-underline hover:text-accent transition-colors"
+                                        >
+                                            {post.data.title}
+                                        </a>
+                                    </h2>
+                                    <p class="mb-4 text-muted-foreground leading-relaxed text-sm">
+                                        {post.data.description}
+                                    </p>
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center gap-3 text-xs text-muted-foreground">
+                                            <span class="font-medium text-foreground">{post.data.author}</span>
+                                            <span>·</span>
+                                            <time datetime={post.data.pubDate.toISOString().split('T')[0]}>
+                                                {post.data.pubDate.toLocaleDateString('en-GB', {
+                                                    year: 'numeric',
+                                                    month: 'long',
+                                                    day: 'numeric',
+                                                })}
+                                            </time>
+                                        </div>
+                                        <a
+                                            href={`/en/blog/${post.id}/`}
+                                            class="text-xs font-medium text-accent no-underline hover:underline"
+                                        >
+                                            Read more →
+                                        </a>
+                                    </div>
+                                </article>
+                            </li>
+                        ))}
+                    </ul>
+                )}
+            </div>
+        </div>
+
+        <div class="bg-muted border-t border-border">
+            <div class="container-main px-4 py-10 sm:px-6 lg:px-8">
+                <div class="mx-auto max-w-2xl flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                    <div>
+                        <p class="font-semibold text-foreground">IT problems at your office?</p>
+                        <p class="text-sm text-muted-foreground">I help small businesses in Limburg — fast and practical.</p>
+                    </div>
+                    <a href="/en/#contact" class="btn-primary text-sm whitespace-nowrap">Request support</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</Layout>
