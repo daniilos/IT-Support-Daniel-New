@@ -1,7 +1,13 @@
 ---
 import { translations, type Lang } from '../i18n/translations';
-interface Props { lang?: Lang }
-const { lang = 'nl' } = Astro.props;
+
+interface Props {
+    lang?: Lang;
+    nlUrl?: string;
+    enUrl?: string;
+}
+
+const { lang = 'nl', nlUrl = '/', enUrl = '/en/' } = Astro.props;
 const t = translations[lang].header;
 ---
 
@@ -25,9 +31,9 @@ const t = translations[lang].header;
 
         <div class="flex items-center gap-3">
             <div class="hidden items-center gap-1 text-sm font-medium sm:flex">
-                <a href="/" class:list={['no-underline transition-colors', lang === 'nl' ? 'font-bold text-accent' : 'text-muted-foreground hover:text-primary']}>NL</a>
+                <a href={nlUrl} class:list={['no-underline transition-colors', lang === 'nl' ? 'font-bold text-accent' : 'text-muted-foreground hover:text-primary']}>NL</a>
                 <span class="text-border">|</span>
-                <a href="/en/" class:list={['no-underline transition-colors', lang === 'en' ? 'font-bold text-accent' : 'text-muted-foreground hover:text-primary']}>EN</a>
+                <a href={enUrl} class:list={['no-underline transition-colors', lang === 'en' ? 'font-bold text-accent' : 'text-muted-foreground hover:text-primary']}>EN</a>
             </div>
             <a href="#contact" class="btn-primary hidden sm:inline-flex">{t.cta}</a>
             <button
@@ -54,9 +60,9 @@ const t = translations[lang].header;
                 </a>
             ))}
             <div class="flex gap-3 px-3 py-3">
-                <a href="/" class:list={['no-underline text-base font-medium', lang === 'nl' ? 'font-bold text-accent' : 'text-muted-foreground']}>NL</a>
+                <a href={nlUrl} class:list={['no-underline text-base font-medium', lang === 'nl' ? 'font-bold text-accent' : 'text-muted-foreground']}>NL</a>
                 <span class="text-border">|</span>
-                <a href="/en/" class:list={['no-underline text-base font-medium', lang === 'en' ? 'font-bold text-accent' : 'text-muted-foreground']}>EN</a>
+                <a href={enUrl} class:list={['no-underline text-base font-medium', lang === 'en' ? 'font-bold text-accent' : 'text-muted-foreground']}>EN</a>
             </div>
             <a href="tel:+31634836118" class="rounded-md px-3 py-3 text-base font-bold text-primary no-underline">
                 +31 6 3483 6118

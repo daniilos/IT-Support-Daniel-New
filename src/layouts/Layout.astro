@@ -11,10 +11,13 @@ interface Props {
     title: string;
     description?: string;
     lang?: Lang;
+    alternateUrl?: string; // URL той же страницы на другом языке
 }
 
-const { title, description, lang = 'nl' } = Astro.props;
+const { title, description, lang = 'nl', alternateUrl } = Astro.props;
 const htmlLang = lang === 'en' ? 'en' : 'nl';
+const nlUrl = lang === 'nl' ? Astro.url.pathname : (alternateUrl ?? '/');
+const enUrl = lang === 'en' ? Astro.url.pathname : (alternateUrl ?? '/en/');
 ---
 
 <!doctype html>
@@ -27,13 +30,13 @@ const htmlLang = lang === 'en' ? 'en' : 'nl';
         <meta name="generator" content={Astro.generator} />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="preload" as="font" type="font/woff2" href={interWoff2Latin} crossorigin />
-        <link rel="alternate" hreflang="nl" href="/" />
-        <link rel="alternate" hreflang="en" href="/en/" />
+        <link rel="alternate" hreflang="nl" href={nlUrl} />
+        <link rel="alternate" hreflang="en" href={enUrl} />
         <slot name="head" />
     </head>
     <body class="font-sans antialiased">
         <TopBar lang={lang} />
-        <SiteHeader lang={lang} />
+        <SiteHeader lang={lang} nlUrl={nlUrl} enUrl={enUrl} />
         <main>
             <slot />
         </main>

@@ -27,6 +27,8 @@ const {
 const baseUrl = 'https://ict-support-limburg.nl';
 const blogPath = lang === 'en' ? '/en/blog' : '/blog';
 const canonicalUrl = `${baseUrl}${blogPath}/${slug}/`;
+// Для языкового переключателя: та же статья на другом языке
+const alternateUrl = lang === 'en' ? `/blog/${slug}/` : `/en/blog/${slug}/`;
 
 const datePublished = pubDate.toISOString().split('T')[0];
 const dateModified = (updatedDate ?? pubDate).toISOString().split('T')[0];
@@ -72,7 +74,7 @@ const articleSchema = JSON.stringify({
 });
 ---
 
-<Layout title={title} description={description} lang={lang}>
+<Layout title={title} description={description} lang={lang} alternateUrl={alternateUrl}>
     <Fragment slot="head">
         <link rel="canonical" href={canonicalUrl} />
         <meta property="og:title" content={title} />
