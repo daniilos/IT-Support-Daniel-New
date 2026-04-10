@@ -1,113 +1,142 @@
 ---
-title: "Ransomware at your office: what to do when it hits"
-description: "A ransomware attack on a medical practice — and what I learned that day about backups. A practical step-by-step guide for small businesses in Limburg."
+title: "Ransomware at your office: what do you do when it goes wrong?"
+description: "I was sitting in Kyiv when the call came. An emergency flight to the Netherlands, a night in log files, and two weeks of waiting. Here's what happened — and what I made sure never had to happen again for seven years."
 pubDate: 2026-04-10
 tags: ["security", "ransomware", "backup", "IT support Limburg"]
 author: "Daniel Orosz"
 draft: false
 image: "/images/blog/ransomware-wat-te-doen.png"
-imageAlt: "IT professional working alone in an office at dawn with red warning screens"
+imageAlt: "IT professional working alone in an office early in the morning with red warning screens"
 ---
 
-It was a Tuesday. Quarter to nine. I set down my coffee and opened my laptop.
+I was sitting in the Kyiv office. Normal working day.
 
-The messages were already there. Staff couldn't access their files. Screens showed text I didn't want to see: all files encrypted. A ransom amount in bitcoin.
+Phone rings. Colleagues from the Netherlands - voices rising: files won't open, screens look strange, "it's really bad here". I connect remotely and pull up the console. File names changing one by one.
 
-We were in a medical practice. Patient records. Treatment plans. Everything locked.
+In that second I understood everything.
 
-I was the only IT person. There was no one to escalate to.
+I call the Dutch office: turn off the computers. Now. Stop everything.
 
-**What I knew that day:** we had backups.
-**What I learned that day:** having a backup and having a backup that works are two different things.
-
-We got through it. The recovery took a full day. Nobody lost data. But it didn't feel like a win — it felt like luck.
+Five minutes later the director calls: you have an emergency flight.
 
 ---
 
-## What is ransomware exactly?
-
-Ransomware is software that encrypts your files and only releases them once you pay. The attackers send a decryption key once the money arrives — in theory. In practice, you don't always get that key.
-
-Small businesses are an attractive target. Not because they have a lot of money, but because they're less well-secured than large organisations and still willing to pay to get their data back. A dental practice without access to patient records hits a wall after just one day.
-
-The most common entry points for ransomware:
-
-- **Phishing email** with an attachment or link (by far the most common)
-- **Weak passwords** on remote desktop or VPN
-- **Unpatched software** with known vulnerabilities
-- **USB drives** of unknown origin
+> **Short version:** ransomware encrypts your files and demands payment. For small businesses that's often a choice between paying or losing everything. At a dental practice where I worked, this happened twice. Three years before I arrived they refused to pay - and lost three years of X-rays and patient records forever. In my first months I flew from Kyiv to the Netherlands, spent a night in log files, and waited two weeks for a decision. We paid €1,500. We got everything back. This article explains what I did - and how I made sure it didn't have to happen again for seven years.
 
 ---
 
-## What I did that morning — step by step
+## What ransomware actually is
 
-As soon as I saw the messages, I did the following. In this order.
+Ransomware is software that encrypts your files and promises to release them once you pay. The attackers send a decryption key when the money arrives - in theory. In practice, you don't always get that key.
 
-**1. Isolate the network**
-I pulled the network cable out of the first infected machine. Then I walked to each other computer and did the same. Goal: prevent the ransomware from spreading further across the local network. Every minute counts here.
+Small businesses are a favourite target. Not because they have a lot of money, but because their security is weaker than large organisations and they're willing to pay to get their data back. A dental practice without access to patient records hits a wall after just one day.
 
-**2. Identify which machines were affected**
-Not every computer was hit. By quickly checking each one, I saw that three machines were fully encrypted. Two others hadn't completed the process yet — those were still recoverable.
+How ransomware gets in:
 
-**3. Don't pay, don't negotiate**
-The on-screen message said we had 72 hours. That's psychological pressure. I reported it to management and gave one recommendation: we fix this ourselves through the backups. Paying provides no guarantee of a working key and marks you as a paying target for a future attack.
-
-**4. Test the backups — at this point**
-This is where it almost went wrong. We had daily backups on an external drive. But I had never tested those backups under pressure. Never done a full system restore. Only checked whether the files were present.
-
-The recovery worked, but it took longer than expected. We had to reinstall the operating system on two machines, reinstall software, reconfigure settings. Those are steps you can't do quickly if you've never practised them.
-
-**5. Document the incident**
-I wrote down what had happened, which machines were affected, when, what I had done and how long the recovery took. I used that document in every recovery conversation afterwards.
+- Phishing email with an attachment or link - by far the most common
+- Weak passwords on remote desktop or VPN
+- Software that hasn't been updated in months
+- USB drives of unknown origin
 
 ---
 
-## What I changed that same evening
+## Three years before I arrived
 
-Once everything was running again, I changed one thing immediately: I built in a monthly restore test.
+What I learned in my first week: this wasn't the first time.
 
-Not a check to see whether the backup files are present. An actual test: isolate a machine, reinstall the operating system, restore the backup and measure how long it takes until everything works again.
+Three years before I joined, the same practice had been hit. They decided not to pay. The result: three years of X-rays and patient documentation gone forever. No recovery possible. When I started, that empty gap in the archive was still there.
 
-That costs one Saturday afternoon per quarter. But after that first ransomware attack, I knew exactly: recovery time is an hour and a half. Which step takes longest. Which settings have to be reconfigured manually.
+The previous IT administrator had built nothing after that attack. No backups, no better protection. They just carried on.
 
-That knowledge is worth more than the backup itself.
+---
+
+## The emergency flight
+
+Bag packed, straight to the airport.
+
+The main server was at the director's home. That was my first stop, directly from the flight. I walk in - five machines infected. I go through them one by one: checking how far the virus got, what's encrypted, what's still intact.
+
+I'm there until late at night going through log files. On one of the screens - the ransom message. Payment demand in bitcoin, countdown timer.
+
+The director is standing next to me. Watching. Over the hours I'm working, his hair seems to have got greyer.
+
+I look up from a machine and say it: the files can't be recovered. Not without the key.
+
+---
+
+## Two weeks of waiting
+
+The director didn't decide immediately. €1,500 is money. Maybe there was another way.
+
+I checked [nomoreransom.org](https://www.nomoreransom.org/en/index.html) first - a free platform from the Police and Europol with decryption tools for hundreds of ransomware variants. For this variant there was nothing available.
+
+While management was weighing it up, I dug through the rest of the system. And the deeper I dug, the worse it looked.
+
+No firewall. No antivirus. No backups. Nothing at all. The network was wide open. The previous administrator had left it that way - and nobody had ever flagged it.
+
+I used those two weeks to map out everything that should have been there: backup architecture, antivirus plan, firewall rules. Ready to deploy the moment we got the go-ahead.
+
+---
+
+## The decision and the command line
+
+After two weeks the director said: we pay.
+
+The calculation was simple: €1,500 or lose four years of patient data. And we both knew what had happened three years earlier when they said no.
+
+We made the transfer. Got the script.
+
+We ran it on an isolated machine. The command line started. File name by file name began appearing - the files decrypting one by one. It took hours. Nobody said much.
+
+Everything came back.
+
+---
+
+## What I built in the two weeks after
+
+While the data was being restored, I was building in parallel what should have been there for years.
+
+Antivirus on every machine. A firewall with proper rules. Daily backups to external storage that gets disconnected from the network after copying. And a quarterly restore test: wipe a machine, restore from backup, measure the time, write it down.
+
+Two weeks after that call from Kyiv, the network looked completely different.
+
+Seven years later, not a single attack. The backups never once failed. Not because of luck - but because I checked every time, closed every small gap I found, and always went one step further than strictly necessary. Boring routine. But that's exactly what makes sure you never sit in someone's living room at night watching a director go grey in real time.
+
+You know what that same director said when I eventually left? "There's actually not that much IT work here. You're not really essential."
+
+That's the irony of this job. When everything's on fire and you fly in from another country on short notice: great work, you've earned a beer. But when you spend seven years making sure nothing catches fire at all - apparently you're just not that busy.
+
+Quiet IT is the goal. It's just not always understood what that takes.
 
 ---
 
 ## What you can do today
 
-You don't need a large IT budget to get the basics right. These are the four things that make the biggest difference for small businesses:
+You don't need a big IT budget to get the basics right.
 
-**Rule 1: Backups in a separate location**
-A backup on the same computer or the same network as the infected machines is also encrypted. Use an external drive that you disconnect after copying, or a cloud service like Microsoft OneDrive or Backblaze. Ideally both.
+**Backups in a separate location.** A backup on the same network as the infected machines gets encrypted too. Use an external drive that you disconnect after copying, or a cloud service like Microsoft OneDrive or Backblaze. Both if possible.
 
-**Rule 2: Test your backup at least once a year**
-Set up a machine from scratch and restore the backup completely. Measure how long it takes. Write it down. If you've never done this, you don't know whether it works.
+**Test your backup at least once a year.** Set up a machine from scratch and restore the backup completely. Measure how long it takes. Write it down. If you've never done this, you don't know if it works.
 
-**Rule 3: Keep software up to date**
-Windows updates, Office updates, antivirus software. The vast majority of attacks exploit known vulnerabilities for which a fix has been available for months. Updates are not optional.
+**Keep software up to date.** Most attacks exploit known vulnerabilities that have had a patch available for months. Windows updates, antivirus - not optional.
 
-**Rule 4: Teach employees to recognise phishing**
-One click on the wrong attachment is enough. Let employees know what a phishing email looks like: urgent language, unknown sender, an attachment you weren't expecting. A ten-minute conversation can prevent an attack.
+**Teach staff to spot phishing.** One click on the wrong attachment is enough. Urgent language, unknown sender, attachment you weren't expecting - a ten-minute conversation can prevent an attack.
 
 ---
 
-## Frequently asked questions about ransomware
+## Three questions I get asked
 
 **Should I pay the ransom?**
-No. Paying gives no guarantee your files will be released. You also identify yourself as a paying target, which increases the chance of a follow-up attack. Always recover through backups — even if that takes longer.
+Check [nomoreransom.org](https://www.nomoreransom.org/en/index.html) first - for many variants there's a free decryption tool. If there isn't one and the data is critical: sometimes paying is the least bad option. I've done it. But it's a gamble - the key doesn't always work, and paying marks you as a known payer. The only real answer is making sure you never face that choice.
 
-**How do I know my backup actually works?**
-Only by testing it for real. Don't just check whether the files are present — restore a complete machine and time it. If you've never done this, you don't know.
+**How do I know if my backup actually works?**
+Only by testing it. Not checking whether files are present - a full machine restore with the time measured. If you've never done this, you don't know.
 
-**What if I have no backups?**
-Then there are no good options. You can engage professional data recovery companies, but that's expensive and not always successful. Prevention is literally cheaper than cure here.
-
-**How likely is it that my small business gets attacked?**
-More likely than you think. Small businesses are targeted precisely because they're less secure. Ransomware attacks on SMEs have increased sharply in recent years. It's not a question of whether, but of when — and how prepared you are when it happens.
+**What if I have no backups at all?**
+Then the options are bad. Professional data recovery companies are expensive and not always successful. Better to start now than after the attack.
 
 ---
 
-Want to know how your office stands right now? I do a practical IT check for small businesses in Limburg — including a look at backups, updates and security.
+Want to know how your office is set up right now? I do a practical [IT check for small businesses](/en/blog/) in Limburg - backups, updates and security included.
 
 [Get in touch →](/en/#contact)

@@ -1,6 +1,6 @@
 ---
 title: "Ransomware op je kantoor: wat doe je als het mis gaat?"
-description: "Een ransomware-aanval op een medische praktijk — en wat ik die dag leerde over backups. Praktisch stappenplan voor kleine bedrijven in Limburg."
+description: "Ik zat in Kiev toen het telefoontje kwam. Een noodvlucht naar Nederland, een nacht in logbestanden, en twee weken wachten. Dit is wat er gebeurde — en wat ik die zeven jaar daarna nooit meer hoefde te doen."
 pubDate: 2026-04-10
 tags: ["beveiliging", "ransomware", "backup", "IT support Limburg"]
 author: "Daniel Orosz"
@@ -9,105 +9,134 @@ image: "/images/blog/ransomware-wat-te-doen.png"
 imageAlt: "IT-professional werkt 's ochtends vroeg alleen op kantoor met rode waarschuwingsschermen"
 ---
 
-Het was een dinsdag. Kwart voor negen. Ik zette mijn koffie neer en opende mijn laptop.
+Ik zat in het kantoor in Kiev. Gewone werkdag.
 
-De berichten stonden er al. Medewerkers konden niet bij hun bestanden. Schermen toonden een tekst die ik niet wou zien: alle bestanden waren versleuteld. Een losgeldbedrag in bitcoin.
+Telefoon. Medewerkers uit Nederland - stemmen die omhooggaan: bestanden openen niet, schermen zien er vreemd uit, "het is hier echt erg". Ik ga snel op afstand binnen. Zie de console. Bestandsnamen die één voor één veranderen.
 
-We zaten in een medische praktijk. Patiëntdossiers. Behandelplannen. Alles achter slot en grendel.
+Op dat moment begreep ik alles.
 
-Ik was de enige IT-persoon. Er was niemand om op te escaleren.
+Ik bel het Nederlandse kantoor: zet de computers uit. Meteen. Stop alles.
 
-**Wat ik die dag wist:** we hadden backups.
-**Wat ik die dag leerde:** een backup hebben en een backup hebben die werkt, zijn twee verschillende dingen.
+Vijf minuten later belt de directeur: je hebt een spoedvlucht.
 
-We kwamen er bovenop. De herstelklus nam een hele dag in beslag. Niemand verloor data. Maar het voelde niet als een overwinning — het voelde als mazzel.
+---
+
+> **Kort:** ransomware versleutelt je bestanden en eist betaling. Voor kleine bedrijven is dat vaak een keuze tussen betalen of alles kwijtraken. Bij een tandartspraktijk waar ik werkte speelde dit twee keer. Drie jaar voor mijn komst weigerden ze te betalen - en verloren drie jaar aan röntgenfoto's en patiëntdossiers voorgoed. In mijn eerste maanden vloog ik vanuit Kiev naar Nederland, zat een nacht in logbestanden, en wachtten we twee weken op een beslissing. We betaalden €1.500. We kregen alles terug. In dit artikel leg ik uit wat ik deed - en hoe ik zorgde dat het zeven jaar lang niet meer hoefde.
 
 ---
 
 ## Wat is ransomware precies?
 
-Ransomware is software die je bestanden versleutelt en ze pas vrijgeeft als je betaalt. De aanvallers sturen een sleutel zodra het geld binnen is — in theorie. In de praktijk krijg je die sleutel lang niet altijd.
+Ransomware is software die je bestanden versleutelt en ze pas vrijgeeft als je betaalt. De aanvallers sturen een decryptiesleutel zodra het geld binnen is - in theorie. In de praktijk krijg je die sleutel lang niet altijd.
 
-Kleine bedrijven zijn een aantrekkelijk doelwit. Niet omdat ze veel geld hebben, maar omdat ze minder goed beveiligd zijn dan grote organisaties en toch bereid zijn te betalen om hun spullen terug te krijgen. Een tandartspraktijk zonder toegang tot patiëntdossiers staat al na één dag met de rug tegen de muur.
+Kleine bedrijven zijn een geliefd doelwit. Niet omdat ze veel geld hebben, maar omdat ze minder goed beveiligd zijn dan grote organisaties en toch bereid zijn te betalen om hun data terug te krijgen. Een tandartspraktijk zonder toegang tot patiëntdossiers staat al na één dag met de rug tegen de muur.
 
-De meest voorkomende routes waarop ransomware binnenkomt:
+Hoe ransomware binnenkomt:
 
-- **Phishing-mail** met een bijlage of link (verreweg de meest voorkomende)
-- **Zwakke wachtwoorden** op remote desktop of VPN
-- **Niet-bijgewerkte software** met bekende beveiligingslekken
-- **USB-sticks** van onbekende herkomst
-
----
-
-## Wat deed ik die ochtend — stap voor stap
-
-Zodra ik de berichten zag, deed ik het volgende. In deze volgorde.
-
-**1. Netwerk isoleren**
-Ik trok de netwerkkabel eruit van de eerste besmette machine. Daarna liep ik langs alle andere computers en deed hetzelfde. Doel: voorkomen dat de ransomware verder verspreidt via het lokale netwerk. Elke minuut telt hier.
-
-**2. Controleren welke machines besmet zijn**
-Niet elke computer was geraakt. Door snel langs te gaan, zag ik dat drie machines volledig versleuteld waren. Twee anderen hadden het proces nog net niet voltooid — die waren eerder te redden.
-
-**3. Niet betalen, niet onderhandelen**
-De tekst op het scherm zei dat we 72 uur hadden. Dat is psychologische druk. Ik meldde het aan de leidinggevende en gaf één advies: we gaan dit zelf oplossen via de backups. Betalen geeft geen garantie op een werkende sleutel en markeert je als betalende partij voor een volgende aanval.
-
-**4. Backups testen — pas op dit moment**
-Hier ging het bijna mis. We hadden dagelijkse backups op een externe schijf. Maar ik had die backups nooit getest onder druk. Niet met een volledige restore van het systeem. Alleen maar gekeken of de bestanden er stonden.
-
-Het herstel werkte, maar het duurde langer dan verwacht. We moesten het besturingssysteem opnieuw installeren op twee machines, software opnieuw inrichten, instellingen terugzetten. Dat zijn stappen die je niet snel kunt doen als je ze nooit hebt geoefend.
-
-**5. Incident documenteren**
-Ik schreef op wat er was gebeurd, welke machines getroffen waren, wanneer, wat ik had gedaan en hoe lang het herstel had geduurd. Dat document heb ik daarna bij elk herstelgesprek gebruikt.
+- Phishing-mail met een bijlage of link - verreweg het meest voorkomend
+- Zwakke wachtwoorden op remote desktop of VPN
+- Software die al maanden niet bijgewerkt is
+- USB-sticks van onbekende herkomst
 
 ---
 
-## Wat ik diezelfde avond heb aangepast
+## Drie jaar voor mijn komst
 
-Nadat alles weer draaide, heb ik één ding direct veranderd: ik bouwde een maandelijkse hersteltest in.
+Wat ik die eerste week hoorde: dit was niet de eerste keer.
 
-Niet een controle of de backupbestanden aanwezig zijn. Een échte test: een machine isoleren, het besturingssysteem opnieuw installeren, de backup terugzetten en meten hoe lang het duurt voordat alles weer werkt.
+Drie jaar voor mijn komst was dezelfde praktijk al eens getroffen. Ze hadden besloten niet te betalen. Het gevolg: drie jaar aan röntgenfoto's en patiëntdocumentatie was voorgoed weg. Geen herstel mogelijk. Toen ik daar begon, was die lege periode in het archief er nog steeds.
 
-Dat kost een zaterdagmiddag per kwartaal. Maar na die eerste ransomware-aanval wist ik precies: hersteltijd is anderhalve uur. Welke stap het langst duurt. Welke instellingen handmatig terug moeten.
+De vorige IT-beheerder had daarna niets gebouwd. Geen backups, geen betere beveiliging. Ze gingen gewoon verder.
 
-Die kennis is meer waard dan de backup zelf.
+---
+
+## De noodvlucht
+
+Koffer gepakt en naar het vliegveld.
+
+De hoofdserver stond bij de directeur thuis. Dat was mijn eerste stop, rechtstreeks vanaf het vliegveld. Ik kom binnen - vijf machines besmet. Ik ga ze een voor een af: kijk hoe ver het virus is gekomen, wat versleuteld is, wat nog intact.
+
+Ik zit tot diep in de nacht in logbestanden. Op een van de schermen staat het losgeldbericht. Betaaleis in bitcoin, aftellende timer.
+
+De directeur staat erbij. Kijkt mee. In de uren dat ik bezig ben lijkt zijn haar grijzer geworden.
+
+Ik kom op van een machine en zeg het: de bestanden zijn niet te redden. Niet zonder de sleutel.
+
+---
+
+## Twee weken wachten
+
+De directeur nam niet meteen een beslissing. €1.500 is geld. Misschien was er een andere weg.
+
+Ik controleerde eerst [nomoreransom.org](https://www.nomoreransom.org/nl/index.html) - een gratis platform van de Politie en Europol met decryptietools voor honderden ransomwarevarianten. Voor deze variant was er niets beschikbaar.
+
+Terwijl het management afwoog, groef ik door de rest van het systeem. En hoe dieper ik groef, hoe grauer mijn eigen haar werd.
+
+Geen firewall. Geen antivirussoftware. Geen backups. Helemaal niets. Het netwerk stond open. De vorige beheerder had het zo achtergelaten - en niemand had het ooit aangekaart.
+
+Die twee weken gebruikte ik om alles uit te tekenen wat er had moeten staan: backuparchitectuur, antivirusplan, firewallregels. Klaar om in te voeren zodra we groen licht hadden.
+
+---
+
+## De beslissing en de commandoregel
+
+Na twee weken zei de directeur: we betalen.
+
+De rekening was simpel: €1.500 of vier jaar patiëntdata kwijtraken. En we wisten allebei wat er drie jaar eerder was gebeurd toen ze nee zeiden.
+
+We maakten de betaling over. Kregen het script.
+
+Dat draaiden we op een geïsoleerde machine. De commandoregel startte. Bestandsnaam voor bestandsnaam begon te verschijnen - de bestanden werden één voor één ontsleuteld. Het duurde uren. Niemand sprak veel.
+
+Alles came terug.
+
+---
+
+## Wat ik in de twee weken daarna bouwde
+
+Terwijl de data werd hersteld, bouwde ik parallel wat er al zeven jaar had moeten staan.
+
+Antivirussoftware op elke machine. Een firewall met fatsoenlijke regels. Dagelijkse backups naar externe opslag die na het kopiëren losgekoppeld wordt van het netwerk. En een hersteltest elk kwartaal: machine van nul opzetten, backup terugzetten, tijd meten, opschrijven.
+
+Twee weken na dat telefoontje uit Kiev stond het netwerk er anders bij.
+
+Zeven jaar later is er geen enkele aanval geweest. De backups hebben het nooit laten afweten. Niet omdat het geluk was - maar omdat ik elke keer controleerde, elke kleine opening dichtsloot, en altijd een stap verder ging dan strikt noodzakelijk. Saaie routine. Maar precies die routine zorgt dat je nooit meer 's nachts in iemands woonkamer zit en kijkt hoe een directeur grijs wordt.
+
+Weet u wat diezelfde directeur zei toen ik uiteindelijk vertrok? "Er is hier eigenlijk niet zo veel IT-werk. Je bent niet echt onmisbaar."
+
+Dat is de ironie van dit vak. Als alles in brand staat en je vliegt met spoed vanuit een ander land: geweldig werk, biertje verdiend. Maar als je zeven jaar lang zorgt dat er helemaal niets in brand vliegt - dan ben je blijkbaar een dagjesmensch.
+
+Stille IT is het doel. Alleen begrijpt niet iedereen wat dat kost.
 
 ---
 
 ## Wat je vandaag nog kunt doen
 
-Je hoeft geen groot IT-budget te hebben om je basis op orde te brengen. Dit zijn de vier dingen die het grootste verschil maken voor kleine bedrijven:
+Je hoeft geen groot IT-budget te hebben om je basis op orde te brengen.
 
-**Regel 1: Backups op een aparte locatie**
-Een backup op dezelfde computer of hetzelfde netwerk als de besmette machines is ook versleuteld. Gebruik een externe schijf die je na het kopiëren loskoppelt, of een clouddienst als Microsoft OneDrive of Backblaze. Liefst allebei.
+**Backups op een aparte locatie.** Een backup op hetzelfde netwerk als de besmette machines is ook versleuteld. Gebruik een externe schijf die je na het kopiëren loskoppelt, of een clouddienst als Microsoft OneDrive of Backblaze. Liefst allebei.
 
-**Regel 2: Test je backup minstens één keer per jaar**
-Zet een machine opnieuw op en herstel de backup volledig. Meet hoe lang het duurt. Schrijf het op. Als je dat nooit hebt gedaan, weet je niet of het werkt.
+**Test je backup minstens één keer per jaar.** Zet een machine opnieuw op en herstel de backup volledig. Meet hoe lang het duurt. Schrijf het op. Als je dat nooit hebt gedaan, weet je niet of het werkt.
 
-**Regel 3: Houd software up-to-date**
-Windows-updates, Office-updates, antivirussoftware. Verreweg de meeste aanvallen maken gebruik van bekende lekken waarvoor al maanden een oplossing beschikbaar is. Updates zijn geen luxe.
+**Houd software up-to-date.** Verreweg de meeste aanvallen maken gebruik van bekende lekken waarvoor al maanden een oplossing beschikbaar is. Windows-updates, antivirussoftware - geen luxe.
 
-**Regel 4: Leer medewerkers phishing herkennen**
-Eén klik op de verkeerde bijlage is genoeg. Laat medewerkers weten hoe een phishing-mail eruitziet: urgente taal, onbekende afzender, bijlage die je niet verwacht. Een kort gesprek van tien minuten kan een aanval voorkomen.
+**Leer medewerkers phishing herkennen.** Eén klik op de verkeerde bijlage is genoeg. Urgente taal, onbekende afzender, bijlage die je niet verwacht - een gesprek van tien minuten kan een aanval voorkomen.
 
 ---
 
-## Veelgestelde vragen over ransomware
+## Drie vragen die ik vaak krijg
 
 **Moet ik losgeld betalen?**
-Nee. Betalen geeft geen garantie dat je bestanden worden vrijgegeven. Bovendien meld je jezelf als betalende partij, wat de kans op een volgende aanval vergroot. Herstel altijd via backups — ook als dat langer duurt.
+Controleer eerst [nomoreransom.org](https://www.nomoreransom.org/nl/index.html) - voor veel varianten is er een gratis decryptietool. Als die er niet is en de data is onmisbaar: soms is betalen de minst slechte optie. Ik heb het gedaan. Maar het is een gok - de sleutel werkt niet altijd, en betalen maakt je een bekende betalende partij. De enige echte oplossing is zorgen dat je nooit voor die keuze staat.
 
 **Hoe weet ik of mijn backup goed werkt?**
-Alleen door hem daadwerkelijk te testen. Controleer niet alleen of de bestanden aanwezig zijn, maar herstel een volledige machine en meet de tijd. Als je dat nooit hebt gedaan, weet je het niet.
+Alleen door hem te testen. Niet controleren of bestanden aanwezig zijn - een volledige machine herstellen en de tijd meten. Als je dat nooit hebt gedaan, weet je het niet.
 
 **Wat als ik geen backups heb?**
-Dan zijn er geen goede opties. Je kunt professionele dataherstelbedrijven inschakelen, maar dat is kostbaar en niet altijd succesvol. Voorkomen is hier letterlijk goedkoper dan genezen.
-
-**Hoe groot is de kans dat mijn kleine bedrijf wordt aangevallen?**
-Groter dan je denkt. Kleine bedrijven zijn doelwit juist omdat ze minder beveiligd zijn. Ransomware-aanvallen op het MKB zijn de afgelopen jaren sterk toegenomen. Het is geen kwestie van of, maar van wanneer — en hoe goed je dan voorbereid bent.
+Dan zijn de opties slecht. Professionele dataherstelbedrijven zijn kostbaar en niet altijd succesvol. Beter nu beginnen dan na de aanval.
 
 ---
 
-Wil je weten hoe jouw kantoor er nu voor staat? Ik doe een praktische IT-check voor kleine bedrijven in Limburg — inclusief een blik op backups, updates en beveiliging.
+Wil je weten hoe jouw kantoor er nu voor staat? Ik doe een praktische [IT-check voor kleine bedrijven](/blog/) in Limburg - inclusief backups, updates en beveiliging.
 
 [Neem contact op →](/#contact)
