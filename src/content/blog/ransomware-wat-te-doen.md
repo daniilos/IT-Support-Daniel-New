@@ -5,6 +5,8 @@ pubDate: 2026-04-10
 tags: ["beveiliging", "ransomware", "backup", "IT support Limburg"]
 author: "Daniel Orosz"
 draft: false
+image: "/images/blog/ransomware-wat-te-doen.png"
+imageAlt: "IT-professional werkt 's ochtends vroeg alleen op kantoor met rode waarschuwingsschermen"
 ---
 
 Het was een dinsdag. Kwart voor negen. Ik zette mijn koffie neer en opende mijn laptop.

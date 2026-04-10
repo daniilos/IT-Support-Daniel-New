@@ -34,45 +34,59 @@ const posts = (await getCollection('blog-en'))
                     <ul class="space-y-10 list-none p-0 m-0">
                         {posts.map((post) => (
                             <li class="border-b border-border pb-10 last:border-0">
-                                <article>
-                                    {post.data.tags && post.data.tags.length > 0 && (
-                                        <div class="mb-3 flex flex-wrap gap-2">
-                                            {post.data.tags.slice(0, 3).map((tag: string) => (
-                                                <span class="rounded-full bg-accent/10 px-3 py-1 text-xs font-medium text-accent">
-                                                    {tag}
-                                                </span>
-                                            ))}
-                                        </div>
+                                <article class="flex flex-col gap-4 sm:flex-row sm:gap-6">
+                                    {post.data.image && (
+                                        <a href={`/en/blog/${post.id}/`} class="shrink-0 sm:w-48">
+                                            <img
+                                                src={post.data.image}
+                                                alt={post.data.imageAlt ?? post.data.title}
+                                                width="192"
+                                                height="108"
+                                                class="w-full rounded-lg object-cover aspect-video sm:aspect-auto sm:h-28"
+                                                loading="lazy"
+                                            />
+                                        </a>
                                     )}
-                                    <h2 class="mb-3 text-xl font-bold leading-snug">
-                                        <a
-                                            href={`/en/blog/${post.id}/`}
-                                            class="text-primary no-underline hover:text-accent transition-colors"
-                                        >
-                                            {post.data.title}
-                                        </a>
-                                    </h2>
-                                    <p class="mb-4 text-muted-foreground leading-relaxed text-sm">
-                                        {post.data.description}
-                                    </p>
-                                    <div class="flex items-center justify-between">
-                                        <div class="flex items-center gap-3 text-xs text-muted-foreground">
-                                            <span class="font-medium text-foreground">{post.data.author}</span>
-                                            <span>·</span>
-                                            <time datetime={post.data.pubDate.toISOString().split('T')[0]}>
-                                                {post.data.pubDate.toLocaleDateString('en-GB', {
-                                                    year: 'numeric',
-                                                    month: 'long',
-                                                    day: 'numeric',
-                                                })}
-                                            </time>
+                                    <div class="flex-1">
+                                        {post.data.tags && post.data.tags.length > 0 && (
+                                            <div class="mb-2 flex flex-wrap gap-2">
+                                                {post.data.tags.slice(0, 3).map((tag: string) => (
+                                                    <span class="rounded-full bg-accent/10 px-3 py-1 text-xs font-medium text-accent">
+                                                        {tag}
+                                                    </span>
+                                                ))}
+                                            </div>
+                                        )}
+                                        <h2 class="mb-2 text-xl font-bold leading-snug">
+                                            <a
+                                                href={`/en/blog/${post.id}/`}
+                                                class="text-primary no-underline hover:text-accent transition-colors"
+                                            >
+                                                {post.data.title}
+                                            </a>
+                                        </h2>
+                                        <p class="mb-3 text-muted-foreground leading-relaxed text-sm">
+                                            {post.data.description}
+                                        </p>
+                                        <div class="flex items-center justify-between">
+                                            <div class="flex items-center gap-3 text-xs text-muted-foreground">
+                                                <span class="font-medium text-foreground">{post.data.author}</span>
+                                                <span>·</span>
+                                                <time datetime={post.data.pubDate.toISOString().split('T')[0]}>
+                                                    {post.data.pubDate.toLocaleDateString('en-GB', {
+                                                        year: 'numeric',
+                                                        month: 'long',
+                                                        day: 'numeric',
+                                                    })}
+                                                </time>
+                                            </div>
+                                            <a
+                                                href={`/en/blog/${post.id}/`}
+                                                class="text-xs font-medium text-accent no-underline hover:underline"
+                                            >
+                                                Read more →
+                                            </a>
                                         </div>
-                                        <a
-                                            href={`/en/blog/${post.id}/`}
-                                            class="text-xs font-medium text-accent no-underline hover:underline"
-                                        >
-                                            Read more →
-                                        </a>
                                     </div>
                                 </article>
                             </li>

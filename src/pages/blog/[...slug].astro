@@ -25,6 +25,8 @@ const { Content } = await render(post);
     tags={post.data.tags}
     lang="nl"
     slug={post.id}
+    image={post.data.image}
+    imageAlt={post.data.imageAlt}
 >
     <Content />
 </BlogLayout>
