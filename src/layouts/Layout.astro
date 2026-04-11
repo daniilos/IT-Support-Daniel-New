@@ -12,12 +12,18 @@ interface Props {
     description?: string;
     lang?: Lang;
     alternateUrl?: string; // URL той же страницы на другом языке
+    ogImage?: string;
 }
 
-const { title, description, lang = 'nl', alternateUrl } = Astro.props;
+const { title, description, lang = 'nl', alternateUrl, ogImage } = Astro.props;
 const htmlLang = lang === 'en' ? 'en' : 'nl';
-const nlUrl = lang === 'nl' ? Astro.url.pathname : (alternateUrl ?? '/');
-const enUrl = lang === 'en' ? Astro.url.pathname : (alternateUrl ?? '/en/');
+const siteUrl = 'https://ict-support-limburg.nl';
+const nlPath = lang === 'nl' ? Astro.url.pathname : (alternateUrl ?? '/');
+const enPath = lang === 'en' ? Astro.url.pathname : (alternateUrl ?? '/en/');
+const nlUrl = `${siteUrl}${nlPath}`;
+const enUrl = `${siteUrl}${enPath}`;
+const canonicalUrl = lang === 'nl' ? nlUrl : enUrl;
+const ogImageUrl = ogImage ? `${siteUrl}${ogImage}` : `${siteUrl}/images/og-default.png`;
 ---
 
 <!doctype html>
@@ -28,10 +34,25 @@ const enUrl = lang === 'en' ? Astro.url.pathname : (alternateUrl ?? '/en/');
         <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="generator" content={Astro.generator} />
+        <link rel="canonical" href={canonicalUrl} />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="preload" as="font" type="font/woff2" href={interWoff2Latin} crossorigin />
         <link rel="alternate" hreflang="nl" href={nlUrl} />
         <link rel="alternate" hreflang="en" href={enUrl} />
+        <link rel="alternate" hreflang="x-default" href={nlUrl} />
+        <!-- Open Graph -->
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:image" content={ogImageUrl} />
+        <meta property="og:site_name" content="Oros IT Support Limburg" />
+        <meta property="og:locale" content={lang === 'en' ? 'en_GB' : 'nl_NL'} />
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={ogImageUrl} />
         <slot name="head" />
     </head>
     <body class="font-sans antialiased">

@@ -2,9 +2,9 @@ export type Lang = 'nl' | 'en';
 
 const nl = {
     meta: {
-        title: 'IT-support voor kleine bedrijven in Zuid-Limburg | Oros IT Support',
+        title: 'IT Support Limburg voor kleine bedrijven | Oros IT Support Limburg',
         description:
-            'Oros IT Support — lokale IT-ondersteuning voor kleine bedrijven in Kerkrade en Zuid-Limburg. Computers, printers, Wi-Fi, gebruikersaccounts en basisbeveiliging.',
+            'IT support in Zuid-Limburg voor kleine bedrijven. Computers, printers, Wi-Fi, Microsoft 365, storingen en beveiliging — snel, lokaal en zonder gedoe. Bel +31 6 3483 6118.',
     },
     topBar: {
         phone: '+31 6 3483 6118',
@@ -24,11 +24,11 @@ const nl = {
         menuLabel: 'Menu openen',
     },
     hero: {
-        heading: 'Lokale IT-support',
-        headingAccent: 'voor jouw bedrijf',
+        heading: 'IT support in Limburg',
+        headingAccent: 'die gewoon werkt',
         subtitle:
-            'Ik help kleine bedrijven in Zuid-Limburg met dagelijkse IT: computers, printers, Wi-Fi, gebruikersaccounts, storingen en basisbeveiliging — zowel ter plaatse als op afstand.',
-        valueProps: 'Snel, praktisch en begrijpelijk. Geen onnodige complexiteit. Gewoon betrouwbare IT-support die jouw kantoor draaiende houdt.',
+            'Ik help kleine bedrijven in Zuid-Limburg met dagelijkse IT: computers, printers, Wi-Fi, gebruikersaccounts en storingen — ter plaatse in Kerkrade, Heerlen, Maastricht en omgeving, of op afstand.',
+        valueProps: 'Snel geholpen, duidelijke uitleg, geen verrassingen op de factuur.',
         cta1: 'Ondersteuning aanvragen',
         cta2: 'Gratis kennismakingsgesprek',
     },
@@ -41,138 +41,163 @@ const nl = {
         ],
     },
     services: {
-        heading: 'IT-supportdiensten voor kleine bedrijven',
+        heading: 'Wat ik voor je kan doen',
         items: [
             {
                 title: 'Werkplekondersteuning',
                 description:
-                    'Installatie, onderhoud, updates, probleemoplossing en optimalisatie van Windows-pc\'s, Macs en kantoorlaptops.',
+                    'Computers traag, crashen of niet bijgewerkt? Ik installeer, onderhoud en los problemen op bij Windows-pc\'s, Macs en laptops.',
                 icon: 'monitor',
             },
             {
                 title: 'Printer- en randapparatuur',
                 description:
-                    'Instellen en oplossen van problemen met printers, scanners, labelprinters en andere kantoorapparatuur.',
+                    'Printer offline, scanner werkt niet, labelprinter hapert. Ik los het op — ook als de leverancier zegt dat het niet kan.',
                 icon: 'printer',
             },
             {
-                title: 'Wi-Fi en netwerkhulp',
+                title: 'Wi-Fi en netwerk',
                 description:
-                    'Kantoor-Wi-Fi instellen, router- en access point-configuratie, netwerkstoringen oplossen en verbindingsverbeteringen doorvoeren.',
+                    'Traag internet op de werkplek, wifi die wegvalt of een router die niet meer meewerkt. Ik configureer netwerken die stabiel blijven.',
                 icon: 'wifi',
             },
             {
-                title: 'Gebruikersaccounts en toegangsbeheer',
+                title: 'Accounts en toegangsbeheer',
                 description:
-                    'E-mailinstellingen, Microsoft 365 / Google Workspace basis, wachtwoordherstel, toegangsbeheer, ondersteuning bij in- en uitdienst van medewerkers.',
+                    'Nieuwe medewerker, vertrekkende collega, vergeten wachtwoord of geen toegang meer tot e-mail. Ik regel het snel en correct.',
                 icon: 'users',
             },
             {
-                title: 'Remote en on-site IT-hulp',
+                title: 'Remote en on-site hulp',
                 description:
-                    'Snelle hulp als er iets stopt met werken — op afstand waar mogelijk, ter plaatse waar nodig.',
+                    'Als het mis gaat, wil je snel iemand. Op afstand waar het kan, ter plaatse waar het moet — ook voor locaties buiten Kerkrade.',
                 icon: 'headset',
             },
             {
-                title: 'Basisbeveiliging en back-upcheck',
+                title: 'Beveiliging en back-up',
                 description:
-                    'Praktische verbeteringen voor veiliger dagelijks werken: updates, back-ups, MFA, phishing-bewustwording en basisapparaathygiëne.',
+                    'Updates, back-ups, MFA en phishing-bewustwording. Niet als groot project, maar als gewone routine die werkt zonder dat je er bij na hoeft te denken.',
                 icon: 'shield',
             },
             {
-                title: 'ChatGPT & werkstroomautomatisering',
+                title: 'ChatGPT en automatisering',
                 description:
-                    'Gebruik je al ChatGPT, maar doe je nog veel taken handmatig? Ik help je eenvoudige manieren te vinden om tijd te besparen en herhalend werk te verminderen.',
+                    'Taken die je elke week handmatig doet, hoef je misschien niet meer handmatig te doen. Ik kijk wat er te automatiseren valt en help het in te richten.',
                 icon: 'sparkles',
             },
         ],
     },
     about: {
-        heading: 'Over Daniel Oros',
+        heading: 'Wie is Daniel?',
         paragraphs: [
-            'Ik ben al sinds mijn tienerjaren gefascineerd door IT en heb jarenlang gewerkt met computers, netwerken, kantoorapparatuur en digitale systemen in echte werkomgevingen.',
-            'Ik help kleine bedrijven om praktische IT-problemen op te lossen — zonder verwarrend vakjargon. Van trage computers en printerproblemen tot Wi-Fi-storingen, gebruikersaccounts, apparaatinstallatie en dagelijkse kantoorondersteuning.',
+            'Zeven jaar lang was ik de enige IT-persoon bij een medisch bedrijf met meerdere vestigingen in Nederland. Als er iets kapotging — server, netwerk, werkplek, beveiliging — loste ik het op. Er was niemand anders om op te bellen.',
+            'Die periode leerde me hoe IT er in de praktijk uitziet bij kleine organisaties: geen groot team, geen eindeloos budget, maar wel mensen die erop rekenen dat alles werkt. Dat is wat ik nu voor andere kleine bedrijven in Limburg doe.',
         ],
-        approach: 'Mijn aanpak is eenvoudig:',
-        approachText: 'IT stabiel, begrijpelijk en minder stressvol maken voor jouw bedrijf.',
+        approach: 'Mijn aanpak:',
+        approachText: 'Zorgen dat het werkt, uitleggen wat er aan de hand is, en geen gedoe over de factuur.',
         quote:
-            '"Goede IT-support gaat niet alleen over het oplossen van problemen. Het gaat over het verminderen van chaos, het besparen van tijd en het geven van vertrouwen dat dingen gewoon werken."',
-        quoteAuthor: '— Daniel Oros',
+            '"Stille IT is het doel. Chaos is wat je krijgt als je stopt met investeren in IT die gewoon werkt."',
+        quoteAuthor: '— Daniel Orosz',
     },
     whyOros: {
-        heading: 'Waarom kiezen voor Oros IT Support?',
+        heading: 'Waarom kiezen voor Oros IT Support Limburg?',
         reasons: [
             {
-                title: 'Lokaal en beschikbaar',
-                description: 'Gevestigd in Kerkrade, met snelle ondersteuning voor bedrijven in heel Zuid-Limburg.',
+                title: 'Lokaal en bereikbaar',
+                description: 'Ik woon en werk in Kerkrade. Bij een storing kan ik snel ter plaatse zijn — geen centrale planningsdienst die je doorverbindt.',
             },
             {
-                title: 'Duidelijke communicatie',
+                title: 'Gewone taal, geen jargon',
                 description:
-                    'Ik leg technische problemen uit in gewone taal, zodat je altijd begrijpt wat er aan de hand is en waarom.',
+                    'Ik leg uit wat er is misgegaan en wat ik ga doen. Geen technische verhalen waar je niets mee kunt. Gewoon duidelijk.',
             },
             {
-                title: 'Praktische probleemoplossing',
+                title: 'Oplossingen die passen bij jouw situatie',
                 description:
-                    'Ik richt me op oplossingen die werken in echte kantooromgevingen — geen onnodig ingewikkeld advies.',
+                    'Ik adviseer wat werkt in jouw kantoor — niet de duurste optie, niet de meest complexe, maar wat het probleem daadwerkelijk oplost.',
             },
             {
-                title: 'Flexibel supportmodel',
-                description: 'Op afstand waar mogelijk, ter plaatse waar nodig.',
+                title: 'Remote of on-site, jij bepaalt',
+                description: 'Veel problemen los ik op afstand op binnen een uur. Soms is ter plaatse sneller. Je hoeft dat niet zelf te beoordelen — ik doe dat.',
             },
             {
-                title: 'MKB-mindset',
+                title: 'Vertrouwd aanspreekpunt',
                 description:
-                    'Ik begrijp dat kleine bedrijven betrouwbare ondersteuning nodig hebben: voorspelbare kosten en iemand die écht verantwoordelijkheid neemt.',
+                    'Je belt mij, niet een helpdesknummer. Ik ken jouw omgeving, weet wat er eerder is speelde en hoef niet elke keer opnieuw uitgelegd te worden hoe het zit.',
             },
         ],
     },
     commonProblems: {
-        heading: 'Problemen waarbij ik dagelijks help',
+        heading: 'Waarmee ik dagelijks help',
         items: [
-            'Printer doet het niet',
-            'Wi-Fi is instabiel of traag',
+            'Printer die offline staat of niet afdrukt',
+            'Wi-Fi traag of steeds wegvallen',
             'Nieuwe medewerker instellen',
             'Geen toegang tot e-mail of account',
-            'Trage pc of laptop',
-            'Back-up of basisbeveiligingscheck',
-            'IT-opruiming en optimalisatie van het kantoor',
+            'Trage of vastlopende computer',
+            'Back-up of beveiligingscheck',
+            'IT-opruiming bij verhuis of reorganisatie',
             'Vragen over Microsoft 365 of Google Workspace',
         ],
     },
     comparison: {
-        heading: 'Eigen IT-medewerker vs. flexibele lokale IT-support',
+        heading: 'Eigen IT-medewerker vs. lokale IT-support',
         inHouseTitle: 'Eigen IT-medewerker',
-        orosTitle: 'Oros IT Support',
+        orosTitle: 'Oros IT Support Limburg',
         inHouseItems: [
             'Vast salaris + sociale lasten',
-            'Eén persoon, beperkt bij ziekte/vakantie',
-            'Moeilijk schaalbaar voor kleine teams',
-            'Niet altijd rendabel voor kleine kantoren',
+            'Uitgevallen bij ziekte of vakantie',
+            'Lastig te schalen voor kleine teams',
+            'Vaak niet rendabel onder de 15–20 werkplekken',
         ],
         orosItems: [
-            'Alleen betalen voor wat je nodig hebt',
-            'Remote + on-site, flexibel inzetbaar',
-            'Praktische focus op kantoor-IT',
-            'Ideaal voor 2–30 werkplekken',
-            'Direct contact met Daniel',
+            'Je betaalt alleen voor wat je gebruikt',
+            'Remote + on-site, beschikbaar wanneer nodig',
+            'Geen inwerkperiode, direct aan de slag',
+            'Geschikt voor 2 tot 30 werkplekken',
+            'Directe lijn met Daniel, geen wachtrij',
         ],
-        note: 'Voor veel kleine bedrijven is uitbestede IT-support flexibeler dan een eigen IT-medewerker in dienst nemen.',
+        note: 'Voor de meeste kleine bedrijven is flexibele IT-support goedkoper én betrouwbaarder dan een vaste IT-er in loondienst.',
     },
     quickScan: {
         heading: 'IT Quick Scan voor kleine bedrijven',
-        intro: 'Weet jij zeker dat de IT van jouw kantoor goed is geregeld?',
+        intro: 'Weet je zeker dat de IT van jouw kantoor goed is geregeld?',
         checks: [
             'Computers en laptops',
             'Wi-Fi en netwerkverbinding',
             'Printers en randapparatuur',
-            'Gebruikersaccounts en toegangsbeheer',
+            'Gebruikersaccounts en toegang',
             'Back-up en basisbeveiliging',
         ],
-        checkIntro: 'Ik bekijk praktisch:',
+        checkIntro: 'Ik loop praktisch door:',
         result:
-            'Resultaat: een helder overzicht van wat goed gaat en wat aandacht verdient — in gewone taal, zonder onnodige complexiteit.',
+            'Je krijgt een helder overzicht van wat goed gaat en wat aandacht nodig heeft — in gewone taal, zonder verkoopverhaal.',
         cta: 'Quick Scan aanvragen',
+    },
+    faq: {
+        heading: 'Veelgestelde vragen',
+        items: [
+            {
+                question: 'In welke regio ben je actief?',
+                answer: 'Ik ben gevestigd in Kerkrade en werk voor bedrijven door heel Zuid-Limburg: Heerlen, Maastricht, Sittard-Geleen, Valkenburg, Brunssum en omliggende gemeenten. Remote support doe ik door heel Nederland.',
+            },
+            {
+                question: 'Hoe snel kun je er zijn bij een storing?',
+                answer: 'Voor remote support ben ik meestal binnen een uur beschikbaar. Voor on-site hulp in de regio Kerkrade–Heerlen reken ik op dezelfde dag of de volgende ochtend, afhankelijk van de agenda.',
+            },
+            {
+                question: 'Werk je op uurbasis of met een vast contract?',
+                answer: 'Beide zijn mogelijk. Je kunt me bellen als er iets is (uurbasis), of een maandelijks supportplan afnemen als je liever vaste kosten hebt. Ik geef altijd vooraf aan wat iets gaat kosten.',
+            },
+            {
+                question: 'Wat kost een remote sessie?',
+                answer: 'Remote support start vanaf €65 per uur exclusief btw. De meeste enkelvoudige problemen los ik op in 30 tot 60 minuten. Voor de IT Quick Scan reken ik €149–€199 voor een volledig kantoor.',
+            },
+            {
+                question: 'Werk je ook voor medische praktijken of zorginstellingen?',
+                answer: 'Ja. Mijn achtergrond ligt in de medische sector — ik heb zeven jaar IT gedaan bij een tandartsbedrijf met meerdere locaties. Ik ken de eisen rondom privacy, AVG en softwarecompatibiliteit in die omgeving.',
+            },
+        ],
     },
     pricing: {
         heading: 'Transparante tarieven',
@@ -185,17 +210,17 @@ const nl = {
             { label: 'Per-gebruiker maandelijks pakket', price: 'vanaf €35–49 / gebruiker / maand', note: 'excl. btw' },
         ],
         disclaimer:
-            'Alle prijzen zijn exclusief btw. Voor maatwerkprojecten en grotere kantoren maak ik graag een offerte.',
+            'Alle tarieven zijn exclusief btw. Voor grotere kantoren of maatwerkprojecten maak ik graag een offerte op maat.',
     },
     contact: {
         heading: 'Neem contact op',
         subtitle:
-            'Op zoek naar lokale IT-support in Zuid-Limburg? Stuur een bericht en vertel me wat voor hulp je nodig hebt.',
+            'IT-probleem, vraag of gewoon even kennismaken? Stuur een bericht of bel direct.',
         info: [
             { label: 'Telefoon', value: '+31 6 3483 6118', href: 'tel:+31634836118' },
             { label: 'E-mail', value: 'info@oros.agency', href: 'mailto:info@oros.agency' },
-            { label: 'Locatie', value: 'Kerkrade, Zuid-Limburg, The Netherlands' },
-            { label: 'Ondersteuningsuren', value: 'Ma–Vr, 9:00–18:00' },
+            { label: 'Locatie', value: 'Kerkrade, Zuid-Limburg' },
+            { label: 'Beschikbaar', value: 'Ma–Vr, 9:00–18:00' },
         ],
         urgentNote: 'Spoedondersteuning in overleg',
         formTitle: 'Vertel me waarmee ik kan helpen',
@@ -214,11 +239,11 @@ const nl = {
     },
     footer: {
         description:
-            'Lokale IT-support voor kleine bedrijven in Zuid-Limburg: computers, printers, Wi-Fi, gebruikersaccounts, storingen en praktische kantoor-IT.',
-        location: 'Kerkrade, Zuid-Limburg, The Netherlands',
+            'IT support in Zuid-Limburg voor kleine bedrijven: computers, printers, Wi-Fi, Microsoft 365, beveiliging en praktische kantoor-IT.',
+        location: 'Kerkrade, Zuid-Limburg',
         phone: '+31 6 3483 6118',
         email: 'info@oros.agency',
-        copyright: 'Oros IT Support',
+        copyright: 'Oros IT Support Limburg',
         servicesTitle: 'Diensten',
         servicesLinks: [
             'Werkplekondersteuning',
@@ -231,8 +256,8 @@ const nl = {
         linksTitle: 'Navigatie',
         navLinks: [
             { label: 'Waarom Oros', href: '#why-oros' },
-            { label: 'Vergelijking', href: '#comparison' },
             { label: 'Tarieven', href: '#pricing' },
+            { label: 'Blog', href: '/blog/' },
             { label: 'Contact', href: '#contact' },
         ],
     },
@@ -240,9 +265,9 @@ const nl = {
 
 const en: typeof nl = {
     meta: {
-        title: 'IT Support for Small Businesses in Zuid-Limburg | Oros IT Support',
+        title: 'IT Support Limburg for Small Businesses | Oros IT Support Limburg',
         description:
-            'Oros IT Support — local IT support for small businesses in Kerkrade and Zuid-Limburg. Computers, printers, Wi-Fi, user accounts, and basic cybersecurity.',
+            'IT support in Zuid-Limburg for small businesses. Computers, printers, Wi-Fi, Microsoft 365, repairs and security — fast, local and straightforward. Call +31 6 3483 6118.',
     },
     topBar: {
         phone: '+31 6 3483 6118',
@@ -262,11 +287,11 @@ const en: typeof nl = {
         menuLabel: 'Open menu',
     },
     hero: {
-        heading: 'Local IT Support',
-        headingAccent: 'for Your Business',
+        heading: 'IT support in Limburg',
+        headingAccent: 'that just works',
         subtitle:
-            'I help small businesses in Zuid-Limburg with day-to-day IT: computers, printers, Wi-Fi, user accounts, troubleshooting, and basic cybersecurity — on-site and remotely.',
-        valueProps: 'Fast, practical, and easy to understand. No unnecessary complexity. Just reliable IT support that keeps your office running.',
+            'I help small businesses in Zuid-Limburg with day-to-day IT: computers, printers, Wi-Fi, user accounts and outages — on-site in Kerkrade, Heerlen, Maastricht and surrounding areas, or remotely.',
+        valueProps: 'Fast response, plain language, no surprises on the invoice.',
         cta1: 'Request Support',
         cta2: 'Free Intro Call',
     },
@@ -279,123 +304,123 @@ const en: typeof nl = {
         ],
     },
     services: {
-        heading: 'IT support services for small businesses',
+        heading: 'What I can do for you',
         items: [
             {
                 title: 'Workstation Support',
                 description:
-                    'Installation, maintenance, updates, troubleshooting, and optimization of Windows PCs, Macs, and office laptops.',
+                    'Computers slow, crashing or out of date? I install, maintain and fix issues on Windows PCs, Macs and laptops.',
                 icon: 'monitor',
             },
             {
                 title: 'Printer & Peripheral Support',
                 description:
-                    'Setup and troubleshooting for printers, scanners, label printers, and other office equipment.',
+                    'Printer offline, scanner not responding, label printer acting up. I fix it — even when the vendor says it can\'t be done.',
                 icon: 'printer',
             },
             {
-                title: 'Wi-Fi & Network Help',
+                title: 'Wi-Fi & Network',
                 description:
-                    'Office Wi-Fi setup, router and access point configuration, resolving network issues, and connectivity improvements.',
+                    'Slow internet at the desk, dropping Wi-Fi or a router that stopped cooperating. I set up networks that stay stable.',
                 icon: 'wifi',
             },
             {
-                title: 'User Accounts & Access Management',
+                title: 'Accounts & Access',
                 description:
-                    'Email setup, Microsoft 365 / Google Workspace basics, password resets, access control, and onboarding/offboarding support.',
+                    'New employee, departing colleague, forgotten password or locked out of email. I sort it quickly and correctly.',
                 icon: 'users',
             },
             {
-                title: 'Remote & On-site IT Help',
+                title: 'Remote & On-site Help',
                 description:
-                    'Quick help when something stops working — remotely where possible, on-site where needed.',
+                    'When things break, you want someone fast. Remotely where possible, on-site where needed — including locations outside Kerkrade.',
                 icon: 'headset',
             },
             {
-                title: 'Basic Security & Backup Check',
+                title: 'Security & Backup',
                 description:
-                    'Practical improvements for safer daily work: updates, backups, MFA, phishing awareness, and basic device hygiene.',
+                    'Updates, backups, MFA and phishing awareness. Not as a big project — just solid routine that runs without you having to think about it.',
                 icon: 'shield',
             },
             {
-                title: 'ChatGPT & Workflow Automation',
+                title: 'ChatGPT & Automation',
                 description:
-                    'Already using ChatGPT but still doing many tasks manually? I help you find simple ways to save time and reduce repetitive work.',
+                    'Tasks you do manually every week might not need to be manual anymore. I look at what can be automated and help you set it up.',
                 icon: 'sparkles',
             },
         ],
     },
     about: {
-        heading: 'About Daniel Oros',
+        heading: 'Who is Daniel?',
         paragraphs: [
-            'I\'ve been fascinated by IT since my teenage years and have spent years working with computers, networks, office equipment, and digital systems in real work environments.',
-            'I help small businesses solve practical IT problems — without confusing jargon. From slow computers and printer issues to Wi-Fi outages, user accounts, device setup, and everyday office support.',
+            'For seven years I was the only IT person at a medical company with multiple locations across the Netherlands. When something broke — server, network, workstation, security — I fixed it. There was no one else to call.',
+            'That period taught me what IT actually looks like in small organisations: no big team, no endless budget, but people who depend on everything working. That\'s what I now do for other small businesses in Limburg.',
         ],
-        approach: 'My approach is simple:',
-        approachText: 'Make IT stable, understandable, and less stressful for your business.',
+        approach: 'My approach:',
+        approachText: 'Make sure it works, explain what\'s going on, and no surprises on the bill.',
         quote:
-            '"Good IT support isn\'t just about fixing problems. It\'s about reducing chaos, saving time, and giving you confidence that things simply work."',
-        quoteAuthor: '— Daniel Oros',
+            '"Quiet IT is the goal. Chaos is what you get when you stop investing in IT that simply works."',
+        quoteAuthor: '— Daniel Orosz',
     },
     whyOros: {
-        heading: 'Why choose Oros IT Support?',
+        heading: 'Why choose Oros IT Support Limburg?',
         reasons: [
             {
-                title: 'Local and available',
-                description: 'Based in Kerkrade, with fast support for businesses across Zuid-Limburg.',
+                title: 'Local and reachable',
+                description: 'I live and work in Kerkrade. When there\'s an outage I can be on-site fast — no central planning desk putting you on hold.',
             },
             {
-                title: 'Clear communication',
+                title: 'Plain language, no jargon',
                 description:
-                    'I explain technical issues in plain language, so you always understand what\'s going on and why.',
+                    'I explain what went wrong and what I\'m going to do about it. No technical stories that leave you none the wiser.',
             },
             {
-                title: 'Practical problem-solving',
+                title: 'Solutions that fit your situation',
                 description:
-                    'I focus on solutions that work in real office environments — no unnecessarily complicated advice.',
+                    'I advise what works for your office — not the most expensive option, not the most complex, but what actually solves the problem.',
             },
             {
-                title: 'Flexible support model',
-                description: 'Remote where possible, on-site where needed.',
+                title: 'Remote or on-site, you decide',
+                description: 'Most problems I fix remotely within the hour. Sometimes on-site is faster. You don\'t need to figure that out — I do.',
             },
             {
-                title: 'SMB mindset',
+                title: 'One point of contact',
                 description:
-                    'I understand that small businesses need reliable support: predictable costs and someone who truly takes responsibility.',
+                    'You call me, not a helpdesk number. I know your setup, remember what happened before, and don\'t need everything re-explained every time.',
             },
         ],
     },
     commonProblems: {
-        heading: 'Problems I help with every day',
+        heading: 'What I help with every day',
         items: [
-            'Printer not working',
-            'Wi-Fi is unstable or slow',
+            'Printer offline or not printing',
+            'Wi-Fi slow or keeps dropping',
             'Setting up a new employee',
             'Can\'t access email or an account',
-            'Slow PC or laptop',
+            'Slow or freezing computer',
             'Backup or basic security check',
-            'Office IT cleanup and optimization',
+            'IT cleanup during a move or reorganisation',
             'Questions about Microsoft 365 or Google Workspace',
         ],
     },
     comparison: {
-        heading: 'In-house IT employee vs. flexible local IT support',
+        heading: 'In-house IT employee vs. local IT support',
         inHouseTitle: 'In-house IT employee',
-        orosTitle: 'Oros IT Support',
+        orosTitle: 'Oros IT Support Limburg',
         inHouseItems: [
             'Fixed salary + social charges',
-            'One person, limited during illness/holiday',
+            'Out when sick or on holiday',
             'Hard to scale for small teams',
-            'Not always cost-effective for small offices',
+            'Often not cost-effective under 15–20 workstations',
         ],
         orosItems: [
-            'Only pay for what you need',
-            'Remote + on-site, flexibly available',
-            'Practical focus on office IT',
-            'Ideal for 2–30 workstations',
-            'Direct contact with Daniel',
+            'You only pay for what you use',
+            'Remote + on-site, available when needed',
+            'No onboarding period, straight to work',
+            'Works for 2 to 30 workstations',
+            'Direct line to Daniel, no queue',
         ],
-        note: 'For many small businesses, outsourced IT support is more flexible than hiring a dedicated in-house IT employee.',
+        note: 'For most small businesses, flexible IT support is cheaper and more reliable than hiring a full-time IT employee.',
     },
     quickScan: {
         heading: 'IT Quick Scan for small businesses',
@@ -404,13 +429,38 @@ const en: typeof nl = {
             'Computers and laptops',
             'Wi-Fi and network connectivity',
             'Printers and peripherals',
-            'User accounts and access control',
+            'User accounts and access',
             'Backup and basic security',
         ],
         checkIntro: 'I practically review:',
         result:
-            'Result: a clear overview of what\'s working well and what needs attention — in plain language, without unnecessary complexity.',
+            'You get a clear overview of what\'s working well and what needs attention — in plain language, no sales pitch.',
         cta: 'Request Quick Scan',
+    },
+    faq: {
+        heading: 'Frequently asked questions',
+        items: [
+            {
+                question: 'Which area do you cover?',
+                answer: 'I\'m based in Kerkrade and work with businesses across Zuid-Limburg: Heerlen, Maastricht, Sittard-Geleen, Valkenburg, Brunssum and surrounding municipalities. Remote support I provide across the Netherlands.',
+            },
+            {
+                question: 'How quickly can you be on-site for an outage?',
+                answer: 'For remote support I\'m usually available within the hour. For on-site visits in the Kerkrade–Heerlen area I typically come the same day or next morning, depending on the schedule.',
+            },
+            {
+                question: 'Do you work hourly or on a fixed contract?',
+                answer: 'Both are possible. You can call me when something comes up (hourly), or take a monthly support plan if you prefer predictable costs. I always confirm the price upfront.',
+            },
+            {
+                question: 'What does a remote session cost?',
+                answer: 'Remote support starts from €65 per hour excluding VAT. Most single issues are resolved in 30 to 60 minutes. The IT Quick Scan for a full small office costs €149–€199.',
+            },
+            {
+                question: 'Do you work with medical practices or care organisations?',
+                answer: 'Yes. My background is in the medical sector — I spent seven years doing IT at a dental company with multiple locations. I know the requirements around privacy, GDPR and software compatibility in that environment.',
+            },
+        ],
     },
     pricing: {
         heading: 'Transparent pricing',
@@ -423,17 +473,17 @@ const en: typeof nl = {
             { label: 'Per-user monthly package', price: 'from €35–49 / user / month', note: 'excl. VAT' },
         ],
         disclaimer:
-            'All prices are excluding VAT. For custom projects and larger offices, I\'m happy to provide a quote.',
+            'All prices are excluding VAT. For larger offices or custom projects I\'m happy to put together a tailored quote.',
     },
     contact: {
-        heading: 'Get in Touch',
+        heading: 'Get in touch',
         subtitle:
-            'Looking for local IT support in Zuid-Limburg? Send a message and tell me what kind of help you need.',
+            'IT problem, a question, or just want to talk? Send a message or call directly.',
         info: [
             { label: 'Phone', value: '+31 6 3483 6118', href: 'tel:+31634836118' },
             { label: 'Email', value: 'info@oros.agency', href: 'mailto:info@oros.agency' },
-            { label: 'Location', value: 'Kerkrade, Zuid-Limburg, The Netherlands' },
-            { label: 'Support hours', value: 'Mon–Fri, 9:00 AM–6:00 PM' },
+            { label: 'Location', value: 'Kerkrade, Zuid-Limburg' },
+            { label: 'Available', value: 'Mon–Fri, 9:00 AM–6:00 PM' },
         ],
         urgentNote: 'Urgent support by arrangement',
         formTitle: 'Tell me how I can help',
@@ -452,11 +502,11 @@ const en: typeof nl = {
     },
     footer: {
         description:
-            'Local IT support for small businesses in Zuid-Limburg: computers, printers, Wi-Fi, user accounts, troubleshooting, and practical office IT.',
-        location: 'Kerkrade, Zuid-Limburg, The Netherlands',
+            'IT support in Zuid-Limburg for small businesses: computers, printers, Wi-Fi, Microsoft 365, security and practical office IT.',
+        location: 'Kerkrade, Zuid-Limburg',
         phone: '+31 6 3483 6118',
         email: 'info@oros.agency',
-        copyright: 'Oros IT Support',
+        copyright: 'Oros IT Support Limburg',
         servicesTitle: 'Services',
         servicesLinks: [
             'Workstation support',
@@ -469,8 +519,8 @@ const en: typeof nl = {
         linksTitle: 'Navigation',
         navLinks: [
             { label: 'Why Oros', href: '#why-oros' },
-            { label: 'Comparison', href: '#comparison' },
             { label: 'Pricing', href: '#pricing' },
+            { label: 'Blog', href: '/en/blog/' },
             { label: 'Contact', href: '#contact' },
         ],
     },
