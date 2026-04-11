@@ -81,3 +81,7 @@ Gebruik het voor het eerste ontwerp en de snelle samenvatting. Laat het nooit he
 Wil je weten hoe AI-tools zoals ChatGPT slim ingezet worden in een klein kantoor, en waar de echte risico's zitten? Ik help bedrijven in Limburg met praktische IT en het beoordelen van wat tools als dit wel en niet kunnen.
 
 [Neem contact op →](/#contact)
+
+---
+
+*GPT geeft ook advies over beveiliging. Maar wie controleert dat advies? Lees: [ransomware op je kantoor — wat doe je als het misgaat](/blog/ransomware-wat-te-doen/).*

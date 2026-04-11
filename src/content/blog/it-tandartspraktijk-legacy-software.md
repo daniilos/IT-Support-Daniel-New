@@ -110,6 +110,10 @@ Eerst kijken of een rollback mogelijk is. Zo niet: bel de leverancier van de den
 
 ---
 
+*Verouderde systemen en geen updates — dat is ook een van de manieren waarop ransomware binnenkomt. Lees: [ransomware op je kantoor — wat doe je als het misgaat](/blog/ransomware-wat-te-doen/).*
+
+---
+
 Heb jij een tandartspraktijk of medische praktijk en weet je niet zeker of je IT goed is ingericht? Ik heb zeven jaar precies dit gedaan - en ik weet waar de problemen zich verstopt houden.
 
 [Neem contact op →](/#contact)

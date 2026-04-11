@@ -110,6 +110,10 @@ First check whether a rollback is possible. If not: call the dental software ven
 
 ---
 
+*Outdated systems with no updates — one of the main ways ransomware gets in. Read: [ransomware at your office — what do you do when it goes wrong](/en/blog/ransomware-wat-te-doen/).*
+
+---
+
 Do you run a dental or medical practice and aren't sure your IT is properly set up? I spent seven years doing exactly this - and I know where the problems tend to hide.
 
 [Get in touch →](/en/#contact)

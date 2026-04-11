@@ -137,6 +137,10 @@ Dan zijn de opties slecht. Professionele dataherstelbedrijven zijn kostbaar en n
 
 ---
 
+*Ransomware komt vaak binnen via zwakke wachtwoorden of phishing. Lees ook: [waarom een Post-it in de la beter is dan op het scherm](/blog/wachtwoord-postit-lade/) — over wachtwoordbeveiliging in de praktijk van een klein kantoor.*
+
+---
+
 Wil je weten hoe jouw kantoor er nu voor staat? Ik doe een praktische [IT-check voor kleine bedrijven](/blog/) in Limburg - inclusief backups, updates en beveiliging.
 
 [Neem contact op →](/#contact)

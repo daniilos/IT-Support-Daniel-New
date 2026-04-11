@@ -106,6 +106,10 @@ Yes, immediately. If an attacker was in the network, assume everything visible o
 
 ---
 
+*Want to know what a real ransomware attack looks like? Read: [ransomware at your office — what do you do when it goes wrong](/en/blog/ransomware-wat-te-doen/).*
+
+---
+
 Want to know where the real vulnerabilities are in your office — not the theoretical ones, but the ones that actually matter for your specific situation? I do a practical IT check for small businesses in Limburg.
 
 [Get in touch →](/en/#contact)

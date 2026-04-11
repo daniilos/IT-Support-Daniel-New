@@ -105,3 +105,7 @@ Dan is de snelste oplossing vaak een tweedehands machine uit de buurt — refurb
 Wil je weten welke risico's er op dit moment in jouw kantoor zitten? Ik doe een praktische IT-check voor kleine bedrijven in Limburg.
 
 [Neem contact op →](/#contact)
+
+---
+
+*Werkt jouw kantoor met oudere machines die niet meer worden bijgewerkt? Lees ook: [waarom ik in 2024 bewust Windows XP draaide in een tandartspraktijk](/blog/it-tandartspraktijk-legacy-software/) — over hardware-keuzes in de praktijk.*

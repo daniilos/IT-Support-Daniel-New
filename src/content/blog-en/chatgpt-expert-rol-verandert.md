@@ -81,3 +81,7 @@ Use it for first drafts and quick summaries. Never let it have the final say on 
 Want to know how AI tools like ChatGPT can be used sensibly in a small office, and where the real risks are? I help businesses in Limburg with practical IT and judging what tools like this can and can't do.
 
 [Get in touch →](/en/#contact)
+
+---
+
+*GPT also gives security advice. But who checks that advice? Read: [ransomware at your office — what do you do when it goes wrong](/en/blog/ransomware-wat-te-doen/).*

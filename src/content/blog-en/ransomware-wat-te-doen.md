@@ -137,6 +137,10 @@ Then the options are bad. Professional data recovery companies are expensive and
 
 ---
 
+*Ransomware often gets in through weak passwords or phishing. Read also: [why a Post-it in the drawer beats one on the screen](/en/blog/wachtwoord-postit-lade/) — on password security in a small office.*
+
+---
+
 Want to know how your office is set up right now? I do a practical [IT check for small businesses](/en/blog/) in Limburg - backups, updates and security included.
 
 [Get in touch →](/en/#contact)

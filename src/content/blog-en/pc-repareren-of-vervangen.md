@@ -105,3 +105,7 @@ The fastest option is usually a second-hand machine nearby — refurbished Dell 
 Want to know what risks are currently sitting in your office? I do a practical IT check for small businesses in Limburg.
 
 [Get in touch →](/en/#contact)
+
+---
+
+*Working with older machines that are no longer updated? Read also: [why I deliberately ran Windows XP at a dental practice in 2024](/en/blog/it-tandartspraktijk-legacy-software/) — on hardware decisions in practice.*

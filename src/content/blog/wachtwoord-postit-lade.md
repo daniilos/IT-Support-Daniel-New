@@ -106,6 +106,10 @@ Ja, en meteen. Als een aanvaller in het netwerk zat, ga er dan van uit dat alles
 
 ---
 
+*Wil je weten hoe een ransomware-aanval er in de praktijk uitziet? Lees: [ransomware op je kantoor — wat doe je als het misgaat](/blog/ransomware-wat-te-doen/).*
+
+---
+
 Wil je weten waar de echte kwetsbaarheden zitten in jouw kantoor - niet de theoretische, maar die er voor jouw specifieke situatie toe doen? Ik doe een praktische IT-check voor kleine bedrijven in Limburg.
 
 [Neem contact op →](/#contact)
