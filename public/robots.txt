@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ict-support-limburg.nl/sitemap-index.xml

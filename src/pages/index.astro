@@ -10,13 +10,79 @@ import CommonProblems from '../components/CommonProblems.astro';
 import ComparisonSection from '../components/ComparisonSection.astro';
 import QuickScan from '../components/QuickScan.astro';
 import PricingSection from '../components/PricingSection.astro';
+import FaqSection from '../components/FaqSection.astro';
+import BlogPreview from '../components/BlogPreview.astro';
 import ContactForm from '../components/ContactForm';
 
 const lang = 'nl';
-const t = translations[lang].meta;
+const t = translations[lang];
+
+const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Oros IT Support",
+    "description": "IT support in Zuid-Limburg voor kleine bedrijven. Computers, printers, Wi-Fi, Microsoft 365, storingen en beveiliging — snel, lokaal en zonder gedoe.",
+    "url": "https://ict-support-limburg.nl",
+    "telephone": "+31634836118",
+    "email": "info@oros.agency",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Kerkrade",
+        "addressLocality": "Kerkrade",
+        "addressRegion": "Limburg",
+        "postalCode": "6460",
+        "addressCountry": "NL"
+    },
+    "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 50.8653,
+        "longitude": 6.0613
+    },
+    "openingHoursSpecification": [
+        {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "18:00"
+        }
+    ],
+    "priceRange": "€€",
+    "currenciesAccepted": "EUR",
+    "paymentAccepted": "Invoice",
+    "areaServed": [
+        { "@type": "City", "name": "Kerkrade" },
+        { "@type": "City", "name": "Heerlen" },
+        { "@type": "City", "name": "Maastricht" },
+        { "@type": "City", "name": "Sittard" },
+        { "@type": "City", "name": "Brunssum" },
+        { "@type": "City", "name": "Valkenburg" }
+    ],
+    "knowsAbout": ["IT support", "Windows", "Microsoft 365", "netwerk", "beveiliging", "backup"],
+    "founder": {
+        "@type": "Person",
+        "name": "Daniel Orosz"
+    }
+};
+
+const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": t.faq.items.map(item => ({
+        "@type": "Question",
+        "name": item.question,
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": item.answer
+        }
+    }))
+};
 ---
 
-<Layout title={t.title} description={t.description} lang={lang}>
+<Layout title={t.meta.title} description={t.meta.description} lang={lang}>
+    <Fragment slot="head">
+        <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+        <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    </Fragment>
     <HeroSection lang={lang} />
     <TrustBar lang={lang} />
     <div class="scroll-reveal">
@@ -39,6 +105,12 @@ const t = translations[lang].meta;
     </div>
     <div class="scroll-reveal">
         <PricingSection lang={lang} />
+    </div>
+    <div class="scroll-reveal">
+        <FaqSection lang={lang} />
+    </div>
+    <div class="scroll-reveal">
+        <BlogPreview lang={lang} />
     </div>
     <div class="scroll-reveal">
         <ContactForm lang={lang} />

@@ -1,0 +1,27 @@
+---
+import { translations, type Lang } from '../i18n/translations';
+interface Props { lang?: Lang }
+const { lang = 'nl' } = Astro.props;
+const t = translations[lang].faq;
+---
+
+<section id="faq" class="section-padding bg-slate-50">
+    <div class="container-main max-w-3xl">
+        <h2 class="mb-10 text-center">{t.heading}</h2>
+        <div class="space-y-4">
+            {t.items.map((item, i) => (
+                <details class="group rounded-2xl border border-border bg-white open:shadow-sm transition-all duration-200">
+                    <summary class="flex cursor-pointer items-center justify-between gap-4 px-6 py-5 font-semibold text-foreground list-none">
+                        <span>{item.question}</span>
+                        <svg class="h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200 group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </summary>
+                    <div class="px-6 pb-5 text-sm leading-relaxed text-muted-foreground">
+                        {item.answer}
+                    </div>
+                </details>
+            ))}
+        </div>
+    </div>
+</section>

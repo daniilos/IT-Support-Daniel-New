@@ -1,0 +1,67 @@
+---
+import { getCollection } from 'astro:content';
+import type { Lang } from '../i18n/translations';
+
+interface Props { lang?: Lang }
+const { lang = 'nl' } = Astro.props;
+
+const collection = lang === 'en' ? 'blog-en' : 'blog';
+const posts = (await getCollection(collection))
+    .filter(p => !p.data.draft)
+    .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+    .slice(0, 3);
+
+const basePath = lang === 'en' ? '/en/blog/' : '/blog/';
+
+const heading = lang === 'en' ? 'From the blog' : 'Uit het blog';
+const subheading = lang === 'en'
+    ? 'Real IT stories from small businesses in Limburg.'
+    : 'Echte IT-verhalen uit kleine bedrijven in Limburg.';
+const readMore = lang === 'en' ? 'Read more' : 'Lees meer';
+const allPosts = lang === 'en' ? 'All articles →' : 'Alle artikelen →';
+---
+
+<section class="section-padding bg-white">
+    <div class="container-main">
+        <div class="mb-10 flex flex-col items-center gap-2 text-center sm:flex-row sm:justify-between sm:text-left">
+            <div>
+                <h2 class="mb-1">{heading}</h2>
+                <p class="text-muted-foreground">{subheading}</p>
+            </div>
+            <a href={basePath} class="shrink-0 text-sm font-semibold text-accent hover:underline">{allPosts}</a>
+        </div>
+
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {posts.map(post => (
+                <a
+                    href={`${basePath}${post.id}/`}
+                    class="group flex flex-col rounded-2xl border border-border bg-white overflow-hidden transition-all duration-300 hover:shadow-md hover:-translate-y-0.5"
+                >
+                    {post.data.image && (
+                        <div class="aspect-[16/9] overflow-hidden bg-slate-100">
+                            <img
+                                src={post.data.image}
+                                alt={post.data.imageAlt ?? post.data.title}
+                                class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                loading="lazy"
+                                decoding="async"
+                            />
+                        </div>
+                    )}
+                    <div class="flex flex-1 flex-col p-5">
+                        <p class="mb-2 text-xs text-muted-foreground">
+                            {post.data.pubDate.toLocaleDateString(lang === 'en' ? 'en-GB' : 'nl-NL', { day: 'numeric', month: 'long', year: 'numeric' })}
+                        </p>
+                        <h3 class="mb-2 text-base font-semibold leading-snug text-foreground group-hover:text-accent transition-colors">
+                            {post.data.title}
+                        </h3>
+                        <p class="mb-4 flex-1 text-sm leading-relaxed text-muted-foreground line-clamp-3">
+                            {post.data.description}
+                        </p>
+                        <span class="text-sm font-semibold text-accent">{readMore} →</span>
+                    </div>
+                </a>
+            ))}
+        </div>
+    </div>
+</section>
