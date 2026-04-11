@@ -52,7 +52,7 @@ const t = translations[lang].footer;
 
         <div class="mt-10 border-t border-white/15 pt-6 text-center">
             <p class="text-sm text-white/60">
-                &copy; {new Date().getFullYear()} {t.copyright}
+                &copy; 2025{new Date().getFullYear() > 2025 ? `–${new Date().getFullYear()}` : ''} {t.copyright}
             </p>
         </div>
     </div>
