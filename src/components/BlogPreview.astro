@@ -6,8 +6,9 @@ interface Props { lang?: Lang }
 const { lang = 'nl' } = Astro.props;
 
 const collection = lang === 'en' ? 'blog-en' : 'blog';
+const now = new Date();
 const posts = (await getCollection(collection))
-    .filter(p => !p.data.draft)
+    .filter(p => !p.data.draft && new Date(p.data.pubDate) <= now)
     .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
     .slice(0, 3);
 

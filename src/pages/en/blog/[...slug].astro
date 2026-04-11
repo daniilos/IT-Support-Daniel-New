@@ -3,9 +3,10 @@ import { getCollection, render } from 'astro:content';
 import BlogLayout from '../../../layouts/BlogLayout.astro';
 
 export async function getStaticPaths() {
+    const now = new Date();
     const posts = await getCollection('blog-en');
     return posts
-        .filter((post) => !post.data.draft)
+        .filter((post) => !post.data.draft && new Date(post.data.pubDate) <= now)
         .map((post) => ({
             params: { slug: post.id },
             props: post,
