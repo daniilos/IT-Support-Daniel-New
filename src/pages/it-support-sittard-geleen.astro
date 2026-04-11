@@ -1,0 +1,112 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContactForm from '../components/ContactForm';
+
+const city = 'Sittard-Geleen';
+const slug = 'it-support-sittard-geleen';
+const distance = '20 km van Kerkrade';
+const lang = 'nl';
+const siteUrl = 'https://ict-support-limburg.nl';
+
+const title = `IT Support Sittard-Geleen voor kleine bedrijven | Oros IT Support Limburg`;
+const description = `IT support in Sittard-Geleen voor kleine bedrijven. Computers, printers, Wi-Fi, Microsoft 365 en storingen — snel ter plaatse of op afstand. Gevestigd in Kerkrade, ${distance}.`;
+
+const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Oros IT Support Limburg",
+    "description": description,
+    "url": `${siteUrl}/${slug}/`,
+    "telephone": "+31634836118",
+    "email": "info@oros.agency",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Kievitstraat 25",
+        "addressLocality": "Kerkrade",
+        "addressRegion": "Limburg",
+        "postalCode": "6469 XX",
+        "addressCountry": "NL"
+    },
+    "areaServed": { "@type": "City", "name": "Sittard-Geleen" },
+    "geo": { "@type": "GeoCoordinates", "latitude": 51.0000, "longitude": 5.8667 }
+};
+---
+
+<Layout title={title} description={description} lang={lang}>
+    <Fragment slot="head">
+        <link rel="canonical" href={`${siteUrl}/${slug}/`} />
+        <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+    </Fragment>
+
+    <section class="bg-white section-padding">
+        <div class="container-main max-w-3xl">
+            <nav class="mb-6 text-sm text-muted-foreground">
+                <a href="/" class="hover:text-accent">Home</a>
+                <span class="mx-2">/</span>
+                <span>IT Support {city}</span>
+            </nav>
+
+            <h1 class="mb-4">IT support in {city}</h1>
+            <p class="mb-8 text-lg text-muted-foreground">
+                Kleine bedrijven in {city} met IT-problemen komen bij mij terecht voor snelle, persoonlijke hulp.
+                Ik ben gevestigd in Kerkrade — {distance} — en werk regelmatig in {city} en omgeving.
+            </p>
+
+            <div class="mb-10 grid gap-6 sm:grid-cols-2">
+                {[
+                    { title: 'Computer traag of crasht', desc: 'Diagnose en oplossing ter plaatse of op afstand.' },
+                    { title: 'Printer doet het niet', desc: 'Offline, papier vast, scanner hapert — ik los het op.' },
+                    { title: 'Wi-Fi valt steeds weg', desc: 'Netwerk stabiel inrichten voor kantoor of praktijk.' },
+                    { title: 'Nieuwe medewerker instellen', desc: 'Account, e-mail, toegang — zelfde dag geregeld.' },
+                    { title: 'Beveiliging en back-up', desc: 'Updates, MFA, dagelijkse back-up die ook getest wordt.' },
+                    { title: 'Microsoft 365 vragen', desc: 'Licenties, inrichting, gebruikersbeheer.' },
+                ].map(item => (
+                    <div class="rounded-xl border border-border p-5">
+                        <h2 class="mb-1 text-base font-semibold">{item.title}</h2>
+                        <p class="text-sm text-muted-foreground">{item.desc}</p>
+                    </div>
+                ))}
+            </div>
+
+            <div class="mb-10 rounded-2xl bg-slate-50 p-6">
+                <h2 class="mb-3 text-xl font-bold">Waarom kiezen voor Oros IT Support Limburg?</h2>
+                <ul class="space-y-2 text-sm text-muted-foreground">
+                    <li>✓ Gevestigd in Kerkrade, {distance} van {city}</li>
+                    <li>✓ Zeven jaar ervaring als enige IT-er bij een medisch bedrijf</li>
+                    <li>✓ Remote support binnen een uur, on-site dezelfde dag of volgende ochtend</li>
+                    <li>✓ Geen helpdesknummer — je belt mij direct</li>
+                    <li>✓ Duidelijke tarieven, geen verrassingen achteraf</li>
+                </ul>
+            </div>
+
+            <div class="mb-10">
+                <h2 class="mb-4 text-xl font-bold">Tarieven voor {city}</h2>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm border-collapse">
+                        <tbody>
+                            {[
+                                ['Remote support', 'vanaf €65 / uur', 'excl. btw'],
+                                ['On-site support', 'vanaf €79 / uur', 'excl. btw'],
+                                ['Voorrijkosten', 'vanaf €25–35', 'excl. btw'],
+                                ['IT Quick Scan', '€149 – €199', 'excl. btw'],
+                            ].map(([label, price, note]) => (
+                                <tr class="border-b border-border">
+                                    <td class="py-2 pr-4 font-medium">{label}</td>
+                                    <td class="py-2 pr-4 text-accent font-semibold">{price}</td>
+                                    <td class="py-2 text-muted-foreground">{note}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <p class="mb-8 text-muted-foreground text-sm">
+                Ik werk ook voor bedrijven in Kerkrade, Heerlen, Maastricht, Brunssum en omgeving.
+                Remote support doe ik door heel Nederland.
+            </p>
+        </div>
+    </section>
+
+    <ContactForm lang={lang} />
+</Layout>
