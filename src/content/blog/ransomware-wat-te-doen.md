@@ -5,7 +5,7 @@ pubDate: 2026-04-10
 tags: ["beveiliging", "ransomware", "backup", "IT support Limburg"]
 author: "Daniel Orosz"
 draft: false
-image: "/images/blog/ransomware-wat-te-doen.png"
+image: "/images/blog/ransomware-wat-te-doen.webp"
 imageAlt: "IT-professional werkt 's ochtends vroeg alleen op kantoor met rode waarschuwingsschermen"
 ---
 

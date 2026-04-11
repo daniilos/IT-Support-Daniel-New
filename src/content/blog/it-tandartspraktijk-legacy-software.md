@@ -5,7 +5,7 @@ pubDate: 2026-04-17
 tags: ["IT tandartspraktijk", "legacy software", "Windows 11", "medische IT"]
 author: "Daniel Orosz"
 draft: false
-image: "/images/blog/it-tandartspraktijk-legacy-software.png"
+image: "/images/blog/it-tandartspraktijk-legacy-software.webp"
 imageAlt: "Verouderde computer met Windows XP-interface naast moderne tandheelkundige röntgenapparatuur in een behandelkamer"
 ---
 

@@ -5,7 +5,7 @@ pubDate: 2026-04-24
 tags: ["wachtwoordbeveiliging", "IT beveiliging", "wachtwoordmanager", "IT support Limburg"]
 author: "Daniel Orosz"
 draft: false
-image: "/images/blog/wachtwoord-postit-lade.png"
+image: "/images/blog/wachtwoord-postit-lade.webp"
 imageAlt: "Post-it met wachtwoord op een kantoormonitor in een kleine praktijk"
 ---
 

@@ -39,13 +39,18 @@ const allPosts = lang === 'en' ? 'All articles →' : 'Alle artikelen →';
                 >
                     {post.data.image && (
                         <div class="aspect-[16/9] overflow-hidden bg-slate-100">
-                            <img
-                                src={post.data.image}
-                                alt={post.data.imageAlt ?? post.data.title}
-                                class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                                loading="lazy"
-                                decoding="async"
-                            />
+                            <picture>
+                                <source srcset={post.data.image} type="image/webp" />
+                                <img
+                                    src={post.data.image.replace('.webp', '.png')}
+                                    alt={post.data.imageAlt ?? post.data.title}
+                                    width="800"
+                                    height="450"
+                                    class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                            </picture>
                         </div>
                     )}
                     <div class="flex flex-1 flex-col p-5">

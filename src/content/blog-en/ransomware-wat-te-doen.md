@@ -5,7 +5,7 @@ pubDate: 2026-04-10
 tags: ["security", "ransomware", "backup", "IT support Limburg"]
 author: "Daniel Orosz"
 draft: false
-image: "/images/blog/ransomware-wat-te-doen.png"
+image: "/images/blog/ransomware-wat-te-doen.webp"
 imageAlt: "IT professional working alone in an office early in the morning with red warning screens"
 ---
 

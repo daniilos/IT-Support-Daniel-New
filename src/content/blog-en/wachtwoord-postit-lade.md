@@ -5,7 +5,7 @@ pubDate: 2026-04-24
 tags: ["password security", "IT security", "password manager", "IT support Limburg"]
 author: "Daniel Orosz"
 draft: false
-image: "/images/blog/wachtwoord-postit-lade.png"
+image: "/images/blog/wachtwoord-postit-lade.webp"
 imageAlt: "Post-it with password on an office monitor in a small practice"
 ---
 

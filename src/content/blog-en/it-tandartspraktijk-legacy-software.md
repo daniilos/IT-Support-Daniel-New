@@ -5,7 +5,7 @@ pubDate: 2026-04-17
 tags: ["dental IT", "legacy software", "Windows 11", "medical IT"]
 author: "Daniel Orosz"
 draft: false
-image: "/images/blog/it-tandartspraktijk-legacy-software.png"
+image: "/images/blog/it-tandartspraktijk-legacy-software.webp"
 imageAlt: "Outdated computer with Windows XP interface next to modern dental X-ray equipment in a treatment room"
 ---
 

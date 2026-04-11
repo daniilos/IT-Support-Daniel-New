@@ -60,24 +60,24 @@ const localBusinessSchema = {
     }
 };
 
-const faqSchema = {
+const websiteSchema = {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": t.faq.items.map(item => ({
-        "@type": "Question",
-        "name": item.question,
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": item.answer
-        }
-    }))
+    "@type": "WebSite",
+    "name": "Oros IT Support",
+    "url": "https://ict-support-limburg.nl/en/",
+    "description": "IT support in Zuid-Limburg for small businesses",
+    "inLanguage": "en-GB",
+    "publisher": {
+        "@type": "LocalBusiness",
+        "name": "Oros IT Support"
+    }
 };
 ---
 
 <Layout title={t.meta.title} description={t.meta.description} lang={lang} alternateUrl="/">
     <Fragment slot="head">
         <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
-        <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+        <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
     </Fragment>
     <HeroSection lang={lang} />
     <TrustBar lang={lang} />

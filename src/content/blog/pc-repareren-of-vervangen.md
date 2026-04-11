@@ -5,7 +5,7 @@ pubDate: 2026-05-01
 tags: ["computer repareren", "IT support", "hardware troubleshooting", "IT support Limburg"]
 author: "Daniel Orosz"
 draft: false
-image: "/images/blog/pc-repareren-of-vervangen.png"
+image: "/images/blog/pc-repareren-of-vervangen.webp"
 imageAlt: "Opengemaakt computerbehuizing op een bureau met losse onderdelen, kantooromgeving"
 ---
 
