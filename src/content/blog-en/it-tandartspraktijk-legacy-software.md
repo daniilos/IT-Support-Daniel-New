@@ -1,7 +1,7 @@
 ---
 title: "Why I was deliberately running Windows XP at a dental practice in 2024"
 description: "An IT firm rolled out Windows 11 without checking whether it would break the X-ray software. Three days later the problems started. At another location we were intentionally running XP. This is what IT at a dental practice actually looks like."
-pubDate: 2026-04-17
+pubDate: 2026-03-21
 tags: ["dental IT", "legacy software", "Windows 11", "medical IT"]
 author: "Daniel Orosz"
 draft: false

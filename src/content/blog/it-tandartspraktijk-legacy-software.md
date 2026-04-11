@@ -1,7 +1,7 @@
 ---
 title: "Waarom ik in 2024 opzettelijk Windows XP draaide in een tandartspraktijk"
 description: "Een IT-bedrijf rolde Windows 11 uit zonder te checken of het röntgensoftware zou breken. Drie dagen later begonnen de problemen. In een andere vestiging draaiden we ondertussen bewust XP. Dit is hoe IT er in de tandartspraktijk echt uitziet."
-pubDate: 2026-04-17
+pubDate: 2026-03-21
 tags: ["IT tandartspraktijk", "legacy software", "Windows 11", "medische IT"]
 author: "Daniel Orosz"
 draft: false

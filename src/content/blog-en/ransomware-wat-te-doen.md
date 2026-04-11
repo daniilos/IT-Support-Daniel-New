@@ -1,7 +1,7 @@
 ---
 title: "Ransomware at your office: what do you do when it goes wrong?"
 description: "I was sitting in Kyiv when the call came. An emergency flight to the Netherlands, a night in log files, and two weeks of waiting. Here's what happened — and what I made sure never had to happen again for seven years."
-pubDate: 2026-04-10
+pubDate: 2026-03-14
 tags: ["security", "ransomware", "backup", "IT support Limburg"]
 author: "Daniel Orosz"
 draft: false

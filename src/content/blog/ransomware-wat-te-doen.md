@@ -1,7 +1,7 @@
 ---
 title: "Ransomware op je kantoor: wat doe je als het mis gaat?"
 description: "Ik zat in Kiev toen het telefoontje kwam. Een noodvlucht naar Nederland, een nacht in logbestanden, en twee weken wachten. Dit is wat er gebeurde — en wat ik die zeven jaar daarna nooit meer hoefde te doen."
-pubDate: 2026-04-10
+pubDate: 2026-03-14
 tags: ["beveiliging", "ransomware", "backup", "IT support Limburg"]
 author: "Daniel Orosz"
 draft: false

@@ -1,7 +1,7 @@
 ---
 title: "De piepende pc. En wat de directeur daarna zei."
 description: "Een ventilator op topsnelheid, een nieuwe koeler die niets oploste, en een tweedehands Dell als donor voor €150. Over repareren versus vervangen — en waarom dat eigenlijk een gesprek is dat je met je management moet voeren."
-pubDate: 2026-05-01
+pubDate: 2026-04-04
 tags: ["computer repareren", "IT support", "hardware troubleshooting", "IT support Limburg"]
 author: "Daniel Orosz"
 draft: false

@@ -1,7 +1,7 @@
 ---
 title: "'Vraag het gewoon aan GPT': hoe AI stilletjes de rol van de expert verandert"
 description: "Mijn leidinggevende zegt het meerdere keren per dag. Documenten, advertenties, IT-problemen, ideeën — alles. Op een gegeven moment vroeg ik me af: als GPT alles oplost, waarom zijn ze mij dan nog nodig?"
-pubDate: 2026-05-08
+pubDate: 2026-04-10
 tags: ["ChatGPT", "AI op het werk", "IT support", "automatisering", "IT support Limburg"]
 author: "Daniel Orosz"
 draft: false

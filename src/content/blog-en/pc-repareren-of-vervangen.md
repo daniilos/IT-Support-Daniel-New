@@ -1,7 +1,7 @@
 ---
 title: "The computer that screamed. And what the director said afterwards."
 description: "A fan at full speed, a new cooler that fixed nothing, and a second-hand Dell as a donor for €150. On repair versus replace — and why that's really a conversation you need to have with your management."
-pubDate: 2026-05-01
+pubDate: 2026-04-04
 tags: ["computer repair", "IT support", "hardware troubleshooting", "IT support Limburg"]
 author: "Daniel Orosz"
 draft: false

@@ -1,7 +1,7 @@
 ---
 title: "I told staff to put their password in the desk drawer. Seriously."
 description: "Seven monitors with passwords on Post-its. A ready-made password manager plan that never got off the ground. And a New file.txt I kept encrypted in an archive for years myself. On what security actually looks like in practice."
-pubDate: 2026-04-24
+pubDate: 2026-03-28
 tags: ["password security", "IT security", "password manager", "IT support Limburg"]
 author: "Daniel Orosz"
 draft: false

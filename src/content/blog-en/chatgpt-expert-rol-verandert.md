@@ -1,7 +1,7 @@
 ---
 title: "'Just ask ChatGPT': how AI is quietly shifting the expert's role"
 description: "My manager says it multiple times a day. Documents, ads, IT issues, ideas — everything. At some point I started wondering: if GPT solves everything, why do they still need me?"
-pubDate: 2026-05-08
+pubDate: 2026-04-10
 tags: ["ChatGPT", "AI at work", "IT support", "automation", "IT support Limburg"]
 author: "Daniel Orosz"
 draft: false

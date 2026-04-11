@@ -1,7 +1,7 @@
 ---
 title: "Ik adviseerde medewerkers hun wachtwoord in de la te leggen. Serieus."
 description: "Zeven monitors met wachtwoorden op een Post-it. Een kant-en-klaar plan voor een wachtwoordmanager dat er nooit van kwam. En een New file.txt die ik zelf jarenlang versleuteld in een archief bewaarde. Over hoe beveiliging er in de praktijk echt uitziet."
-pubDate: 2026-04-24
+pubDate: 2026-03-28
 tags: ["wachtwoordbeveiliging", "IT beveiliging", "wachtwoordmanager", "IT support Limburg"]
 author: "Daniel Orosz"
 draft: false
