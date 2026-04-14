@@ -15,7 +15,7 @@ const nl = {
         nav: [
             { label: 'Diensten', href: '#services' },
             { label: 'Over mij', href: '#about' },
-            { label: 'Waarom Oros', href: '#why-oros' },
+            { label: 'Waarom OIT', href: '#why-oros' },
             { label: 'Blog', href: '/blog/' },
             { label: 'Tarieven', href: '#pricing' },
             { label: 'Contact', href: '#contact' },
@@ -100,7 +100,7 @@ const nl = {
         quoteAuthor: '— Daniel Orosz',
     },
     whyOros: {
-        heading: 'Waarom kiezen voor Oros IT Support Limburg?',
+        heading: 'Waarom kiezen voor OIT IT Support Limburg?',
         reasons: [
             {
                 title: 'Lokaal en bereikbaar',
@@ -255,7 +255,7 @@ const nl = {
         ],
         linksTitle: 'Navigatie',
         navLinks: [
-            { label: 'Waarom Oros', href: '#why-oros' },
+            { label: 'Waarom OIT', href: '#why-oros' },
             { label: 'Tarieven', href: '#pricing' },
             { label: 'Blog', href: '/blog/' },
             { label: 'Contact', href: '#contact' },
@@ -278,7 +278,7 @@ const en: typeof nl = {
         nav: [
             { label: 'Services', href: '#services' },
             { label: 'About', href: '#about' },
-            { label: 'Why Oros', href: '#why-oros' },
+            { label: 'Why OIT', href: '#why-oros' },
             { label: 'Blog', href: '/en/blog/' },
             { label: 'Pricing', href: '#pricing' },
             { label: 'Contact', href: '#contact' },
@@ -363,7 +363,7 @@ const en: typeof nl = {
         quoteAuthor: '— Daniel Orosz',
     },
     whyOros: {
-        heading: 'Why choose Oros IT Support Limburg?',
+        heading: 'Why choose OIT IT Support Limburg?',
         reasons: [
             {
                 title: 'Local and reachable',
@@ -518,7 +518,7 @@ const en: typeof nl = {
         ],
         linksTitle: 'Navigation',
         navLinks: [
-            { label: 'Why Oros', href: '#why-oros' },
+            { label: 'Why OIT', href: '#why-oros' },
             { label: 'Pricing', href: '#pricing' },
             { label: 'Blog', href: '/en/blog/' },
             { label: 'Contact', href: '#contact' },
