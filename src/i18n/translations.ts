@@ -8,7 +8,7 @@ const nl = {
     },
     topBar: {
         phone: '+31 6 3483 6118',
-        email: 'info@oros.agency',
+        email: 'daniel@ict-support-limburg.nl',
         hours: 'Ma–Vr: 9:00–18:00',
     },
     header: {
@@ -218,7 +218,7 @@ const nl = {
             'IT-probleem, vraag of gewoon even kennismaken? Stuur een bericht of bel direct.',
         info: [
             { label: 'Telefoon', value: '+31 6 3483 6118', href: 'tel:+31634836118' },
-            { label: 'E-mail', value: 'info@oros.agency', href: 'mailto:info@oros.agency' },
+            { label: 'E-mail', value: 'daniel@ict-support-limburg.nl', href: 'mailto:daniel@ict-support-limburg.nl' },
             { label: 'Locatie', value: 'Kerkrade, Zuid-Limburg' },
             { label: 'Beschikbaar', value: 'Ma–Vr, 9:00–18:00' },
         ],
@@ -242,7 +242,7 @@ const nl = {
             'IT support in Zuid-Limburg voor kleine bedrijven: computers, printers, Wi-Fi, Microsoft 365, beveiliging en praktische kantoor-IT.',
         location: 'Kerkrade, Zuid-Limburg',
         phone: '+31 6 3483 6118',
-        email: 'info@oros.agency',
+        email: 'daniel@ict-support-limburg.nl',
         copyright: 'Oros IT Support Limburg',
         servicesTitle: 'Diensten',
         servicesLinks: [
@@ -271,7 +271,7 @@ const en: typeof nl = {
     },
     topBar: {
         phone: '+31 6 3483 6118',
-        email: 'info@oros.agency',
+        email: 'daniel@ict-support-limburg.nl',
         hours: 'Mon–Fri: 9:00 AM–6:00 PM',
     },
     header: {
@@ -481,7 +481,7 @@ const en: typeof nl = {
             'IT problem, a question, or just want to talk? Send a message or call directly.',
         info: [
             { label: 'Phone', value: '+31 6 3483 6118', href: 'tel:+31634836118' },
-            { label: 'Email', value: 'info@oros.agency', href: 'mailto:info@oros.agency' },
+            { label: 'Email', value: 'daniel@ict-support-limburg.nl', href: 'mailto:daniel@ict-support-limburg.nl' },
             { label: 'Location', value: 'Kerkrade, Zuid-Limburg' },
             { label: 'Available', value: 'Mon–Fri, 9:00 AM–6:00 PM' },
         ],
@@ -505,7 +505,7 @@ const en: typeof nl = {
             'IT support in Zuid-Limburg for small businesses: computers, printers, Wi-Fi, Microsoft 365, security and practical office IT.',
         location: 'Kerkrade, Zuid-Limburg',
         phone: '+31 6 3483 6118',
-        email: 'info@oros.agency',
+        email: 'daniel@ict-support-limburg.nl',
         copyright: 'Oros IT Support Limburg',
         servicesTitle: 'Services',
         servicesLinks: [
