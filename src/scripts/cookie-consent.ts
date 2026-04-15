@@ -88,15 +88,15 @@
     loadGoogleTagManager();
   }
 
-  function loadOptionalAnalyticsIfConsented() {
-    if (clarityLoaded || readConsent() !== 'accepted') return;
+  function loadOptionalAnalyticsIfEnabled() {
+    if (clarityLoaded || readConsent() === 'rejected') return;
     clarityLoaded = true;
     loadClarity();
   }
 
   function syncOptionalAnalytics(state: ConsentState) {
-    if (state === 'accepted') {
-      loadOptionalAnalyticsIfConsented();
+    if (state !== 'rejected') {
+      loadOptionalAnalyticsIfEnabled();
       setClarityConsent(true);
       return;
     }
