@@ -274,7 +274,7 @@ const nl = {
         baseAnalyticsTitle: 'Basisanalyse',
         baseAnalyticsDescription:
             'Google Tag Manager en basis Google Analytics laden altijd voor algemene website-statistieken en technische metingen.',
-        clarityTitle: 'Extra gedragsanalyse (aanbevolen)',
+        clarityToggleShortLabel: 'Microsoft Clarity inschakelen',
         clarityDescription:
             'Microsoft Clarity helpt ons sessies, klikgedrag en verbeterpunten te begrijpen. Dit vakje staat standaard aan. Als je het handmatig uitzet, slaan we op dat je geen toestemming geeft voor Clarity.',
         policyNote:
@@ -558,7 +558,7 @@ const en: typeof nl = {
         baseAnalyticsTitle: 'Basic analytics',
         baseAnalyticsDescription:
             'Google Tag Manager and basic Google Analytics always load for general site statistics and technical measurement.',
-        clarityTitle: 'Extra behavioural analytics (recommended)',
+        clarityToggleShortLabel: 'Enable Microsoft Clarity',
         clarityDescription:
             'Microsoft Clarity helps us understand sessions, click behaviour and usability improvements. This checkbox is enabled by default. If you manually turn it off, we store that you do not consent to Clarity.',
         policyNote:

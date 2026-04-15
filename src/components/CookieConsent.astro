@@ -34,13 +34,23 @@ const t = translations[lang].cookieConsent;
             <form data-cookie-consent-form class="contents">
                 <div class="space-y-4">
                     <div class="rounded-2xl border border-border bg-muted p-5">
-                        <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                            <span class="min-w-0">
-                                <span class="block text-sm font-semibold text-primary">{t.baseAnalyticsTitle}</span>
-                                <span class="mt-1 block text-sm text-muted-foreground">{t.baseAnalyticsDescription}</span>
+                        <div class="flex items-start gap-4">
+                            <span
+                                aria-hidden="true"
+                                class="mt-0.5 inline-flex h-5 w-5 flex-shrink-0 items-center justify-center rounded border border-accent bg-accent text-white"
+                            >
+                                <svg viewBox="0 0 16 16" class="h-3.5 w-3.5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3.5 8.25 6.5 11l6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
                             </span>
-                            <span class="inline-flex items-center rounded-full bg-accent px-3 py-1 text-xs font-semibold text-white">
-                                {t.alwaysOnLabel}
+                            <span class="min-w-0 flex-1">
+                                <span class="flex flex-wrap items-center gap-2">
+                                    <span class="text-sm font-semibold text-primary">{t.baseAnalyticsToggleLabel}</span>
+                                    <span class="inline-flex items-center rounded-full bg-accent px-2.5 py-0.5 text-[11px] font-semibold text-white">
+                                        {t.alwaysOnLabel}
+                                    </span>
+                                </span>
+                                <span class="mt-1 block text-sm text-muted-foreground">{t.baseAnalyticsDescription}</span>
                             </span>
                         </div>
                     </div>
@@ -50,11 +60,11 @@ const t = translations[lang].cookieConsent;
                             type="checkbox"
                             checked
                             data-consent-analytics-checkbox
-                            aria-label={t.optionalToggleLabel}
-                            class="mt-1 h-5 w-5 rounded border-border text-accent accent-accent"
+                            aria-label={t.clarityToggleLabel}
+                            class="mt-0.5 h-5 w-5 flex-shrink-0 rounded border-border text-accent accent-accent"
                         />
-                        <span class="min-w-0">
-                            <span class="block text-sm font-semibold text-primary">{t.optionalTitle}</span>
+                        <span class="min-w-0 flex-1">
+                            <span class="block text-sm font-semibold text-primary">{t.clarityToggleShortLabel}</span>
                             <span class="mt-1 block text-sm text-muted-foreground">{t.optionalDescription}</span>
                         </span>
                     </label>
