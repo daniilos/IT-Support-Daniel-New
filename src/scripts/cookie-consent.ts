@@ -63,6 +63,25 @@
     firstScript?.parentNode?.insertBefore(script, firstScript);
   }
 
+  function setClarityConsent(granted: boolean) {
+    if (typeof window.clarity !== 'function') return;
+
+    try {
+      if (granted) {
+        window.clarity('consent');
+        return;
+      }
+
+      window.clarity('consentv2', {
+        ad_Storage: 'denied',
+        analytics_Storage: 'denied',
+      });
+      window.clarity('consent', false);
+    } catch {
+      // Ignore vendor API errors so consent UI remains functional.
+    }
+  }
+
   function loadBaseAnalytics() {
     if (baseAnalyticsLoaded) return;
     baseAnalyticsLoaded = true;
@@ -73,6 +92,16 @@
     if (clarityLoaded || readConsent() !== 'accepted') return;
     clarityLoaded = true;
     loadClarity();
+  }
+
+  function syncOptionalAnalytics(state: ConsentState) {
+    if (state === 'accepted') {
+      loadOptionalAnalyticsIfConsented();
+      setClarityConsent(true);
+      return;
+    }
+
+    setClarityConsent(false);
   }
 
   function updateBannerVisibility(state: ConsentState) {
@@ -112,12 +141,13 @@
     updateStatusText(state);
     syncCheckboxState(state);
     loadBaseAnalytics();
-    if (state === 'accepted') loadOptionalAnalyticsIfConsented();
+    syncOptionalAnalytics(state);
   }
 
   function initBannerActions() {
-    document.querySelectorAll<HTMLElement>('[data-cookie-save]').forEach((button) => {
-      button.addEventListener('click', () => {
+    document.querySelectorAll<HTMLFormElement>('[data-cookie-consent-form]').forEach((form) => {
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
         const analyticsCheckbox = document.querySelector<HTMLInputElement>('[data-cookie-clarity]');
         const nextState: ConsentState = analyticsCheckbox?.checked === false ? 'rejected' : 'accepted';
 
