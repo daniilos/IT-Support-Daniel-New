@@ -24,6 +24,10 @@ const t = translations[lang].footer;
                     <a href="tel:+31634836118" class="text-white/85 no-underline hover:text-white transition-colors">{t.phone}</a>
                     <a href="mailto:daniel@ict-support-limburg.nl" class="text-white/85 no-underline hover:text-white transition-colors">{t.email}</a>
                 </div>
+                <div class="mt-4 space-y-1 text-sm text-white/70">
+                    <p>{t.kvkLabel}: {t.kvkValue}</p>
+                    <p>{t.vatLabel}: {t.vatValue}</p>
+                </div>
             </div>
 
             <div>
@@ -49,6 +53,15 @@ const t = translations[lang].footer;
                             </a>
                         </li>
                     ))}
+                    <li>
+                        <button
+                            type="button"
+                            class="inline-block py-1 text-left text-sm text-white/75 no-underline transition-colors hover:text-white cursor-pointer"
+                            data-cookie-open-settings
+                        >
+                            {t.cookieSettings}
+                        </button>
+                    </li>
                 </ul>
             </div>
         </div>

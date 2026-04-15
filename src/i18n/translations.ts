@@ -243,6 +243,11 @@ const nl = {
         location: 'Kerkrade, Zuid-Limburg',
         phone: '+31 6 3483 6118',
         email: 'daniel@ict-support-limburg.nl',
+        kvkLabel: 'KvK',
+        kvkValue: '98242482',
+        vatLabel: 'BTW',
+        vatValue: 'NL005319090B91',
+        cookieSettings: 'Cookie-instellingen',
         copyright: 'Oros IT Support Limburg',
         servicesTitle: 'Diensten',
         servicesLinks: [
@@ -260,6 +265,22 @@ const nl = {
             { label: 'Blog', href: '/blog/' },
             { label: 'Contact', href: '#contact' },
         ],
+    },
+    cookieConsent: {
+        badge: 'Cookies',
+        title: 'Kies je cookievoorkeuren',
+        description:
+            'We gebruiken basisstatistieken voor het goed laten draaien en verbeteren van de website. Extra gedragsanalyse via Microsoft Clarity staat standaard aan, maar je kunt die hier uitschakelen voordat je opslaat.',
+        baseAnalyticsTitle: 'Basisanalyse',
+        baseAnalyticsDescription:
+            'Google Tag Manager en basis Google Analytics laden altijd voor algemene website-statistieken en technische metingen.',
+        clarityToggleShortLabel: 'Microsoft Clarity inschakelen',
+        clarityDescription:
+            'Microsoft Clarity helpt ons sessies, klikgedrag en verbeterpunten te begrijpen. Dit vakje staat standaard aan. Als je het handmatig uitzet, slaan we op dat je geen toestemming geeft voor Clarity.',
+        policyNote:
+            'Klik op Opslaan om je voorkeur te bewaren. Basisanalyse blijft actief; alleen Clarity kun je hier uitschakelen. Je keuze kun je later altijd aanpassen via de footer.',
+        clarityToggleLabel: 'Extra gedragsanalyse via Microsoft Clarity toestaan',
+        saveLabel: 'Voorkeur opslaan',
     },
 };
 
@@ -506,6 +527,11 @@ const en: typeof nl = {
         location: 'Kerkrade, Zuid-Limburg',
         phone: '+31 6 3483 6118',
         email: 'daniel@ict-support-limburg.nl',
+        kvkLabel: 'KvK',
+        kvkValue: '98242482',
+        vatLabel: 'VAT',
+        vatValue: 'NL005319090B91',
+        cookieSettings: 'Cookie settings',
         copyright: 'Oros IT Support Limburg',
         servicesTitle: 'Services',
         servicesLinks: [
@@ -523,6 +549,22 @@ const en: typeof nl = {
             { label: 'Blog', href: '/en/blog/' },
             { label: 'Contact', href: '#contact' },
         ],
+    },
+    cookieConsent: {
+        badge: 'Cookies',
+        title: 'Choose your cookie preferences',
+        description:
+            'We use basic measurement for core website statistics and improvement. Extra behavioural analytics through Microsoft Clarity is enabled by default, but you can switch it off here before saving.',
+        baseAnalyticsTitle: 'Basic analytics',
+        baseAnalyticsDescription:
+            'Google Tag Manager and basic Google Analytics always load for general site statistics and technical measurement.',
+        clarityToggleShortLabel: 'Enable Microsoft Clarity',
+        clarityDescription:
+            'Microsoft Clarity helps us understand sessions, click behaviour and usability improvements. This checkbox is enabled by default. If you manually turn it off, we store that you do not consent to Clarity.',
+        policyNote:
+            'Click Save to store your preference. Basic analytics stays active; only Clarity can be turned off here. You can change your choice later from the footer.',
+        clarityToggleLabel: 'Allow extra behavioural analytics via Microsoft Clarity',
+        saveLabel: 'Save preferences',
     },
 };
 
