@@ -243,6 +243,11 @@ const nl = {
         location: 'Kerkrade, Zuid-Limburg',
         phone: '+31 6 3483 6118',
         email: 'daniel@ict-support-limburg.nl',
+        kvkLabel: 'KvK',
+        kvkValue: '98242482',
+        vatLabel: 'BTW',
+        vatValue: 'NL005319090B91',
+        cookieSettings: 'Cookie-instellingen',
         copyright: 'Oros IT Support Limburg',
         servicesTitle: 'Diensten',
         servicesLinks: [
@@ -260,6 +265,22 @@ const nl = {
             { label: 'Blog', href: '/blog/' },
             { label: 'Contact', href: '#contact' },
         ],
+    },
+    cookieConsent: {
+        badge: 'Cookies',
+        title: 'Kies je cookievoorkeuren',
+        description:
+            'We gebruiken alleen analytische cookies voor Google Tag Manager, Google Analytics en Microsoft Clarity nadat je toestemming geeft. Zonder toestemming blijft de site volledig bruikbaar.',
+        essentialTitle: 'Noodzakelijke cookies',
+        essentialDescription:
+            'Deze cookies zijn nodig voor basisfuncties van de site, zoals taalkeuze, formuliergedrag en het onthouden van je cookievoorkeur.',
+        analyticsTitle: 'Analytische cookies',
+        analyticsDescription:
+            'Met je toestemming laden we Google Tag Manager en Microsoft Clarity om geanonimiseerde gebruiksstatistieken en verbeterpunten te meten.',
+        policyNote:
+            'Je kunt analytische cookies weigeren zonder dat dit invloed heeft op de werking van de website. Je keuze kun je later altijd aanpassen via de footer.',
+        acceptLabel: 'Alles accepteren',
+        rejectLabel: 'Alleen noodzakelijke cookies',
     },
 };
 
@@ -506,6 +527,11 @@ const en: typeof nl = {
         location: 'Kerkrade, Zuid-Limburg',
         phone: '+31 6 3483 6118',
         email: 'daniel@ict-support-limburg.nl',
+        kvkLabel: 'KvK',
+        kvkValue: '98242482',
+        vatLabel: 'VAT',
+        vatValue: 'NL005319090B91',
+        cookieSettings: 'Cookie settings',
         copyright: 'Oros IT Support Limburg',
         servicesTitle: 'Services',
         servicesLinks: [
@@ -523,6 +549,22 @@ const en: typeof nl = {
             { label: 'Blog', href: '/en/blog/' },
             { label: 'Contact', href: '#contact' },
         ],
+    },
+    cookieConsent: {
+        badge: 'Cookies',
+        title: 'Choose your cookie preferences',
+        description:
+            'We only use analytics cookies for Google Tag Manager, Google Analytics and Microsoft Clarity after you consent. Without consent, the site remains fully usable.',
+        essentialTitle: 'Necessary cookies',
+        essentialDescription:
+            'These cookies are required for core site functions such as language choice, form behaviour and remembering your cookie preference.',
+        analyticsTitle: 'Analytics cookies',
+        analyticsDescription:
+            'With your consent, we load Google Tag Manager and Microsoft Clarity to measure anonymised usage insights and improvement opportunities.',
+        policyNote:
+            'You can refuse analytics cookies without affecting how the website works. You can change your choice later from the footer.',
+        acceptLabel: 'Accept all',
+        rejectLabel: 'Only necessary cookies',
     },
 };
 
