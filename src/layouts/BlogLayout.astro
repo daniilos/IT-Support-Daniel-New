@@ -67,7 +67,7 @@ const articleSchema = JSON.stringify({
     },
     publisher: {
         '@type': 'Organization',
-        name: 'Oros IT Support Limburg',
+        name: lang === 'en' ? 'Oros IT Support Limburg' : 'Oros ICT Support Limburg',
         url: baseUrl,
         logo: { '@type': 'ImageObject', url: `${baseUrl}/favicon.svg` },
         sameAs: ['https://www.linkedin.com/company/oros-it-support/'],
@@ -195,7 +195,7 @@ const breadcrumbSchema = JSON.stringify({
                                 <p class="text-xs text-muted-foreground">
                                     {lang === 'en'
                                         ? 'IT Support Specialist · Kerkrade, Limburg'
-                                        : 'IT Support Specialist · Kerkrade, Limburg'}
+                                        : 'ICT Support Specialist · Kerkrade, Limburg'}
                                 </p>
                             </div>
                         </div>

@@ -12,7 +12,7 @@ const t = translations[lang].footer;
                 <a href={lang === 'en' ? '/en/' : '/'} class="mb-4 inline-flex items-center gap-2.5 no-underline transition-opacity hover:opacity-80">
                     <img src="/images/oit-logo.svg" alt="Oros IT Support" class="h-10 w-auto sm:h-11" style="filter: brightness(0) invert(1);" />
                     <span class="flex flex-col leading-none">
-                        <span class="text-sm font-bold tracking-wide text-white sm:text-[0.9375rem]">IT Support</span>
+                        <span class="text-sm font-bold tracking-wide text-white sm:text-[0.9375rem]">{lang === 'en' ? 'IT Support' : 'ICT Support'}</span>
                         <span class="text-xs font-semibold tracking-wider text-white/60 sm:text-sm">Limburg</span>
                     </span>
                 </a>

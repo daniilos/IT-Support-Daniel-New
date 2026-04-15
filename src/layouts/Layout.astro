@@ -61,7 +61,7 @@ const ogImageUrl = ogImage ? `${siteUrl}${ogImage}` : `${siteUrl}/images/og-defa
         <meta property="og:description" content={description} />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:image" content={ogImageUrl} />
-        <meta property="og:site_name" content="Oros IT Support Limburg" />
+        <meta property="og:site_name" content={lang === 'en' ? 'Oros IT Support Limburg' : 'Oros ICT Support Limburg'} />
         <meta property="og:locale" content={lang === 'en' ? 'en_GB' : 'nl_NL'} />
         <!-- Twitter Card -->
         <meta name="twitter:card" content="summary_large_image" />
