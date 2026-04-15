@@ -9,7 +9,7 @@ image: "/images/blog/phishing-bijna-getrapt.webp"
 imageAlt: "Phishing e-mail nagemaakt van een hostingprovider op een laptopscherm"
 ---
 
-Vorige week opende ik mijn inbox en zag een e-mail van "Hetzner", de hostingprovider waar mijn server voor Oros Agency op staat.
+Vandaag opende ik mijn inbox en zag een e-mail van "Hetzner", de hostingprovider waar mijn server voor Oros Agency op staat.
 
 Hij lag in de spammap.
 
