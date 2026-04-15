@@ -1,0 +1,475 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContactForm from '../components/ContactForm';
+
+const lang = 'nl';
+const slug = 'tandarts';
+const siteUrl = 'https://ict-support-limburg.nl';
+
+const title = 'IT-ondersteuning voor tandartspraktijken in Limburg | Oros IT Support';
+const description = 'IT-support voor tandartspraktijken in Zuid-Limburg. Exquise, röntgensystemen, werkplekken en interne processen: snel, lokaal, zonder gedoe. 7 jaar dagelijks werkzaam ín de tandheelkunde.';
+
+const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "MedicalBusiness"],
+    "name": "Oros IT Support Limburg",
+    "description": description,
+    "url": `${siteUrl}/${slug}/`,
+    "telephone": "+31634836118",
+    "email": "daniel@ict-support-limburg.nl",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Kievitstraat 25",
+        "addressLocality": "Kerkrade",
+        "addressRegion": "Limburg",
+        "postalCode": "6469 XX",
+        "addressCountry": "NL"
+    },
+    "areaServed": [
+        { "@type": "City", "name": "Kerkrade" },
+        { "@type": "City", "name": "Heerlen" },
+        { "@type": "City", "name": "Maastricht" },
+        { "@type": "City", "name": "Sittard" }
+    ],
+    "knowsAbout": ["Exquise", "tandheelkundige IT", "röntgensystemen", "NZa-tarieven", "IT support", "Windows", "netwerk"],
+    "founder": { "@type": "Person", "name": "Daniel Orosz" }
+};
+
+const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Werk je ook met Exquise?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Ja. Ik ken Exquise vanuit de dagelijkse praktijk, niet vanuit een handleiding. Sjablonen, behandelcodes, koppelingen met randapparatuur en de logica eromheen: ik weet hoe het werkt en waar het fout kan gaan." }
+        },
+        {
+            "@type": "Question",
+            "name": "Wat als mijn leverancier zegt dat het probleem niet bij hen ligt?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Dat hoor ik regelmatig. IT wijst naar de software, software wijst naar het netwerk, netwerk wijst naar de hardware. Ik kijk naar het geheel en zoek de echte oorzaak, zonder naar iemand anders te wijzen." }
+        },
+        {
+            "@type": "Question",
+            "name": "Hoe snel reageer je bij een storing die de praktijk stilleggen?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Voor remote support ben ik doorgaans binnen een uur beschikbaar. Voor on-site hulp in de regio Kerkrade–Heerlen reken ik op dezelfde dag of volgende ochtend. Bij storingen die de praktijk stilleggen: zo snel mogelijk." }
+        },
+        {
+            "@type": "Question",
+            "name": "Werk je alleen in Kerkrade of ook breder in Limburg?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Ik werk door heel Zuid-Limburg: Heerlen, Kerkrade, Sittard, Maastricht en omgeving. Remote support doe ik door heel Nederland." }
+        },
+        {
+            "@type": "Question",
+            "name": "Wat kost IT-ondersteuning voor een kleine tandartspraktijk?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Dat hangt af van de situatie. Een eenmalige diagnose of reparatie is anders dan structurele ondersteuning. Neem contact op voor een korte intake: ik geef eerlijk aan wat nodig is en wat het kost." }
+        }
+    ]
+};
+
+const services = [
+    { title: 'Werkplekken en netwerk', desc: 'Werkplekken die het houden, ook als Exquise, röntgensoftware, mail en verzekeringsportalen tegelijk draaien. Ik zorg dat de basis klopt.', icon: 'monitor' },
+    { title: 'Exquise en praktijksoftware', desc: 'Configuratie, sjablonen, behandelcodes en de logica eromheen. Ik ken Exquise vanuit de dagelijkse praktijk, niet vanuit een handleiding.', icon: 'app' },
+    { title: 'Röntgen- en medische systemen', desc: 'Technische diagnose bij storingen in röntgensoftware en koppelingen. Ik zoek de oorzaak op het snijpunt van systemen, ook als de leverancier zegt dat het "niet bij hen" ligt.', icon: 'scan' },
+    { title: 'Printer en randapparatuur', desc: 'Kleine reparaties en vervanging van printers, scanners en labelprinters. Zonder dure servicecontracten of lange wachttijden.', icon: 'printer' },
+    { title: 'Interne kennisbasis', desc: 'Protocollen, codes en werkwijzen overzichtelijk en doorzoekbaar gemaakt. Antwoorden zitten in een systeem, niet in de hoofden van medewerkers.', icon: 'book' },
+    { title: 'Onboarding en procesondersteuning', desc: 'Nieuwe medewerkers leren snel de juiste werkwijzen. Minder vragen, minder fouten, minder afhankelijkheid van één persoon die alles weet.', icon: 'users' },
+    { title: 'NZa-tarieven en administratieve sjablonen', desc: 'Up-to-date na elk nieuw tariefseizoen. De praktijk werkt met de huidige codes, prijzen en sjablonen.', icon: 'doc' },
+    { title: 'Exquise NG-migratiebegeleiding', desc: 'Vertimart zet alle praktijken over naar Exquise Next Generation: nieuwe omgeving, nieuwe instellingen, nieuwe koppelingen, en het risico dat sjablonen, codes en randapparatuur niet meer kloppen. Ik begeleid die overgang zodat de praktijk er geen dag last van heeft.', icon: 'migrate', highlight: true },
+];
+
+const whyReasons = [
+    { title: 'Lokaal en bereikbaar', desc: 'Gevestigd in Kerkrade, snel ter plaatse in heel Zuid-Limburg. Geen centrale planningsdienst, geen wachtrij. Je belt mij direct.' },
+    { title: 'Ik ken de context', desc: 'Niet als externe consultant, maar als de persoon die elke maandagochtend in de praktijk stond als Exquise vastliep, de röntgenkoppeling foutmeldingen gaf of het personeel niet wist hoe verder.' },
+    { title: 'Ik los op wat tussen systemen valt', desc: 'IT zegt: ligt aan de software. Software zegt: ligt aan het netwerk. Netwerk zegt: ligt aan de hardware. Ik kijk naar het geheel en zoek de echte oorzaak, zonder naar iemand anders te wijzen.' },
+    { title: 'Remote of on-site', desc: 'Veel problemen los ik op afstand op. Soms is ter plaatse sneller. Jij hoeft dat niet te beoordelen, ik doe dat.' },
+    { title: 'Directe lijn, geen ticket', desc: 'Je belt mij, niet een helpdesknummer. Ik ken jouw praktijk, weet wat er eerder speelde en hoef niet elke keer opnieuw uitgelegd te worden hoe het zit.' },
+];
+
+const faqItems = [
+    { question: 'Werk je ook met Exquise?', answer: 'Ja. Ik ken Exquise vanuit de dagelijkse praktijk, niet vanuit een handleiding. Sjablonen, behandelcodes, koppelingen met randapparatuur en de logica eromheen: ik weet hoe het werkt en waar het fout kan gaan.' },
+    { question: 'Wat als mijn leverancier zegt dat het probleem "niet bij hen" ligt?', answer: 'Dat hoor ik regelmatig. IT wijst naar de software, software wijst naar het netwerk, netwerk wijst naar de hardware. Ik kijk naar het geheel en zoek de echte oorzaak, zonder naar iemand anders te wijzen.' },
+    { question: 'Hoe snel reageer je bij een storing die de praktijk stilleggen?', answer: 'Voor remote support ben ik doorgaans binnen een uur beschikbaar. Voor on-site hulp in de regio Kerkrade–Heerlen reken ik op dezelfde dag of volgende ochtend. Bij storingen die de praktijk stilleggen: zo snel mogelijk.' },
+    { question: 'Werk je alleen in Kerkrade of ook breder in Limburg?', answer: 'Ik werk door heel Zuid-Limburg: Heerlen, Kerkrade, Sittard, Maastricht en omgeving. Remote support doe ik door heel Nederland.' },
+    { question: 'Wat kost IT-ondersteuning voor een kleine tandartspraktijk?', answer: 'Dat hangt af van de situatie. Een eenmalige diagnose of reparatie is anders dan structurele ondersteuning. Neem contact op voor een korte intake: ik geef eerlijk aan wat nodig is en wat het kost.' },
+];
+
+const iconPaths: Record<string, string> = {
+    monitor: 'M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25',
+    app: 'M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z',
+    scan: 'M7.5 3.75H6A2.25 2.25 0 003.75 6v1.5M16.5 3.75H18A2.25 2.25 0 0120.25 6v1.5m0 9V18A2.25 2.25 0 0118 20.25h-1.5m-9 0H6A2.25 2.25 0 013.75 18v-1.5M15 12a3 3 0 11-6 0 3 3 0 016 0z',
+    printer: 'M6.72 13.829c-.24.03-.48.062-.72.096m.72-.096a42.415 42.415 0 0110.56 0m-10.56 0L6.34 18m10.94-4.171c.24.03.48.062.72.096m-.72-.096L17.66 18m0 0l.229 2.523a1.125 1.125 0 01-1.12 1.227H7.231c-.662 0-1.18-.568-1.12-1.227L6.34 18m11.318 0h1.091A2.25 2.25 0 0021 15.75V9.456c0-1.081-.768-2.015-1.837-2.175a48.055 48.055 0 00-1.913-.247M6.34 18H5.25A2.25 2.25 0 013 15.75V9.456c0-1.081.768-2.015 1.837-2.175a48.041 48.041 0 011.913-.247m10.5 0a48.536 48.536 0 00-10.5 0m10.5 0V3.375c0-.621-.504-1.125-1.125-1.125h-8.25c-.621 0-1.125.504-1.125 1.125v3.659M18 10.5h.008v.008H18V10.5zm-3 0h.008v.008H15V10.5z',
+    book: 'M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25',
+    users: 'M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z',
+    doc: 'M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z',
+    migrate: 'M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5',
+};
+---
+
+<Layout title={title} description={description} lang={lang}>
+    <Fragment slot="head">
+        <link rel="canonical" href={`${siteUrl}/${slug}/`} />
+        <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+        <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    </Fragment>
+
+    {/* Breadcrumb */}
+    <div class="bg-white border-b border-border">
+        <div class="container-main max-w-5xl py-3">
+            <nav class="text-sm text-muted-foreground">
+                <a href="/" class="hover:text-accent transition-colors">Home</a>
+                <span class="mx-2 text-border">/</span>
+                <span>IT voor tandartspraktijken</span>
+            </nav>
+        </div>
+    </div>
+
+    {/* Hero */}
+    <section class="relative overflow-hidden bg-white section-padding !pb-16">
+        <div class="pointer-events-none absolute inset-0 -z-10">
+            <div class="absolute -top-32 right-0 h-[500px] w-[500px] rounded-full bg-blue-50 opacity-60 blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 h-[300px] w-[400px] rounded-full bg-slate-50 opacity-80 blur-3xl"></div>
+        </div>
+        <div class="container-main max-w-5xl">
+            <div class="max-w-2xl">
+                <div class="mb-4 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-xs font-semibold text-accent">
+                    <svg class="h-3.5 w-3.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    7 jaar dagelijks werkzaam ín tandartspraktijken
+                </div>
+                <h1 class="mb-5">
+                    IT-ondersteuning voor tandartspraktijken<br />
+                    <span class="text-accent">die het snijpunt begrijpt</span>
+                </h1>
+                <p class="mb-4 text-lg leading-relaxed text-muted-foreground">
+                    Zeven jaar lang was ik de vaste IT-er bij een tandheelkundige organisatie. Niet als externe leverancier, maar dagelijks aanwezig in de praktijk. Nu help ik andere praktijken in Zuid-Limburg met hetzelfde: werkplekken, Exquise, röntgensystemen en de processen die ertussenin vallen.
+                </p>
+                <p class="mb-8 text-base font-medium text-foreground">
+                    Snel geholpen, duidelijke uitleg, geen verrassingen op de factuur.<br />
+                    <span class="text-muted-foreground font-normal">Geen callcenter. Geen ticket. Jij belt mij direct.</span>
+                </p>
+                <div class="flex flex-col gap-3 sm:flex-row">
+                    <a href="#contact" class="btn-primary px-8 py-3.5 text-base">Ondersteuning aanvragen</a>
+                    <a href="#contact" class="btn-outline px-8 py-3.5 text-base">Gratis kennismakingsgesprek</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {/* Trust bar */}
+    <section class="border-y border-border bg-slate-50 py-4">
+        <div class="container-main">
+            <ul class="flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm text-muted-foreground">
+                {[
+                    'Gevestigd in Kerkrade, actief in heel Zuid-Limburg',
+                    '7 jaar dagelijks werkzaam ín tandartspraktijken',
+                    'Remote hulp doorgaans binnen 60 minuten beschikbaar',
+                    'On-site én remote, ook bij acute storingen',
+                ].map((item) => (
+                    <li class="flex items-center gap-2">
+                        <svg class="h-4 w-4 shrink-0 text-accent" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                        </svg>
+                        {item}
+                    </li>
+                ))}
+            </ul>
+        </div>
+    </section>
+
+    {/* Services */}
+    <section id="services" class="section-padding bg-white">
+        <div class="container-main">
+            <div class="mb-10 text-center">
+                <h2>Wat ik voor jouw praktijk doe</h2>
+            </div>
+            <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+                {services.map((s) => (
+                    <div class={`group rounded-2xl border p-5 transition-all duration-300 hover:shadow-md ${s.highlight ? 'border-accent bg-blue-50 hover:bg-blue-100/60' : 'border-border bg-white hover:border-accent/30'}`}>
+                        <div class={`mb-4 flex h-10 w-10 items-center justify-center rounded-xl ${s.highlight ? 'bg-accent text-white' : 'bg-blue-50 text-accent'}`}>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d={iconPaths[s.icon]} />
+                            </svg>
+                        </div>
+                        <h3 class="mb-2 text-base font-semibold">{s.title}</h3>
+                        <p class="text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
+                        {s.highlight && (
+                            <p class="mt-3 text-xs font-semibold text-accent">Is jouw praktijk al klaar voor Exquise NG?</p>
+                        )}
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    {/* About Daniel */}
+    <section id="about" class="section-padding bg-slate-50">
+        <div class="container-main">
+            <div class="mx-auto max-w-5xl">
+                <div class="grid items-center gap-10 md:grid-cols-5">
+                    <div class="flex justify-center md:col-span-2">
+                        <div class="relative">
+                            <div class="absolute -inset-3 -z-10 rounded-3xl bg-gradient-to-br from-blue-50 to-slate-100"></div>
+                            <img
+                                src="/images/daniel2_1.png"
+                                alt="Daniel Orosz — IT specialist voor tandartspraktijken"
+                                width="597"
+                                height="800"
+                                class="h-auto w-full max-w-[260px] rounded-2xl object-cover md:max-w-none"
+                                loading="lazy"
+                                decoding="async"
+                            />
+                        </div>
+                    </div>
+                    <div class="md:col-span-3">
+                        <h2 class="mb-6">Wie is Daniel?</h2>
+                        <div class="space-y-4 text-base leading-relaxed text-muted-foreground">
+                            <p>
+                                Zeven jaar lang was ik de enige IT-er bij een tandheelkundige organisatie met meerdere vestigingen in Nederland. Niet als externe leverancier, maar dagelijks aanwezig in de praktijk, tussen de medewerkers, midden in de problemen. Ik ken de context van een tandartspraktijk op een manier die een generieke IT-leverancier nooit kan hebben.
+                            </p>
+                            <p>
+                                In die periode heb ik niet alleen computers en netwerken beheerd. Exquise-configuratie, röntgenkoppelingen, sjablonen, behandelcodes, onboarding van personeel en de interne kennisopbouw van de praktijk: dat is mijn dagelijkse werk geweest.
+                            </p>
+                        </div>
+                        <div class="mt-6">
+                            <p class="font-semibold text-primary">Mijn aanpak:</p>
+                            <p class="text-base text-foreground">Zorgen dat het werkt, uitleggen wat er aan de hand is, en geen gedoe over de factuur.</p>
+                        </div>
+                        <blockquote class="mt-8 border-l-4 border-accent pl-6">
+                            <p class="text-lg italic text-primary leading-relaxed">"Stille IT is het doel. Chaos is wat je krijgt als je stopt met investeren in IT die gewoon werkt."</p>
+                            <footer class="mt-3 text-sm font-semibold text-muted-foreground">— Daniel Orosz</footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {/* Why Oros */}
+    <section class="section-padding bg-white">
+        <div class="container-main">
+            <h2 class="mb-10 text-center">Waarom tandartspraktijken voor mij kiezen</h2>
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {whyReasons.map((r, i) => (
+                    <div class="rounded-2xl border border-border bg-white p-6 transition-all duration-300 hover:shadow-md hover:border-accent/30">
+                        <div class="mb-4 flex h-9 w-9 items-center justify-center rounded-lg bg-blue-50 text-accent text-sm font-bold">
+                            {i + 1}
+                        </div>
+                        <h3 class="mb-2 text-base font-semibold">{r.title}</h3>
+                        <p class="text-sm leading-relaxed text-muted-foreground">{r.desc}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    {/* Common problems */}
+    <section class="section-padding bg-slate-50">
+        <div class="container-main max-w-4xl">
+            <h2 class="mb-8 text-center">Waarmee ik dagelijks help in tandartspraktijken</h2>
+            <div class="grid gap-3 sm:grid-cols-2">
+                {[
+                    'Werkplek loopt vast als meerdere programma\'s tegelijk draaien',
+                    'Exquise-configuratie, sjablonen of codes kloppen niet',
+                    'Röntgensoftware of koppeling geeft foutmeldingen',
+                    'Printer of scanner werkt niet, receptie ligt plat',
+                    'Leverancier reageert traag of lost het probleem niet volledig op',
+                    'Nieuwe medewerker moet snel worden ingewerkt',
+                    'Protocollen en werkwijzen zijn niet makkelijk terug te vinden',
+                    'NZa-tarieven of sjablonen zijn verouderd na een update',
+                ].map((p) => (
+                    <div class="flex items-start gap-3 rounded-xl border border-border bg-white px-4 py-3.5 transition-colors hover:border-accent/30">
+                        <svg class="mt-0.5 h-5 w-5 shrink-0 text-accent" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span class="text-sm text-foreground">{p}</span>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    {/* Uit de praktijk */}
+    <section class="section-padding bg-white">
+        <div class="container-main max-w-4xl">
+            <h2 class="mb-8 text-center">Uit de praktijk</h2>
+            <div class="grid gap-6 md:grid-cols-2">
+                <div class="relative rounded-2xl border border-border bg-slate-50 p-6">
+                    <div class="absolute -top-3 left-6 flex h-7 w-7 items-center justify-center rounded-full bg-accent text-white text-xs font-bold shadow-sm">1</div>
+                    <p class="pt-2 text-sm leading-relaxed text-muted-foreground">
+                        Een röntgenkoppeling gaf wekelijks foutmeldingen. De softwareleverancier zei: probleem bij het netwerk. De netwerkbeheerder zei: probleem bij de software. Ik analyseerde beide kanten tegelijk en vond de oorzaak in een conflicterende Windows-update die beide systemen raakte. Opgelost binnen een dag, na drie weken heen-en-weer sturen.
+                    </p>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-accent">Röntgensysteem</span>
+                        <span class="rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-accent">Windows-update</span>
+                        <span class="rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-700">Opgelost in 1 dag</span>
+                    </div>
+                </div>
+                <div class="relative rounded-2xl border border-border bg-slate-50 p-6">
+                    <div class="absolute -top-3 left-6 flex h-7 w-7 items-center justify-center rounded-full bg-accent text-white text-xs font-bold shadow-sm">2</div>
+                    <p class="pt-2 text-sm leading-relaxed text-muted-foreground">
+                        Een nieuwe medewerker kon na een week nog steeds niet zelfstandig werken in Exquise. Geen duidelijke werkwijze, geen documentatie, iedereen legt het anders uit. Ik bracht de logica van de praktijk terug in één kennisbasis met een zoekveld. Sindsdien onboarden nieuwe medewerkers in twee dagen in plaats van twee weken.
+                    </p>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-accent">Exquise</span>
+                        <span class="rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-accent">Kennisbasis</span>
+                        <span class="rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-700">2 dagen ipv 2 weken</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {/* Comparison */}
+    <section class="section-padding bg-slate-50">
+        <div class="container-main">
+            <h2 class="mb-10 text-center">Eigen IT-medewerker vs. IT-support voor jouw praktijk</h2>
+            <div class="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
+                <div class="rounded-2xl border border-border bg-white p-6">
+                    <h3 class="mb-5 text-center text-base font-bold text-muted-foreground">Eigen IT-medewerker</h3>
+                    <ul class="space-y-3">
+                        {[
+                            'Vast salaris + sociale lasten',
+                            'Uitgevallen bij ziekte of vakantie',
+                            'Lastig te schalen voor kleine teams',
+                            'Geen kennis van Exquise, NZa-tarieven of röntgensystemen',
+                            'Vaak niet rendabel onder de 15–20 werkplekken',
+                        ].map((item) => (
+                            <li class="flex items-start gap-3 text-sm text-muted-foreground">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-5 w-5 shrink-0 text-red-400" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>{item}</span>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+                <div class="rounded-2xl border-2 border-accent bg-blue-50 p-6">
+                    <h3 class="mb-5 text-center text-base font-bold text-accent">Oros IT Support Limburg</h3>
+                    <ul class="space-y-3">
+                        {[
+                            'Je betaalt alleen voor wat je gebruikt',
+                            'Remote + on-site, beschikbaar wanneer nodig',
+                            'Directe kennis van Exquise, röntgensystemen en praktijkprocessen',
+                            'Geschikt voor praktijken van 2 tot 30 werkplekken',
+                            'Directe lijn met Daniel, geen wachtrij',
+                        ].map((item) => (
+                            <li class="flex items-start gap-3 text-sm text-foreground">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-5 w-5 shrink-0 text-success" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>{item}</span>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
+            <p class="mx-auto mt-8 max-w-2xl text-center text-sm text-muted-foreground">
+                Voor de meeste tandartspraktijken is flexibele IT-support goedkoper én praktischer dan een vaste IT-er die de context van de praktijk niet kent.
+            </p>
+        </div>
+    </section>
+
+    {/* Praktijkscan */}
+    <section class="section-padding bg-white">
+        <div class="container-main max-w-3xl">
+            <div class="relative overflow-hidden rounded-2xl border border-border bg-gradient-to-br from-slate-50 to-blue-50 p-8">
+                <div class="pointer-events-none absolute right-0 top-0 h-40 w-40 -translate-y-8 translate-x-8 rounded-full bg-blue-100 opacity-50 blur-2xl"></div>
+                <h2 class="mb-2 text-xl font-bold">Praktijkscan voor tandartspraktijken</h2>
+                <p class="mb-5 text-muted-foreground">Weet je zeker dat de IT van jouw praktijk goed is geregeld?</p>
+                <p class="mb-3 text-sm font-semibold text-foreground">Ik loop praktisch door:</p>
+                <ul class="mb-5 grid gap-1.5 sm:grid-cols-2 text-sm text-muted-foreground">
+                    {[
+                        'Werkplekken en computers',
+                        'Netwerk en Wi-Fi',
+                        'Exquise en randapparatuur',
+                        'Röntgensysteem en koppelingen',
+                        'Gebruikers, toegang en back-up',
+                    ].map((item) => (
+                        <li class="flex items-center gap-2">
+                            <svg class="h-4 w-4 shrink-0 text-accent" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                            </svg>
+                            {item}
+                        </li>
+                    ))}
+                </ul>
+                <p class="mb-6 text-sm text-muted-foreground">
+                    Je krijgt een overzicht van wat goed gaat en wat aandacht nodig heeft, in gewone taal, zonder vakjargon en zonder verkoopverhaal. Ik stuur het binnen twee werkdagen toe.
+                </p>
+                <a href="#contact" class="btn-primary inline-block px-6 py-3 text-sm">
+                    Vraag een gratis praktijkscan aan — ik kijk mee, zonder verplichtingen
+                </a>
+            </div>
+        </div>
+    </section>
+
+    {/* Pricing */}
+    <section class="section-padding bg-slate-50">
+        <div class="container-main max-w-3xl">
+            <h2 class="mb-8 text-center">Transparante tarieven</h2>
+            <div class="overflow-hidden rounded-2xl border border-border bg-white">
+                <table class="w-full text-sm border-collapse">
+                    <tbody>
+                        {[
+                            ['Remote support', 'vanaf €65 / uur', 'excl. btw'],
+                            ['On-site support Zuid-Limburg', 'vanaf €79 / uur', 'excl. btw'],
+                            ['Voorrijkosten (lokaal)', 'vanaf €20–30', 'excl. btw'],
+                            ['Praktijkscan', '€149 – €199', 'excl. btw'],
+                            ['Maandelijks starterssupportplan', 'vanaf €149 / maand', 'excl. btw'],
+                            ['Per-gebruiker maandelijks pakket', 'vanaf €35–49 / gebruiker / maand', 'excl. btw'],
+                        ].map(([label, price, note]) => (
+                            <tr class="border-b border-border last:border-0 hover:bg-slate-50 transition-colors">
+                                <td class="px-5 py-3.5 font-medium">{label}</td>
+                                <td class="px-5 py-3.5 font-semibold text-accent whitespace-nowrap">{price}</td>
+                                <td class="px-5 py-3.5 text-muted-foreground text-xs">{note}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
+            <p class="mt-4 text-center text-xs text-muted-foreground">
+                Alle tarieven zijn exclusief btw. Voor grotere praktijken of maatwerktrajecten maak ik graag een offerte op maat.
+            </p>
+        </div>
+    </section>
+
+    {/* FAQ */}
+    <section id="faq" class="section-padding bg-white">
+        <div class="container-main max-w-3xl">
+            <h2 class="mb-10 text-center">Veelgestelde vragen van tandartspraktijken</h2>
+            <div class="space-y-4">
+                {faqItems.map((item) => (
+                    <details class="group rounded-2xl border border-border bg-white open:shadow-sm transition-all duration-200">
+                        <summary class="flex cursor-pointer items-center justify-between gap-4 px-6 py-5 font-semibold text-foreground list-none">
+                            <span>{item.question}</span>
+                            <svg class="h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200 group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                            </svg>
+                        </summary>
+                        <div class="px-6 pb-5 text-sm leading-relaxed text-muted-foreground">
+                            {item.answer}
+                        </div>
+                    </details>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    {/* Final CTA */}
+    <section class="section-padding bg-primary text-white">
+        <div class="container-main max-w-2xl text-center">
+            <h2 class="mb-4 text-white">Klaar om de IT in jouw praktijk op orde te brengen?</h2>
+            <p class="mb-8 text-white/75">
+                Geen verkoopgesprek. Geen verplichtingen. Gewoon een kort gesprek om te kijken of ik iets voor jouw praktijk kan betekenen. Ik heb beperkt ruimte voor nieuwe praktijken in Limburg, plan een intake in als je interesse hebt.
+            </p>
+            <div class="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+                <a href="#contact" class="btn-primary px-8 py-3.5 text-base bg-white text-primary hover:bg-white/90">Ondersteuning aanvragen</a>
+                <a href="#contact" class="px-8 py-3.5 text-base rounded-xl border border-white/30 text-white hover:bg-white/10 transition-colors">Gratis kennismakingsgesprek</a>
+            </div>
+        </div>
+    </section>
+
+    <ContactForm lang={lang} />
+</Layout>
