@@ -240,6 +240,9 @@ const nl = {
     footer: {
         description:
             'ICT support in Zuid-Limburg voor kleine bedrijven: computers, printers, Wi-Fi, Microsoft 365, beveiliging en praktische kantoor-ICT.',
+        companyName: 'Oros ICT Support Limburg',
+        street: 'Kievitstraat 25',
+        postalCity: '6469 XX Kerkrade',
         location: 'Kerkrade, Zuid-Limburg',
         phone: '+31 6 3483 6118',
         email: 'daniel@ict-support-limburg.nl',
@@ -265,6 +268,13 @@ const nl = {
             { label: 'Blog', href: '/blog/' },
             { label: 'ICT voor tandartsen', href: '/tandarts/' },
             { label: 'Contact', href: '#contact' },
+        ],
+        legalTitle: 'Juridisch',
+        legalLinks: [
+            { label: 'Privacyverklaring', href: '/privacyverklaring/' },
+            { label: 'Cookieverklaring', href: '/cookieverklaring/' },
+            { label: 'Algemene voorwaarden', href: '/algemene-voorwaarden/' },
+            { label: 'Klachtenregeling', href: '/klachtenregeling/' },
         ],
     },
     cookieConsent: {
@@ -525,6 +535,9 @@ const en: typeof nl = {
     footer: {
         description:
             'IT support in Zuid-Limburg for small businesses: computers, printers, Wi-Fi, Microsoft 365, security and practical office IT.',
+        companyName: 'Oros IT Support Limburg',
+        street: 'Kievitstraat 25',
+        postalCity: '6469 XX Kerkrade',
         location: 'Kerkrade, Zuid-Limburg',
         phone: '+31 6 3483 6118',
         email: 'daniel@ict-support-limburg.nl',
@@ -550,6 +563,13 @@ const en: typeof nl = {
             { label: 'Blog', href: '/en/blog/' },
             { label: 'IT for dental practices', href: '/en/tandarts/' },
             { label: 'Contact', href: '#contact' },
+        ],
+        legalTitle: 'Legal',
+        legalLinks: [
+            { label: 'Privacy policy', href: '/en/privacy-policy/' },
+            { label: 'Cookie policy', href: '/en/cookie-policy/' },
+            { label: 'Terms & conditions', href: '/en/terms-and-conditions/' },
+            { label: 'Complaints', href: '/en/complaints/' },
         ],
     },
     cookieConsent: {
