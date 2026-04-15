@@ -31,44 +31,53 @@ const t = translations[lang].cookieConsent;
                 </p>
             </div>
 
-            <div class="grid gap-4 md:grid-cols-2">
-                <div class="rounded-2xl border border-border bg-muted p-5">
-                    <p class="text-sm font-semibold text-primary">{t.essentialTitle}</p>
-                    <p class="mt-2 text-sm text-muted-foreground">
-                        {t.essentialDescription}
+            <form data-cookie-consent-form class="contents">
+                <div class="space-y-4">
+                    <label class="flex items-start gap-4 rounded-2xl border border-border bg-muted p-5">
+                        <input
+                            type="checkbox"
+                            checked
+                            disabled
+                            aria-disabled="true"
+                            class="mt-1 h-5 w-5 rounded border-border text-accent accent-accent disabled:opacity-100"
+                        />
+                        <span class="min-w-0">
+                            <span class="block text-sm font-semibold text-primary">{t.baseAnalyticsTitle}</span>
+                            <span class="mt-1 block text-sm text-muted-foreground">{t.baseAnalyticsDescription}</span>
+                        </span>
+                    </label>
+
+                    <label class="flex items-start gap-4 rounded-2xl border border-accent/20 bg-blue-50 p-5">
+                        <input
+                            type="checkbox"
+                            checked
+                            data-consent-analytics-checkbox
+                            aria-label={t.optionalToggleLabel}
+                            class="mt-1 h-5 w-5 rounded border-border text-accent accent-accent"
+                        />
+                        <span class="min-w-0">
+                            <span class="block text-sm font-semibold text-primary">{t.optionalTitle}</span>
+                            <span class="mt-1 block text-sm text-muted-foreground">{t.optionalDescription}</span>
+                        </span>
+                    </label>
+                </div>
+
+                <div class="flex flex-col gap-4 border-t border-border pt-5 sm:flex-row sm:items-center sm:justify-between">
+                    <p class="max-w-2xl text-xs text-muted-foreground sm:text-sm">
+                        {t.policyNote}
                     </p>
-                </div>
 
-                <div class="rounded-2xl border border-accent/20 bg-blue-50 p-5">
-                    <p class="text-sm font-semibold text-primary">{t.analyticsTitle}</p>
-                    <p class="mt-2 text-sm text-muted-foreground">
-                        {t.analyticsDescription}
-                    </p>
+                    <div class="w-full sm:w-auto">
+                        <button
+                            type="submit"
+                            data-cookie-save
+                            class="btn-primary w-full !min-h-12 !px-8 !py-3 !text-base sm:min-w-56"
+                        >
+                            {t.saveLabel}
+                        </button>
+                    </div>
                 </div>
-            </div>
-
-            <div class="flex flex-col gap-4 border-t border-border pt-5 sm:flex-row sm:items-center sm:justify-between">
-                <p class="max-w-2xl text-xs text-muted-foreground sm:text-sm">
-                    {t.policyNote}
-                </p>
-
-                <div class="flex flex-col gap-3 sm:flex-row">
-                    <button
-                        type="button"
-                        data-cookie-reject
-                        class="btn-outline !min-h-11 !px-5 !py-2.5 !text-sm"
-                    >
-                        {t.rejectLabel}
-                    </button>
-                    <button
-                        type="button"
-                        data-cookie-accept
-                        class="btn-primary !min-h-11 !px-5 !py-2.5 !text-sm"
-                    >
-                        {t.acceptLabel}
-                    </button>
-                </div>
-            </div>
+            </form>
         </div>
     </div>
 </div>

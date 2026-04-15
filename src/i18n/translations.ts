@@ -270,17 +270,17 @@ const nl = {
         badge: 'Cookies',
         title: 'Kies je cookievoorkeuren',
         description:
-            'We gebruiken alleen analytische cookies voor Google Tag Manager, Google Analytics en Microsoft Clarity nadat je toestemming geeft. Zonder toestemming blijft de site volledig bruikbaar.',
-        essentialTitle: 'Noodzakelijke cookies',
-        essentialDescription:
-            'Deze cookies zijn nodig voor basisfuncties van de site, zoals taalkeuze, formuliergedrag en het onthouden van je cookievoorkeur.',
-        analyticsTitle: 'Analytische cookies',
-        analyticsDescription:
-            'Met je toestemming laden we Google Tag Manager en Microsoft Clarity om geanonimiseerde gebruiksstatistieken en verbeterpunten te meten.',
+            'We gebruiken basisstatistieken voor het goed laten draaien en verbeteren van de website. Extra gedragsanalyse via Microsoft Clarity staat standaard aan, maar je kunt die hier uitschakelen voordat je opslaat.',
+        baseAnalyticsTitle: 'Basisanalyse',
+        baseAnalyticsDescription:
+            'Google Tag Manager en basis Google Analytics laden altijd voor algemene website-statistieken en technische metingen.',
+        clarityTitle: 'Extra gedragsanalyse (aanbevolen)',
+        clarityDescription:
+            'Microsoft Clarity helpt ons sessies, klikgedrag en verbeterpunten te begrijpen. Dit vakje staat standaard aan. Als je het handmatig uitzet, slaan we op dat je geen toestemming geeft voor Clarity.',
         policyNote:
-            'Je kunt analytische cookies weigeren zonder dat dit invloed heeft op de werking van de website. Je keuze kun je later altijd aanpassen via de footer.',
-        acceptLabel: 'Alles accepteren',
-        rejectLabel: 'Alleen noodzakelijke cookies',
+            'Klik op Opslaan om je voorkeur te bewaren. Basisanalyse blijft actief; alleen Clarity kun je hier uitschakelen. Je keuze kun je later altijd aanpassen via de footer.',
+        clarityToggleLabel: 'Extra gedragsanalyse via Microsoft Clarity toestaan',
+        saveLabel: 'Voorkeur opslaan',
     },
 };
 
@@ -554,17 +554,17 @@ const en: typeof nl = {
         badge: 'Cookies',
         title: 'Choose your cookie preferences',
         description:
-            'We only use analytics cookies for Google Tag Manager, Google Analytics and Microsoft Clarity after you consent. Without consent, the site remains fully usable.',
-        essentialTitle: 'Necessary cookies',
-        essentialDescription:
-            'These cookies are required for core site functions such as language choice, form behaviour and remembering your cookie preference.',
-        analyticsTitle: 'Analytics cookies',
-        analyticsDescription:
-            'With your consent, we load Google Tag Manager and Microsoft Clarity to measure anonymised usage insights and improvement opportunities.',
+            'We use basic measurement for core website statistics and improvement. Extra behavioural analytics through Microsoft Clarity is enabled by default, but you can switch it off here before saving.',
+        baseAnalyticsTitle: 'Basic analytics',
+        baseAnalyticsDescription:
+            'Google Tag Manager and basic Google Analytics always load for general site statistics and technical measurement.',
+        clarityTitle: 'Extra behavioural analytics (recommended)',
+        clarityDescription:
+            'Microsoft Clarity helps us understand sessions, click behaviour and usability improvements. This checkbox is enabled by default. If you manually turn it off, we store that you do not consent to Clarity.',
         policyNote:
-            'You can refuse analytics cookies without affecting how the website works. You can change your choice later from the footer.',
-        acceptLabel: 'Accept all',
-        rejectLabel: 'Only necessary cookies',
+            'Click Save to store your preference. Basic analytics stays active; only Clarity can be turned off here. You can change your choice later from the footer.',
+        clarityToggleLabel: 'Allow extra behavioural analytics via Microsoft Clarity',
+        saveLabel: 'Save preferences',
     },
 };
 

@@ -6,7 +6,8 @@
 
   type ConsentState = 'accepted' | 'rejected' | 'unset';
 
-  let analyticsLoaded = false;
+  let baseAnalyticsLoaded = false;
+  let clarityLoaded = false;
 
   function readConsent(): ConsentState {
     const match = document.cookie.match(new RegExp(`(?:^|; )${STORAGE_COOKIE}=([^;]*)`));
@@ -19,6 +20,10 @@
 
   function writeConsent(value: Exclude<ConsentState, 'unset'>) {
     document.cookie = `${STORAGE_COOKIE}=${encodeURIComponent(value)}; Max-Age=${COOKIE_MAX_AGE}; Path=/; SameSite=Lax`;
+  }
+
+  function clearConsentCookie() {
+    document.cookie = `${STORAGE_COOKIE}=; Max-Age=0; Path=/; SameSite=Lax`;
   }
 
   function dispatchConsent(value: ConsentState) {
@@ -58,10 +63,15 @@
     firstScript?.parentNode?.insertBefore(script, firstScript);
   }
 
-  function loadAnalyticsIfConsented() {
-    if (analyticsLoaded || readConsent() !== 'accepted') return;
-    analyticsLoaded = true;
+  function loadBaseAnalytics() {
+    if (baseAnalyticsLoaded) return;
+    baseAnalyticsLoaded = true;
     loadGoogleTagManager();
+  }
+
+  function loadOptionalAnalyticsIfConsented() {
+    if (clarityLoaded || readConsent() !== 'accepted') return;
+    clarityLoaded = true;
     loadClarity();
   }
 
@@ -90,40 +100,43 @@
     });
   }
 
+  function syncCheckboxState(state: ConsentState) {
+    document.querySelectorAll<HTMLInputElement>('[data-cookie-clarity]').forEach((checkbox) => {
+      checkbox.checked = state !== 'rejected';
+    });
+  }
+
   function syncUi() {
     const state = readConsent();
     updateBannerVisibility(state);
     updateStatusText(state);
-    if (state === 'accepted') loadAnalyticsIfConsented();
+    syncCheckboxState(state);
+    loadBaseAnalytics();
+    if (state === 'accepted') loadOptionalAnalyticsIfConsented();
   }
 
   function initBannerActions() {
-    document.querySelectorAll<HTMLElement>('[data-cookie-accept]').forEach((button) => {
+    document.querySelectorAll<HTMLElement>('[data-cookie-save]').forEach((button) => {
       button.addEventListener('click', () => {
-        writeConsent('accepted');
-        syncUi();
-        dispatchConsent('accepted');
-      });
-    });
+        const analyticsCheckbox = document.querySelector<HTMLInputElement>('[data-cookie-clarity]');
+        const nextState: ConsentState = analyticsCheckbox?.checked === false ? 'rejected' : 'accepted';
 
-    document.querySelectorAll<HTMLElement>('[data-cookie-reject]').forEach((button) => {
-      button.addEventListener('click', () => {
-        writeConsent('rejected');
+        writeConsent(nextState);
         syncUi();
-        dispatchConsent('rejected');
+        dispatchConsent(nextState);
       });
     });
 
     document.querySelectorAll<HTMLElement>('[data-cookie-open-settings]').forEach((button) => {
       button.addEventListener('click', () => {
-        document.cookie = `${STORAGE_COOKIE}=; Max-Age=0; Path=/; SameSite=Lax`;
+        clearConsentCookie();
         syncUi();
         dispatchConsent('unset');
 
         const banner = document.querySelector<HTMLElement>('[data-cookie-banner]');
         banner?.scrollIntoView({ behavior: 'smooth', block: 'end' });
         window.setTimeout(() => {
-          banner?.querySelector<HTMLElement>('[data-cookie-accept]')?.focus();
+          banner?.querySelector<HTMLElement>('[data-cookie-save]')?.focus();
         }, 350);
       });
     });
