@@ -124,10 +124,6 @@ Eén korte uitleg werkt beter dan een beleidsdocument. Laat zien hoe een phishin
 
 ---
 
-*Meer over wachtwoorden en beveiliging in de praktijk: [Ik adviseerde medewerkers hun wachtwoord in de la te leggen](/blog/wachtwoord-postit-lade/).*
-
----
-
 Wil je weten hoe jouw kantoor er op dit moment voor staat qua beveiliging — niet theoretisch, maar concreet voor jouw situatie? Ik doe een praktische IT-check voor kleine bedrijven in Limburg.
 
 [Neem contact op →](/#contact)

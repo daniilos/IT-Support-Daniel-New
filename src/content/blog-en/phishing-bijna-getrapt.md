@@ -124,10 +124,6 @@ One short explanation works better than a policy document. Show what a phishing 
 
 ---
 
-*More on passwords and security in practice: [I told staff to put their password in the desk drawer](/en/blog/wachtwoord-postit-lade/).*
-
----
-
 Want to know where your office actually stands on security — not theoretically, but specifically for your situation? I do a practical IT check for small businesses in Limburg.
 
 [Get in touch →](/en/#contact)
