@@ -130,7 +130,7 @@
   }
 
   function syncCheckboxState(state: ConsentState) {
-    document.querySelectorAll<HTMLInputElement>('[data-cookie-clarity]').forEach((checkbox) => {
+    document.querySelectorAll<HTMLInputElement>('[data-consent-analytics-checkbox]').forEach((checkbox) => {
       checkbox.checked = state !== 'rejected';
     });
   }
@@ -148,7 +148,7 @@
     document.querySelectorAll<HTMLFormElement>('[data-cookie-consent-form]').forEach((form) => {
       form.addEventListener('submit', (event) => {
         event.preventDefault();
-        const analyticsCheckbox = document.querySelector<HTMLInputElement>('[data-cookie-clarity]');
+        const analyticsCheckbox = document.querySelector<HTMLInputElement>('[data-consent-analytics-checkbox]');
         const nextState: ConsentState = analyticsCheckbox?.checked === false ? 'rejected' : 'accepted';
 
         writeConsent(nextState);
