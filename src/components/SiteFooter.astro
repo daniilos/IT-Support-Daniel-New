@@ -7,7 +7,7 @@ const t = translations[lang].footer;
 
 <footer class="border-t border-border bg-primary text-white">
     <div class="container-main section-padding !py-12">
-        <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
             <div class="lg:col-span-2">
                 <a href={lang === 'en' ? '/en/' : '/'} class="mb-4 inline-flex items-center gap-2.5 no-underline transition-opacity hover:opacity-80">
                     <img src="/images/oit-logo.svg" alt="Oros IT Support" class="h-10 w-auto sm:h-11" style="filter: brightness(0) invert(1);" />
@@ -20,8 +20,10 @@ const t = translations[lang].footer;
                     {t.description}
                 </p>
                 <div class="mt-4 flex flex-col gap-1 text-sm text-white/75">
-                    <span>{t.location}</span>
-                    <a href="tel:+31634836118" class="text-white/85 no-underline hover:text-white transition-colors">{t.phone}</a>
+                    <span>{t.companyName}</span>
+                    <span>{t.street}</span>
+                    <span>{t.postalCity}</span>
+                    <a href="tel:+31634836118" class="mt-1 text-white/85 no-underline hover:text-white transition-colors">{t.phone}</a>
                     <a href="mailto:daniel@ict-support-limburg.nl" class="text-white/85 no-underline hover:text-white transition-colors">{t.email}</a>
                 </div>
                 <div class="mt-4 space-y-1 text-sm text-white/70">
@@ -62,6 +64,19 @@ const t = translations[lang].footer;
                             {t.cookieSettings}
                         </button>
                     </li>
+                </ul>
+            </div>
+
+            <div>
+                <p class="mb-4 text-sm font-semibold uppercase tracking-wider text-white/60">{t.legalTitle}</p>
+                <ul class="flex flex-col gap-1">
+                    {t.legalLinks.map((link) => (
+                        <li>
+                            <a href={link.href} class="inline-block py-1 text-sm text-white/75 no-underline transition-colors hover:text-white">
+                                {link.label}
+                            </a>
+                        </li>
+                    ))}
                 </ul>
             </div>
         </div>
