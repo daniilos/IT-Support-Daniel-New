@@ -2,9 +2,9 @@ export type Lang = 'nl' | 'en';
 
 const nl = {
     meta: {
-        title: 'IT Support Limburg voor kleine bedrijven | Oros IT Support Limburg',
+        title: 'ICT Support Limburg voor kleine bedrijven | Oros ICT Support Limburg',
         description:
-            'IT support in Zuid-Limburg voor kleine bedrijven. Computers, printers, Wi-Fi, Microsoft 365, storingen en beveiliging — snel, lokaal en zonder gedoe. Bel +31 6 3483 6118.',
+            'ICT support in Zuid-Limburg voor kleine bedrijven. Computers, printers, Wi-Fi, Microsoft 365, storingen en beveiliging — snel, lokaal en zonder gedoe. Bel +31 6 3483 6118.',
     },
     topBar: {
         phone: '+31 6 3483 6118',
@@ -24,10 +24,10 @@ const nl = {
         menuLabel: 'Menu openen',
     },
     hero: {
-        heading: 'IT support in Limburg',
+        heading: 'ICT support in Limburg',
         headingAccent: 'die gewoon werkt',
         subtitle:
-            'Ik help kleine bedrijven in Zuid-Limburg met dagelijkse IT: computers, printers, Wi-Fi, gebruikersaccounts en storingen — ter plaatse in Kerkrade, Heerlen, Maastricht en omgeving, of op afstand.',
+            'Ik help kleine bedrijven in Zuid-Limburg met dagelijkse ICT: computers, printers, Wi-Fi, gebruikersaccounts en storingen — ter plaatse in Kerkrade, Heerlen, Maastricht en omgeving, of op afstand.',
         valueProps: 'Snel geholpen, duidelijke uitleg, geen verrassingen op de factuur.',
         cta1: 'Ondersteuning aanvragen',
         cta2: 'Gratis kennismakingsgesprek',
@@ -90,17 +90,17 @@ const nl = {
     about: {
         heading: 'Wie is Daniel?',
         paragraphs: [
-            'Zeven jaar lang was ik de enige IT-persoon bij een medisch bedrijf met meerdere vestigingen in Nederland. Als er iets kapotging — server, netwerk, werkplek, beveiliging — loste ik het op. Er was niemand anders om op te bellen.',
-            'Die periode leerde me hoe IT er in de praktijk uitziet bij kleine organisaties: geen groot team, geen eindeloos budget, maar wel mensen die erop rekenen dat alles werkt. Dat is wat ik nu voor andere kleine bedrijven in Limburg doe.',
+            'Zeven jaar lang was ik de enige ICT-er bij een medisch bedrijf met meerdere vestigingen in Nederland. Als er iets kapotging — server, netwerk, werkplek, beveiliging — loste ik het op. Er was niemand anders om op te bellen.',
+            'Die periode leerde me hoe ICT er in de praktijk uitziet bij kleine organisaties: geen groot team, geen eindeloos budget, maar wel mensen die erop rekenen dat alles werkt. Dat is wat ik nu voor andere kleine bedrijven in Limburg doe.',
         ],
         approach: 'Mijn aanpak:',
         approachText: 'Zorgen dat het werkt, uitleggen wat er aan de hand is, en geen gedoe over de factuur.',
         quote:
-            '"Stille IT is het doel. Chaos is wat je krijgt als je stopt met investeren in IT die gewoon werkt."',
+            '"Stille ICT is het doel. Chaos is wat je krijgt als je stopt met investeren in ICT die gewoon werkt."',
         quoteAuthor: '— Daniel Orosz',
     },
     whyOros: {
-        heading: 'Waarom kiezen voor OIT IT Support Limburg?',
+        heading: 'Waarom kiezen voor OIT ICT Support Limburg?',
         reasons: [
             {
                 title: 'Lokaal en bereikbaar',
@@ -136,14 +136,14 @@ const nl = {
             'Geen toegang tot e-mail of account',
             'Trage of vastlopende computer',
             'Back-up of beveiligingscheck',
-            'IT-opruiming bij verhuis of reorganisatie',
+            'ICT-opruiming bij verhuis of reorganisatie',
             'Vragen over Microsoft 365 of Google Workspace',
         ],
     },
     comparison: {
-        heading: 'Eigen IT-medewerker vs. lokale IT-support',
-        inHouseTitle: 'Eigen IT-medewerker',
-        orosTitle: 'Oros IT Support Limburg',
+        heading: 'Eigen ICT-medewerker vs. lokale ICT-support',
+        inHouseTitle: 'Eigen ICT-medewerker',
+        orosTitle: 'Oros ICT Support Limburg',
         inHouseItems: [
             'Vast salaris + sociale lasten',
             'Uitgevallen bij ziekte of vakantie',
@@ -157,11 +157,11 @@ const nl = {
             'Geschikt voor 2 tot 30 werkplekken',
             'Directe lijn met Daniel, geen wachtrij',
         ],
-        note: 'Voor de meeste kleine bedrijven is flexibele IT-support goedkoper én betrouwbaarder dan een vaste IT-er in loondienst.',
+        note: 'Voor de meeste kleine bedrijven is flexibele ICT-support goedkoper én betrouwbaarder dan een vaste ICT-er in loondienst.',
     },
     quickScan: {
-        heading: 'IT Quick Scan voor kleine bedrijven',
-        intro: 'Weet je zeker dat de IT van jouw kantoor goed is geregeld?',
+        heading: 'ICT Quick Scan voor kleine bedrijven',
+        intro: 'Weet je zeker dat de ICT van jouw kantoor goed is geregeld?',
         checks: [
             'Computers en laptops',
             'Wi-Fi en netwerkverbinding',
@@ -191,11 +191,11 @@ const nl = {
             },
             {
                 question: 'Wat kost een remote sessie?',
-                answer: 'Remote support start vanaf €65 per uur exclusief btw. De meeste enkelvoudige problemen los ik op in 30 tot 60 minuten. Voor de IT Quick Scan reken ik €149–€199 voor een volledig kantoor.',
+                answer: 'Remote support start vanaf €65 per uur exclusief btw. De meeste enkelvoudige problemen los ik op in 30 tot 60 minuten. Voor de ICT Quick Scan reken ik €149–€199 voor een volledig kantoor.',
             },
             {
                 question: 'Werk je ook voor medische praktijken of zorginstellingen?',
-                answer: 'Ja. Mijn achtergrond ligt in de medische sector — ik heb zeven jaar IT gedaan bij een tandartsbedrijf met meerdere locaties. Ik ken de eisen rondom privacy, AVG en softwarecompatibiliteit in die omgeving.',
+                answer: 'Ja. Mijn achtergrond ligt in de medische sector — ik heb zeven jaar ICT gedaan bij een tandartsbedrijf met meerdere locaties. Ik ken de eisen rondom privacy, AVG en softwarecompatibiliteit in die omgeving.',
             },
         ],
     },
@@ -205,7 +205,7 @@ const nl = {
             { label: 'Remote support', price: 'vanaf €65 / uur', note: 'excl. btw' },
             { label: 'On-site support Zuid-Limburg', price: 'vanaf €79 / uur', note: 'excl. btw' },
             { label: 'Voorrijkosten (lokaal)', price: 'vanaf €20–30', note: 'excl. btw' },
-            { label: 'IT Quick Scan (klein kantoor)', price: '€149 – €199', note: 'excl. btw' },
+            { label: 'ICT Quick Scan (klein kantoor)', price: '€149 – €199', note: 'excl. btw' },
             { label: 'Maandelijks starterssupportplan', price: 'vanaf €149 / maand', note: 'excl. btw' },
             { label: 'Per-gebruiker maandelijks pakket', price: 'vanaf €35–49 / gebruiker / maand', note: 'excl. btw' },
         ],
@@ -215,7 +215,7 @@ const nl = {
     contact: {
         heading: 'Neem contact op',
         subtitle:
-            'IT-probleem, vraag of gewoon even kennismaken? Stuur een bericht of bel direct.',
+            'ICT-probleem, vraag of gewoon even kennismaken? Stuur een bericht of bel direct.',
         info: [
             { label: 'Telefoon', value: '+31 6 3483 6118', href: 'tel:+31634836118' },
             { label: 'E-mail', value: 'daniel@ict-support-limburg.nl', href: 'mailto:daniel@ict-support-limburg.nl' },
@@ -239,7 +239,7 @@ const nl = {
     },
     footer: {
         description:
-            'IT support in Zuid-Limburg voor kleine bedrijven: computers, printers, Wi-Fi, Microsoft 365, beveiliging en praktische kantoor-IT.',
+            'ICT support in Zuid-Limburg voor kleine bedrijven: computers, printers, Wi-Fi, Microsoft 365, beveiliging en praktische kantoor-ICT.',
         location: 'Kerkrade, Zuid-Limburg',
         phone: '+31 6 3483 6118',
         email: 'daniel@ict-support-limburg.nl',
@@ -248,7 +248,7 @@ const nl = {
         vatLabel: 'BTW',
         vatValue: 'NL005319090B91',
         cookieSettings: 'Cookie-instellingen',
-        copyright: 'Oros IT Support Limburg',
+        copyright: 'Oros ICT Support Limburg',
         servicesTitle: 'Diensten',
         servicesLinks: [
             'Werkplekondersteuning',
@@ -263,7 +263,7 @@ const nl = {
             { label: 'Waarom OIT', href: '#why-oros' },
             { label: 'Tarieven', href: '#pricing' },
             { label: 'Blog', href: '/blog/' },
-            { label: 'IT voor tandartsen', href: '/tandarts/' },
+            { label: 'ICT voor tandartsen', href: '/tandarts/' },
             { label: 'Contact', href: '#contact' },
         ],
     },
