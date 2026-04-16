@@ -152,7 +152,7 @@ const iconPaths: Record<string, string> = {
                     </p>
                     <div class="flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
                         <a href="#contact" class="btn-primary px-8 py-3.5 text-base">Ondersteuning aanvragen</a>
-                        <a href="#contact" class="btn-outline px-8 py-3.5 text-base">Kennismakingsgesprek plannen</a>
+                        <a href="https://calendly.com/daniilos123/30min" target="_blank" rel="noopener noreferrer" class="btn-outline px-8 py-3.5 text-base">Kennismakingsgesprek plannen</a>
                     </div>
                 </div>
 
@@ -486,10 +486,10 @@ const iconPaths: Record<string, string> = {
             </p>
             <div class="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
                 <a href="#contact" class="btn-primary px-8 py-3.5 text-base bg-white text-primary hover:bg-white/90">Ondersteuning aanvragen</a>
-                <a href="#contact" class="px-8 py-3.5 text-base rounded-xl border border-white/30 text-white hover:bg-white/10 transition-colors">Kennismakingsgesprek plannen</a>
+                <a href="https://calendly.com/daniilos123/30min" target="_blank" rel="noopener noreferrer" class="px-8 py-3.5 text-base rounded-xl border border-white/30 text-white hover:bg-white/10 transition-colors">Kennismakingsgesprek plannen</a>
             </div>
         </div>
     </section>
 
-    <ContactForm lang={lang} />
+    <ContactForm client:load lang={lang} />
 </Layout>

@@ -1,5 +1,6 @@
 ---
 import LegalLayout from '../../layouts/LegalLayout.astro';
+import LegalContact from '../../components/LegalContact.astro';
 ---
 
 <LegalLayout
@@ -28,8 +29,8 @@ Kievitstraat 25
 Netherlands  
 KvK: 98242482  
 VAT: NL005319090B91  
-Email: daniel@ict-support-limburg.nl  
-Phone: +31 6 3483 6118
+Email: <LegalContact type="email" />  
+Phone: <LegalContact type="phone" />
 
 ---
 
@@ -113,7 +114,7 @@ Under the GDPR you have the following rights:
 - **Right to object** — you can object to processing based on legitimate interest.
 - **Right to withdraw consent** — where processing is based on consent, you can withdraw it at any time without affecting the lawfulness of prior processing.
 
-To exercise your rights, contact us at **daniel@ict-support-limburg.nl**.
+To exercise your rights, contact us at <LegalContact type="email" />.
 
 We will respond within 4 weeks.
 

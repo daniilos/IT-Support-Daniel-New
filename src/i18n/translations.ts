@@ -20,7 +20,7 @@ const nl = {
             { label: 'Tarieven', href: '#pricing' },
             { label: 'Contact', href: '#contact' },
         ],
-        cta: 'Ondersteuning aanvragen',
+        cta: 'Gratis gesprek plannen',
         menuLabel: 'Menu openen',
     },
     hero: {
@@ -315,7 +315,7 @@ const en: typeof nl = {
             { label: 'Pricing', href: '#pricing' },
             { label: 'Contact', href: '#contact' },
         ],
-        cta: 'Request Support',
+        cta: 'Book a free call',
         menuLabel: 'Open menu',
     },
     hero: {
