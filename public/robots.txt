@@ -1,4 +1,11 @@
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /.netlify/
+
+# Legal/policy pages — allow indexing (needed for GDPR compliance disclosure)
+# but disallow automated scraping via a separate polite-bot rule below
+User-agent: *
+Disallow: /api/
 
 Sitemap: https://ict-support-limburg.nl/sitemap-index.xml

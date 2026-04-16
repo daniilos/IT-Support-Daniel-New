@@ -1,5 +1,6 @@
 ---
 import LegalLayout from '../../layouts/LegalLayout.astro';
+import LegalContact from '../../components/LegalContact.astro';
 ---
 
 <LegalLayout
@@ -20,8 +21,8 @@ import LegalLayout from '../../layouts/LegalLayout.astro';
 
 You can submit a complaint via:
 
-- **Email:** daniel@ict-support-limburg.nl  
-- **Phone:** +31 6 3483 6118  
+- **Email:** <LegalContact type="email" />  
+- **Phone:** <LegalContact type="phone" />  
 - **Post:** Kievitstraat 25, 6469 XX Kerkrade, Netherlands
 
 Please include in your complaint:
@@ -61,12 +62,12 @@ Oros IT Support Limburg is a sole trader and is currently not affiliated with a 
 If we cannot resolve the issue together, you can submit the dispute to:
 
 - The **competent civil court** in the district of Limburg, Netherlands. All agreements are governed by Dutch law.
-- If you are acting as a consumer: the **European ODR platform** (Online Dispute Resolution) at [ec.europa.eu/consumers/odr](https://ec.europa.eu/consumers/odr). Our email address for ODR purposes: daniel@ict-support-limburg.nl.
+- If you are acting as a consumer: the **European ODR platform** (Online Dispute Resolution) at [ec.europa.eu/consumers/odr](https://ec.europa.eu/consumers/odr). Our email address for ODR purposes: <LegalContact type="email" />.
 
 ---
 
 ## 6. Contact
 
-For questions about our complaints procedure, contact us at **daniel@ict-support-limburg.nl** or call **+31 6 3483 6118**.
+For questions about our complaints procedure, contact us at <LegalContact type="email" /> or call <LegalContact type="phone" />.
 
 </LegalLayout>

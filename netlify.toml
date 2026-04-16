@@ -9,3 +9,35 @@
   from   = "/api/*"
   to     = "/.netlify/functions/:splat"
   status = 200
+
+# ── Security headers ────────────────────────────────────────────────────────
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Prevent clickjacking
+    X-Frame-Options = "SAMEORIGIN"
+    # Prevent MIME sniffing
+    X-Content-Type-Options = "nosniff"
+    # Minimal referrer exposure to third parties
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    # Disable browser features that are not needed
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+    # HSTS — force HTTPS for 1 year, include subdomains
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    # Content-Security-Policy
+    # script-src notes:
+    #   'unsafe-inline' is required for Astro's is:inline scripts (analytics config object)
+    #   and the obfuscation inline scripts in LegalContact.astro.
+    #   GTM / Clarity are loaded dynamically via cookie-consent.ts after user consent.
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.clarity.ms; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com; font-src 'self' data:; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://api.telegram.org; frame-src https://calendly.com; object-src 'none'; base-uri 'self'; form-action 'self'"
+
+# Cache static assets aggressively
+[[headers]]
+  for = "/_astro/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"

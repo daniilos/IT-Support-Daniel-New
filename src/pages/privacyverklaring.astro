@@ -1,5 +1,6 @@
 ---
 import LegalLayout from '../layouts/LegalLayout.astro';
+import LegalContact from '../components/LegalContact.astro';
 ---
 
 <LegalLayout
@@ -27,8 +28,8 @@ Kievitstraat 25
 6469 XX Kerkrade  
 KvK: 98242482  
 BTW: NL005319090B91  
-E-mail: daniel@ict-support-limburg.nl  
-Telefoon: +31 6 3483 6118
+E-mail: <LegalContact type="email" />  
+Telefoon: <LegalContact type="phone" />
 
 ---
 
@@ -112,7 +113,7 @@ Op grond van de AVG heeft u de volgende rechten:
 - **Recht van bezwaar** — u kunt bezwaar maken tegen verwerking op basis van gerechtvaardigd belang.
 - **Recht om toestemming in te trekken** — als de verwerking op toestemming is gebaseerd, kunt u deze te allen tijde intrekken zonder dat dit afbreuk doet aan de rechtmatigheid van de verwerking vóór de intrekking.
 
-U kunt uw rechten uitoefenen door contact op te nemen via **daniel@ict-support-limburg.nl**.
+U kunt uw rechten uitoefenen door contact op te nemen via <LegalContact type="email" />.
 
 Wij reageren binnen 4 weken op uw verzoek.
 

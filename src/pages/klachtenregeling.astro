@@ -1,5 +1,6 @@
 ---
 import LegalLayout from '../layouts/LegalLayout.astro';
+import LegalContact from '../components/LegalContact.astro';
 ---
 
 <LegalLayout
@@ -20,8 +21,8 @@ import LegalLayout from '../layouts/LegalLayout.astro';
 
 U kunt een klacht indienen via:
 
-- **E-mail:** daniel@ict-support-limburg.nl  
-- **Telefoon:** +31 6 3483 6118  
+- **E-mail:** <LegalContact type="email" />  
+- **Telefoon:** <LegalContact type="phone" />  
 - **Post:** Kievitstraat 25, 6469 XX Kerkrade
 
 Vermeld bij uw klacht:
@@ -61,12 +62,12 @@ Oros ICT Support Limburg is een eenmanszaak en is momenteel niet aangesloten bij
 Als wij er samen niet uitkomen, kunt u het geschil voorleggen aan:
 
 - De **bevoegde civiele rechter** in het arrondissement Limburg. Op alle overeenkomsten is Nederlands recht van toepassing.
-- Als u als consument handelt: het **Europese ODR-platform** (Online Dispute Resolution) via [ec.europa.eu/consumers/odr](https://ec.europa.eu/consumers/odr). Ons e-mailadres voor ODR-doeleinden: daniel@ict-support-limburg.nl.
+- Als u als consument handelt: het **Europese ODR-platform** (Online Dispute Resolution) via [ec.europa.eu/consumers/odr](https://ec.europa.eu/consumers/odr). Ons e-mailadres voor ODR-doeleinden: <LegalContact type="email" />.
 
 ---
 
 ## 6. Contact
 
-Heeft u vragen over onze klachtenregeling? Neem dan contact op via **daniel@ict-support-limburg.nl** of bel **+31 6 3483 6118**.
+Heeft u vragen over onze klachtenregeling? Neem dan contact op via <LegalContact type="email" /> of bel <LegalContact type="phone" />.
 
 </LegalLayout>
