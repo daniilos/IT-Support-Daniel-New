@@ -1,5 +1,6 @@
 ---
 import { translations, type Lang } from '../i18n/translations';
+import { ObfuscatedLink } from './ObfuscatedContact';
 
 interface Props {
     lang?: Lang;
@@ -67,9 +68,12 @@ const t = translations[lang].header;
                 <span class="text-border">|</span>
                 <a href={enUrl} class:list={['no-underline text-base font-medium', lang === 'en' ? 'font-bold text-accent' : 'text-muted-foreground']}>EN</a>
             </div>
-            <a href="tel:+31634836118" class="rounded-md px-3 py-3 text-base font-bold text-primary no-underline">
-                +31 6 3483 6118
-            </a>
+            <ObfuscatedLink
+                client:load
+                encoded="dGVsOiszMTYzNDgzNjExOA=="
+                label="KzMxIDYgMzQ4MyA2MTE4"
+                className="rounded-md px-3 py-3 text-base font-bold text-primary no-underline"
+            />
             <a href="#contact" class="btn-primary mt-2 text-center">{t.cta}</a>
         </nav>
     </div>

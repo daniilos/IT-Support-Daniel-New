@@ -1,5 +1,6 @@
 ---
 import { translations, type Lang } from '../i18n/translations';
+import { ObfuscatedLink, ObfuscatedText } from './ObfuscatedContact';
 interface Props { lang?: Lang }
 const { lang = 'nl' } = Astro.props;
 const t = translations[lang].footer;
@@ -21,10 +22,20 @@ const t = translations[lang].footer;
                 </p>
                 <div class="mt-4 flex flex-col gap-1 text-sm text-white/75">
                     <span>{t.companyName}</span>
-                    <span>{t.street}</span>
-                    <span>{t.postalCity}</span>
-                    <a href="tel:+31634836118" class="mt-1 text-white/85 no-underline hover:text-white transition-colors">{t.phone}</a>
-                    <a href="mailto:daniel@ict-support-limburg.nl" class="text-white/85 no-underline hover:text-white transition-colors">{t.email}</a>
+                    <ObfuscatedText client:load encoded="S2lldml0c3RyYWF0IDI1" />
+                    <ObfuscatedText client:load encoded="NjQ2OSBYWCBLZXJrcmFkZQ==" />
+                    <ObfuscatedLink
+                        client:load
+                        encoded="dGVsOiszMTYzNDgzNjExOA=="
+                        label="KzMxIDYgMzQ4MyA2MTE4"
+                        className="mt-1 text-white/85 no-underline hover:text-white transition-colors"
+                    />
+                    <ObfuscatedLink
+                        client:load
+                        encoded="bWFpbHRvOmRhbmllbEBpY3Qtc3VwcG9ydC1saW1idXJnLm5s"
+                        label="ZGFuaWVsQGljdC1zdXBwb3J0LWxpbWJ1cmcubmw="
+                        className="text-white/85 no-underline hover:text-white transition-colors"
+                    />
                 </div>
                 <div class="mt-4 space-y-1 text-sm text-white/70">
                     <p>{t.kvkLabel}: {t.kvkValue}</p>

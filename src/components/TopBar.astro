@@ -1,5 +1,6 @@
 ---
 import { translations, type Lang } from '../i18n/translations';
+import { ObfuscatedLink } from './ObfuscatedContact';
 interface Props { lang?: Lang }
 const { lang = 'nl' } = Astro.props;
 const t = translations[lang].topBar;
@@ -8,12 +9,18 @@ const t = translations[lang].topBar;
 <div class="bg-primary text-white">
     <div class="container-main flex flex-wrap items-center justify-between gap-2 px-4 py-2 text-sm sm:px-6 lg:px-8">
         <div class="flex flex-wrap items-center gap-4 sm:gap-6">
-            <a href="tel:+31634836118" class="no-underline text-white/90 transition-colors hover:text-white">
-                {t.phone}
-            </a>
-            <a href="mailto:daniel@ict-support-limburg.nl" class="no-underline text-white/90 transition-colors hover:text-white">
-                {t.email}
-            </a>
+            <ObfuscatedLink
+                client:load
+                encoded="dGVsOiszMTYzNDgzNjExOA=="
+                label="KzMxIDYgMzQ4MyA2MTE4"
+                className="no-underline text-white/90 transition-colors hover:text-white"
+            />
+            <ObfuscatedLink
+                client:load
+                encoded="bWFpbHRvOmRhbmllbEBpY3Qtc3VwcG9ydC1saW1idXJnLm5s"
+                label="ZGFuaWVsQGljdC1zdXBwb3J0LWxpbWJ1cmcubmw="
+                className="no-underline text-white/90 transition-colors hover:text-white"
+            />
         </div>
         <div class="text-white/80 text-xs sm:text-sm">{t.hours}</div>
     </div>
