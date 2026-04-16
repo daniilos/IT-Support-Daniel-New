@@ -10,6 +10,14 @@ interface Props {
 
 const { lang = 'nl', nlUrl = '/', enUrl = '/en/' } = Astro.props;
 const t = translations[lang].header;
+const homeUrl = lang === 'en' ? '/en/' : '/';
+
+// Resolve anchor-only hrefs so they work from any subpage (e.g. /blog/, /en/blog/)
+function resolveHref(href: string): string {
+    return href.startsWith('#') ? `${homeUrl}${href}` : href;
+}
+
+const CALENDLY = 'https://calendly.com/daniilos123/30min';
 ---
 
 <header class="sticky top-0 z-50 border-b border-border bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/90">
@@ -25,7 +33,7 @@ const t = translations[lang].header;
         <nav class="hidden items-center gap-1 lg:flex" aria-label="Main navigation">
             {t.nav.map((item) => (
                 <a
-                    href={item.href}
+                    href={resolveHref(item.href)}
                     class="px-3 py-2 text-sm font-medium text-card-foreground no-underline transition-colors duration-200 hover:text-accent"
                 >
                     {item.label}
@@ -39,7 +47,7 @@ const t = translations[lang].header;
                 <span class="text-border">|</span>
                 <a href={enUrl} class:list={['no-underline transition-colors', lang === 'en' ? 'font-bold text-accent' : 'text-muted-foreground hover:text-primary']}>EN</a>
             </div>
-            <a href="#contact" class="btn-primary hidden sm:inline-flex">{t.cta}</a>
+            <a href={CALENDLY} target="_blank" rel="noopener noreferrer" class="btn-primary hidden sm:inline-flex">{t.cta}</a>
             <button
                 id="mobile-menu-btn"
                 class="flex h-11 w-11 items-center justify-center rounded-lg text-foreground transition-colors hover:bg-muted lg:hidden"
@@ -57,7 +65,7 @@ const t = translations[lang].header;
         <nav class="container-main flex flex-col gap-1 px-4 py-4" aria-label="Mobile navigation">
             {t.nav.map((item) => (
                 <a
-                    href={item.href}
+                    href={resolveHref(item.href)}
                     class="mobile-nav-link rounded-md px-3 py-3 text-base font-medium text-card-foreground no-underline transition-colors hover:bg-muted"
                 >
                     {item.label}
@@ -74,7 +82,7 @@ const t = translations[lang].header;
                 label="KzMxIDYgMzQ4MyA2MTE4"
                 className="rounded-md px-3 py-3 text-base font-bold text-primary no-underline"
             />
-            <a href="#contact" class="btn-primary mt-2 text-center">{t.cta}</a>
+            <a href={CALENDLY} target="_blank" rel="noopener noreferrer" class="btn-primary mt-2 text-center">{t.cta}</a>
         </nav>
     </div>
 </header>
