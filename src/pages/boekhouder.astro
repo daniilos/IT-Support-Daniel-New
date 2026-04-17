@@ -1,0 +1,495 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContactForm from '../components/ContactForm';
+
+const lang = 'nl';
+const slug = 'boekhouder';
+const siteUrl = 'https://ict-support-limburg.nl';
+
+const title = 'ICT-support voor accountants- en administratiekantoren in Limburg | Oros IT Support';
+const description = 'IT-support voor accountants- en administratiekantoren in Zuid-Limburg. Exact Online, Twinfield, Yuki, Peppol. Snel, lokaal, geen generieke helpdesk. Bekend met de dagelijkse kantoorlogica.';
+
+const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Oros IT Support Limburg",
+    "description": description,
+    "url": `${siteUrl}/${slug}/`,
+    "telephone": "+31634836118",
+    "email": "daniel@ict-support-limburg.nl",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Kievitstraat 25",
+        "addressLocality": "Kerkrade",
+        "addressRegion": "Limburg",
+        "postalCode": "6469 XX",
+        "addressCountry": "NL"
+    },
+    "areaServed": [
+        { "@type": "City", "name": "Kerkrade" },
+        { "@type": "City", "name": "Heerlen" },
+        { "@type": "City", "name": "Maastricht" },
+        { "@type": "City", "name": "Sittard" }
+    ],
+    "knowsAbout": ["Exact Online", "Twinfield", "Yuki", "Peppol", "e-facturering", "Microsoft 365", "GDPR", "boekhoudkantoor IT", "administratiekantoor ICT"],
+    "founder": { "@type": "Person", "name": "Daniel Orosz" }
+};
+
+const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Werk je ook met Exact Online, Twinfield of Yuki?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Ja. Ik ken deze systemen vanuit de dagelijkse praktijk van een kantoor, niet vanuit een handleiding. Koppelingen, synchronisaties, gebruikersinstellingen en de logica eromheen." }
+        },
+        {
+            "@type": "Question",
+            "name": "Wat als mijn softwareleverancier zegt dat het probleem niet bij hen ligt?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Dat hoor ik regelmatig. IT wijst naar de software, software wijst naar het netwerk, netwerk wijst naar de hardware. Ik kijk naar het geheel en zoek de echte oorzaak." }
+        },
+        {
+            "@type": "Question",
+            "name": "Wat is Peppol en moet ik daar nu al iets mee?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Peppol is de standaard voor elektronische facturering die in Europa verplicht wordt. Voor accountants- en administratiekantoren is dit dubbel relevant: voor de eigen facturen én voor die van uw klanten. Ik help dit praktisch in te richten." }
+        },
+        {
+            "@type": "Question",
+            "name": "Hoe snel reageer je bij een probleem dat het kantoor stilleggen?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Voor remote support ben ik doorgaans binnen een uur beschikbaar. Voor on-site in de regio Kerkrade–Heerlen reken ik op dezelfde dag of volgende ochtend." }
+        },
+        {
+            "@type": "Question",
+            "name": "Werk je alleen als er al een IT-leverancier is?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Ik vervang niemand. Ik pak op wat er tussen de stoelen valt: de kantoorspecifieke zaken die een generieke MSP niet kent of niet wil oppakken." }
+        }
+    ]
+};
+
+const services = [
+    { title: 'Toegangsbeheer en Microsoft 365', desc: 'Nieuwe medewerker, vertrekkende collega, gewijzigde rol: ik zorg dat de juiste mensen toegang hebben en de verkeerde mensen niet meer. MFA, gedeelde mailboxen, licenties.', icon: 'users' },
+    { title: 'Koppelingen tussen systemen', desc: 'Exact Online, Twinfield of Yuki loopt niet goed samen met het klantportaal, de DMS of de salarismodule? Ik zoek de echte oorzaak, ook als leveranciers naar elkaar wijzen.', icon: 'link' },
+    { title: 'Back-up en herstel', desc: 'Een back-up die nooit getest is, is geen back-up. Ik controleer niet alleen of er een back-up is, maar of je er ook echt mee kunt herstellen.', icon: 'shield' },
+    { title: 'Peppol en e-facturering', desc: 'De Europese e-factureringsplicht komt eraan. Ik help uw kantoor en uw klanten om dit gestructureerd in te richten, zonder dat het proces stilvalt.', icon: 'doc' },
+    { title: 'Onboarding en kennisbasis', desc: 'Nieuwe medewerkers leren snel de juiste werkwijzen. Protocollen en procedures overzichtelijk en doorzoekbaar gemaakt, zodat kennis niet in één hoofd zit.', icon: 'book' },
+    { title: 'AI-tools veilig inzetten', desc: 'ChatGPT en andere AI-tools bieden kansen voor kantoorprocessen, maar brengen ook risico\'s mee. Ik help dit gestructureerd te doen zonder dat klantgegevens op persoonlijke accounts terechtkomen.', icon: 'sparkle' },
+    { title: 'Printers, scanners en randapparatuur', desc: 'Kleine reparaties en vervanging zonder dure servicecontracten of lange wachttijden.', icon: 'printer' },
+    { title: 'Vendor coördinatie', desc: 'IT zegt: software. Software zegt: netwerk. Netwerk zegt: hardware. Ik kijk naar het geheel en zoek de echte oorzaak, niet degene die wijst.', icon: 'arrows', highlight: false },
+];
+
+const whyReasons = [
+    { title: 'Ik ken de kantoorlogica', desc: 'Mijn moeder was boekhoudster. Ik ben opgegroeid met de logica van administratie: precies werken, aandacht voor detail, nul tolerantie voor fouten die geld kosten. Dat geeft een ander perspectief dan een generieke IT-leverancier.' },
+    { title: 'Bekend met Exact, Twinfield en Yuki', desc: 'Niet vanuit een handleiding, maar vanuit de dagelijkse praktijk van een kantoor. Koppelingen, synchronisaties, gebruikersinstellingen en de logica eromheen: ik weet hoe het werkt en waar het fout kan gaan.' },
+    { title: 'Lokaal en bereikbaar', desc: 'Gevestigd in Kerkrade, snel ter plaatse in heel Zuid-Limburg. Geen centrale planningsdienst, geen wachtrij. Je belt mij direct.' },
+    { title: 'GDPR als standaard', desc: 'Kantoren werken met klantdossiers. Ik houd daar rekening mee bij elke ingreep: toegangen, opslag, cloudapps en offboarding. Geen handleiding die ik erbij pak, maar standaard onderdeel van hoe ik werk.' },
+    { title: 'Directe lijn, geen ticket', desc: 'Je belt mij, niet een helpdesknummer. Ik ken jouw kantoor, weet wat er eerder speelde en hoef niet elke keer opnieuw uitgelegd te worden hoe het zit.' },
+];
+
+const faqItems = [
+    { question: 'Werk je ook met Exact Online, Twinfield of Yuki?', answer: 'Ja. Ik ken deze systemen vanuit de dagelijkse praktijk van een kantoor, niet vanuit een handleiding. Koppelingen, synchronisaties, gebruikersinstellingen en de logica eromheen.' },
+    { question: 'Wat als mijn softwareleverancier zegt dat het probleem niet bij hen ligt?', answer: 'Dat hoor ik regelmatig. IT wijst naar de software, software wijst naar het netwerk, netwerk wijst naar de hardware. Ik kijk naar het geheel en zoek de echte oorzaak.' },
+    { question: 'Wat is Peppol en moet ik daar nu al iets mee?', answer: 'Peppol is de standaard voor elektronische facturering die in Europa verplicht wordt. Voor accountants- en administratiekantoren is dit dubbel relevant: voor de eigen facturen én voor die van uw klanten. Ik help dit praktisch in te richten.' },
+    { question: 'Hoe snel reageer je bij een probleem dat het kantoor stilleggen?', answer: 'Voor remote support ben ik doorgaans binnen een uur beschikbaar. Voor on-site in de regio Kerkrade–Heerlen reken ik op dezelfde dag of volgende ochtend.' },
+    { question: 'Werk je alleen als er al een IT-leverancier is?', answer: 'Ik vervang niemand. Ik pak op wat er tussen de stoelen valt: de kantoorspecifieke zaken die een generieke MSP niet kent of niet wil oppakken.' },
+];
+
+const iconPaths: Record<string, string> = {
+    users: 'M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z',
+    link: 'M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244',
+    shield: 'M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z',
+    doc: 'M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z',
+    book: 'M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25',
+    sparkle: 'M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z',
+    printer: 'M6.72 13.829c-.24.03-.48.062-.72.096m.72-.096a42.415 42.415 0 0110.56 0m-10.56 0L6.34 18m10.94-4.171c.24.03.48.062.72.096m-.72-.096L17.66 18m0 0l.229 2.523a1.125 1.125 0 01-1.12 1.227H7.231c-.662 0-1.18-.568-1.12-1.227L6.34 18m11.318 0h1.091A2.25 2.25 0 0021 15.75V9.456c0-1.081-.768-2.015-1.837-2.175a48.055 48.055 0 00-1.913-.247M6.34 18H5.25A2.25 2.25 0 013 15.75V9.456c0-1.081.768-2.015 1.837-2.175a48.041 48.041 0 011.913-.247m10.5 0a48.536 48.536 0 00-10.5 0m10.5 0V3.375c0-.621-.504-1.125-1.125-1.125h-8.25c-.621 0-1.125.504-1.125 1.125v3.659M18 10.5h.008v.008H18V10.5zm-3 0h.008v.008H15V10.5z',
+    arrows: 'M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5',
+};
+---
+
+<Layout title={title} description={description} lang={lang} alternateUrl="/en/boekhouder/">
+    <Fragment slot="head">
+        <link rel="canonical" href={`${siteUrl}/${slug}/`} />
+        <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+        <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    </Fragment>
+
+    {/* Breadcrumb */}
+    <div class="bg-white border-b border-border">
+        <div class="container-main max-w-5xl py-3">
+            <nav class="text-sm text-muted-foreground">
+                <a href="/" class="hover:text-accent transition-colors">Home</a>
+                <span class="mx-2 text-border">/</span>
+                <span>IT voor accountants- en administratiekantoren</span>
+            </nav>
+        </div>
+    </div>
+
+    {/* Hero */}
+    <section class="relative overflow-hidden bg-white section-padding !pb-14 md:!pb-16">
+        <div class="pointer-events-none absolute inset-0 -z-10">
+            <div class="absolute -top-32 right-0 h-[500px] w-[500px] rounded-full bg-blue-50 opacity-60 blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 h-[300px] w-[400px] rounded-full bg-slate-50 opacity-80 blur-3xl"></div>
+        </div>
+        <div class="container-main">
+            <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
+                <div class="text-center lg:text-left">
+                    <div class="mb-4 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-xs font-semibold text-accent">
+                        <svg class="h-3.5 w-3.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        Vertrouwd met de dagelijkse werkwijze van boekhoud- en administratiekantoren
+                    </div>
+                    <h1 class="mb-5">
+                        ICT-support voor accountants-<br />en administratiekantoren<br />
+                        <span class="text-accent">die de kantoorlogica begrijpen</span>
+                    </h1>
+                    <p class="mx-auto mb-4 max-w-2xl text-lg leading-relaxed text-muted-foreground lg:mx-0">
+                        Ik ben opgegroeid met boekhouden. Jarenlang werkte ik zij aan zij met de boekhoudafdeling van een organisatie: bij facturen, btw-aangiften, voorraadbeheer en administratieve workflows. Ik ken de manier van werken. Nu help ik kantoren in Zuid-Limburg met de ICT die de dagelijkse werkstroom draaiende houdt.
+                    </p>
+                    <p class="mx-auto mb-8 max-w-xl text-base font-medium text-foreground lg:mx-0">
+                        Snel geholpen, duidelijke uitleg, geen verrassingen op de factuur.<br />
+                        <span class="text-muted-foreground font-normal">Geen callcenter. Geen ticketsysteem. Je belt direct met mij.</span>
+                    </p>
+                    <div class="flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
+                        <a href="#contact" class="btn-primary px-8 py-3.5 text-base">Ondersteuning aanvragen</a>
+                        <a href="https://calendly.com/daniilos123/30min" target="_blank" rel="noopener" class="btn-outline px-8 py-3.5 text-base">Kennismakingsgesprek plannen</a>
+                    </div>
+                </div>
+
+                <div class="mx-auto flex max-w-sm items-end justify-center lg:mx-0 lg:max-w-none lg:justify-end">
+                    <div class="relative">
+                        <div class="absolute -inset-4 -z-10 rounded-3xl bg-gradient-to-br from-blue-50 to-slate-50"></div>
+                        <img
+                            src="/images/daniel-it.png"
+                            alt="Daniel Orosz — ICT specialist voor accountants- en administratiekantoren"
+                            width="597"
+                            height="800"
+                            class="h-auto w-full max-w-[320px] rounded-2xl object-cover lg:max-w-[380px]"
+                            fetchpriority="high"
+                            decoding="async"
+                        />
+                        <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-xl bg-white px-5 py-2.5 text-sm font-semibold text-primary shadow-lg border border-border">
+                            Daniel Oros · Kerkrade
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {/* Trust bar */}
+    <section class="border-y border-border bg-slate-50 py-4">
+        <div class="container-main">
+            <ul class="flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm text-muted-foreground">
+                {[
+                    'Gevestigd in Kerkrade, actief in heel Zuid-Limburg',
+                    'Bekend met Exact Online, Twinfield, Yuki en Microsoft 365',
+                    'Remote hulp doorgaans binnen 60 minuten beschikbaar',
+                    'Privacybewust: GDPR-werkwijze voor kantoren met klantdossiers',
+                ].map((item) => (
+                    <li class="flex items-center gap-2">
+                        <svg class="h-4 w-4 shrink-0 text-accent" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                        </svg>
+                        {item}
+                    </li>
+                ))}
+            </ul>
+        </div>
+    </section>
+
+    {/* Services */}
+    <section id="services" class="section-padding bg-white">
+        <div class="container-main">
+            <div class="mb-10 text-center">
+                <h2>Wat ik voor jouw kantoor doe</h2>
+            </div>
+            <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+                {services.map((s) => (
+                    <div class={`group rounded-2xl border p-5 transition-all duration-300 hover:shadow-md ${s.highlight ? 'border-accent bg-blue-50 hover:bg-blue-100/60' : 'border-border bg-white hover:border-accent/30'}`}>
+                        <div class={`mb-4 flex h-10 w-10 items-center justify-center rounded-xl ${s.highlight ? 'bg-accent text-white' : 'bg-blue-50 text-accent'}`}>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d={iconPaths[s.icon]} />
+                            </svg>
+                        </div>
+                        <h3 class="mb-2 text-base font-semibold">{s.title}</h3>
+                        <p class="text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    {/* About Daniel */}
+    <section id="about" class="section-padding bg-slate-50">
+        <div class="container-main">
+            <div class="mx-auto max-w-5xl">
+                <div class="grid items-center gap-10 md:grid-cols-5">
+                    <div class="flex justify-center md:col-span-2">
+                        <div class="relative">
+                            <div class="absolute -inset-3 -z-10 rounded-3xl bg-gradient-to-br from-blue-50 to-slate-100"></div>
+                            <img
+                                src="/images/daniel2_1.png"
+                                alt="Daniel Orosz — ICT specialist voor accountants- en administratiekantoren"
+                                width="597"
+                                height="800"
+                                class="h-auto w-full max-w-[260px] rounded-2xl object-cover md:max-w-none"
+                                loading="lazy"
+                                decoding="async"
+                            />
+                        </div>
+                    </div>
+                    <div class="md:col-span-3">
+                        <h2 class="mb-6">Wie is Daniel?</h2>
+                        <div class="space-y-4 text-base leading-relaxed text-muted-foreground">
+                            <p>
+                                Mijn moeder was boekhoudster. Ik ben opgegroeid met de logica van administratie: precies werken, aandacht voor detail, nul tolerantie voor fouten die geld kosten.
+                            </p>
+                            <p>
+                                Technisch heb ik jarenlang de ICT-omgeving van een organisatie beheerd, inclusief de boekhoudafdeling. Factuurworkflows, voorraadbeheer, toegangen tot administratieve systemen, en alles wat ertussen valt. Ik weet hoe een kantoor denkt.
+                            </p>
+                            <p>
+                                Dat maakt me anders dan een generieke IT-leverancier die jouw wereld niet kent.
+                            </p>
+                        </div>
+                        <div class="mt-6">
+                            <p class="font-semibold text-primary">Mijn aanpak:</p>
+                            <p class="text-base text-foreground">Zorgen dat het werkt, uitleggen wat er aan de hand is, en geen gedoe over de factuur.</p>
+                        </div>
+                        <blockquote class="mt-8 border-l-4 border-accent pl-6">
+                            <p class="text-lg italic text-primary leading-relaxed">"Stille ICT is het doel. Elk uur dat een medewerker bezig is met een ICT-probleem, is een uur dat niet declareerbaar is."</p>
+                            <footer class="mt-3 text-sm font-semibold text-muted-foreground">— Daniel Orosz</footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {/* Why Oros */}
+    <section class="section-padding bg-white">
+        <div class="container-main">
+            <h2 class="mb-10 text-center">Waarom accountantskantoren voor mij kiezen</h2>
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {whyReasons.map((r, i) => (
+                    <div class="rounded-2xl border border-border bg-white p-6 transition-all duration-300 hover:shadow-md hover:border-accent/30">
+                        <div class="mb-4 flex h-9 w-9 items-center justify-center rounded-lg bg-blue-50 text-accent text-sm font-bold">
+                            {i + 1}
+                        </div>
+                        <h3 class="mb-2 text-base font-semibold">{r.title}</h3>
+                        <p class="text-sm leading-relaxed text-muted-foreground">{r.desc}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    {/* Common problems */}
+    <section class="section-padding bg-slate-50">
+        <div class="container-main max-w-4xl">
+            <h2 class="mb-8 text-center">Waarmee ik dagelijks help in accountantskantoren</h2>
+            <div class="grid gap-3 sm:grid-cols-2">
+                {[
+                    'Toegang voor nieuwe medewerker werkt niet op dag één',
+                    'Exact Online, Twinfield of Yuki geeft synchronisatieproblemen',
+                    'Koppeling met klantportaal of DMS werkt niet meer na update',
+                    'Back-up bestaat, maar restore is nooit getest',
+                    'Medewerker vertrekt, maar heeft nog steeds toegang',
+                    'Peppol of e-facturering is nog niet ingericht',
+                    'AI-tools worden al gebruikt, maar zonder beleid of beveiliging',
+                    'Printer of scanner op de receptie werkt niet',
+                ].map((p) => (
+                    <div class="flex items-start gap-3 rounded-xl border border-border bg-white px-4 py-3.5 transition-colors hover:border-accent/30">
+                        <svg class="mt-0.5 h-5 w-5 shrink-0 text-accent" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span class="text-sm text-foreground">{p}</span>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    {/* Uit de praktijk */}
+    <section class="section-padding bg-white">
+        <div class="container-main max-w-4xl">
+            <h2 class="mb-8 text-center">Uit de praktijk</h2>
+            <div class="grid gap-6 md:grid-cols-2">
+                <div class="relative rounded-2xl border border-border bg-slate-50 p-6">
+                    <div class="absolute -top-3 left-6 flex h-7 w-7 items-center justify-center rounded-full bg-accent text-white text-xs font-bold shadow-sm">1</div>
+                    <p class="pt-2 text-sm leading-relaxed text-muted-foreground">
+                        Een koppeling tussen Exact Online en een klantportaal gaf wekelijks foutmeldingen. De softwareleverancier wees naar het netwerk. De netwerkbeheerder wees naar de software. Ik analyseerde beide kanten tegelijk en vond een conflicterende update als oorzaak. Opgelost binnen één dag, na twee weken heen-en-weer sturen.
+                    </p>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-accent">Exact Online</span>
+                        <span class="rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-accent">Koppeling</span>
+                        <span class="rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-700">Opgelost in 1 dag</span>
+                    </div>
+                </div>
+                <div class="relative rounded-2xl border border-border bg-slate-50 p-6">
+                    <div class="absolute -top-3 left-6 flex h-7 w-7 items-center justify-center rounded-full bg-accent text-white text-xs font-bold shadow-sm">2</div>
+                    <p class="pt-2 text-sm leading-relaxed text-muted-foreground">
+                        Een nieuw aangenomen medewerker kon na vier dagen nog niet zelfstandig werken. Geen duidelijke werkwijze, geen documentatie, iedereen legde het anders uit. Ik bracht de kantoorlogica terug in één doorzoekbare kennisbasis. Sindsdien onboarden nieuwe medewerkers in twee dagen in plaats van twee weken.
+                    </p>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-accent">Onboarding</span>
+                        <span class="rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-accent">Kennisbasis</span>
+                        <span class="rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-700">2 dagen ipv 2 weken</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {/* Comparison */}
+    <section class="section-padding bg-slate-50">
+        <div class="container-main">
+            <h2 class="mb-10 text-center">Eigen IT-medewerker vs. IT-support voor jouw kantoor</h2>
+            <div class="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
+                <div class="rounded-2xl border border-border bg-white p-6">
+                    <h3 class="mb-5 text-center text-base font-bold text-muted-foreground">Eigen IT-medewerker</h3>
+                    <ul class="space-y-3">
+                        {[
+                            'Vast salaris + sociale lasten',
+                            'Uitgevallen bij ziekte of vakantie',
+                            'Zelden kennis van Exact, Twinfield of Yuki',
+                            'GDPR-bewustzijn afhankelijk van de persoon',
+                            'Vaak niet rendabel onder de 15–20 werkplekken',
+                        ].map((item) => (
+                            <li class="flex items-start gap-3 text-sm text-muted-foreground">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-5 w-5 shrink-0 text-red-400" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>{item}</span>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+                <div class="rounded-2xl border-2 border-accent bg-blue-50 p-6">
+                    <h3 class="mb-5 text-center text-base font-bold text-accent">Oros IT Support Limburg</h3>
+                    <ul class="space-y-3">
+                        {[
+                            'Je betaalt alleen voor wat je gebruikt',
+                            'Remote + on-site, beschikbaar wanneer nodig',
+                            'Dagelijkse praktijkkennis van Exact, Twinfield en Yuki',
+                            'GDPR-werkwijze als standaard, niet als bijgedachte',
+                            'Geschikt voor kantoren van 2 tot 30 werkplekken',
+                        ].map((item) => (
+                            <li class="flex items-start gap-3 text-sm text-foreground">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-5 w-5 shrink-0 text-success" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>{item}</span>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
+            <p class="mx-auto mt-8 max-w-2xl text-center text-sm text-muted-foreground">
+                Voor de meeste accountants- en administratiekantoren is flexibele IT-support goedkoper én praktischer dan een vaste IT-er die de kantoorlogica niet kent.
+            </p>
+        </div>
+    </section>
+
+    {/* Kantoorcheck */}
+    <section class="section-padding bg-white">
+        <div class="container-main max-w-3xl">
+            <div class="relative overflow-hidden rounded-2xl border border-border bg-gradient-to-br from-slate-50 to-blue-50 p-8">
+                <div class="pointer-events-none absolute right-0 top-0 h-40 w-40 -translate-y-8 translate-x-8 rounded-full bg-blue-100 opacity-50 blur-2xl"></div>
+                <h2 class="mb-2 text-xl font-bold">ICT-kantoorcheck voor accountants- en administratiekantoren</h2>
+                <p class="mb-5 text-muted-foreground">Weet je zeker dat de ICT van jouw kantoor goed is geregeld?</p>
+                <p class="mb-3 text-sm font-semibold text-foreground">Ik loop praktisch door:</p>
+                <ul class="mb-5 grid gap-1.5 sm:grid-cols-2 text-sm text-muted-foreground">
+                    {[
+                        'Toegangen en Microsoft 365-omgeving',
+                        'Back-up en restore',
+                        'Koppelingen tussen systemen',
+                        'Peppol/e-facturering readiness',
+                        'Gebruikers, rollen en offboarding',
+                    ].map((item) => (
+                        <li class="flex items-center gap-2">
+                            <svg class="h-4 w-4 shrink-0 text-accent" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                            </svg>
+                            {item}
+                        </li>
+                    ))}
+                </ul>
+                <p class="mb-6 text-sm text-muted-foreground">
+                    Je krijgt een overzicht van wat goed gaat en wat aandacht nodig heeft, in gewone taal, zonder vakjargon en zonder verkoopverhaal. Ik stuur het binnen twee werkdagen toe.
+                </p>
+                <a href="#contact" class="btn-primary inline-block px-6 py-3 text-sm">
+                    Vraag een gratis kantoorcheck aan — ik kijk mee, zonder verplichtingen
+                </a>
+            </div>
+        </div>
+    </section>
+
+    {/* Pricing */}
+    <section class="section-padding bg-slate-50">
+        <div class="container-main max-w-3xl">
+            <h2 class="mb-8 text-center">Transparante tarieven</h2>
+            <div class="overflow-hidden rounded-2xl border border-border bg-white">
+                <table class="w-full text-sm border-collapse">
+                    <tbody>
+                        {[
+                            ['Remote support', 'vanaf €65 / uur', 'excl. btw'],
+                            ['On-site support Zuid-Limburg', 'vanaf €79 / uur', 'excl. btw'],
+                            ['Voorrijkosten (lokaal)', 'vanaf €20–30', 'excl. btw'],
+                            ['ICT-kantoorcheck', '€149 – €199', 'excl. btw'],
+                            ['Maandelijks starterssupportplan', 'vanaf €149 / maand', 'excl. btw'],
+                            ['Per-gebruiker maandelijks pakket', 'vanaf €35–49 / gebruiker / maand', 'excl. btw'],
+                        ].map(([label, price, note]) => (
+                            <tr class="border-b border-border last:border-0 hover:bg-slate-50 transition-colors">
+                                <td class="px-5 py-3.5 font-medium">{label}</td>
+                                <td class="px-5 py-3.5 font-semibold text-accent whitespace-nowrap">{price}</td>
+                                <td class="px-5 py-3.5 text-muted-foreground text-xs">{note}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
+            <p class="mt-4 text-center text-xs text-muted-foreground">
+                Alle tarieven zijn exclusief btw. Voor grotere kantoren of maatwerktrajecten maak ik graag een offerte op maat.
+            </p>
+        </div>
+    </section>
+
+    {/* FAQ */}
+    <section id="faq" class="section-padding bg-white">
+        <div class="container-main max-w-3xl">
+            <h2 class="mb-10 text-center">Veelgestelde vragen van accountants- en administratiekantoren</h2>
+            <div class="space-y-4">
+                {faqItems.map((item) => (
+                    <details class="group rounded-2xl border border-border bg-white open:shadow-sm transition-all duration-200">
+                        <summary class="flex cursor-pointer items-center justify-between gap-4 px-6 py-5 font-semibold text-foreground list-none">
+                            <span>{item.question}</span>
+                            <svg class="h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200 group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                            </svg>
+                        </summary>
+                        <div class="px-6 pb-5 text-sm leading-relaxed text-muted-foreground">
+                            {item.answer}
+                        </div>
+                    </details>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    {/* Final CTA */}
+    <section class="section-padding bg-primary text-white">
+        <div class="container-main max-w-2xl text-center">
+            <h2 class="mb-4 text-white">Klaar om de ICT van jouw kantoor op orde te brengen?</h2>
+            <p class="mb-8 text-white/75">
+                Geen verkoopgesprek. Geen verplichtingen. Gewoon een kort gesprek om te kijken of ik iets voor jouw kantoor kan betekenen.
+            </p>
+            <div class="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+                <a href="#contact" class="btn-primary px-8 py-3.5 text-base bg-white text-primary hover:bg-white/90">Ondersteuning aanvragen</a>
+                <a href="https://calendly.com/daniilos123/30min" target="_blank" rel="noopener" class="px-8 py-3.5 text-base rounded-xl border border-white/30 text-white hover:bg-white/10 transition-colors">Kennismakingsgesprek plannen →</a>
+            </div>
+        </div>
+    </section>
+
+    <ContactForm lang={lang} />
+</Layout>
